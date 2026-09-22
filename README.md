@@ -22,7 +22,7 @@ Two layers keep this from being casually stumbled on:
 2. **Access code gate.** `site/access-gate.js` shows a full-page access-code prompt
    before any content is visible. The current code is:
 
-   > **greentec-2026**
+   > **dte-equipment2026**
 
    Share the deployed URL + this code with whoever needs to review the site.
 

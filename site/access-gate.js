@@ -7,7 +7,7 @@
 // redeploy.
 (function () {
   var STORAGE_KEY = "dte-preview-unlocked";
-  var ACCESS_CODE = "greentec-2026";
+  var ACCESS_CODE = "dte-equipment2026";
 
   try {
     if (sessionStorage.getItem(STORAGE_KEY) === "1") return;
