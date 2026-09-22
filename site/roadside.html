@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(20px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; scroll-behavior:smooth; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img { display:block; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  button, input, select, textarea { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="applications" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<!-- BANNER -->
+<section style="position:relative;background:#141412;overflow:hidden">
+  <div style="position:relative;min-height:clamp(340px,42cqi,600px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden">
+    <img src="uploads/Roadside Image.jpg" alt="GreenTec reach mower working a road verge" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+    <div style="position:absolute;left:0;right:0;bottom:0;height:100%;pointer-events:none;background:linear-gradient(to top,rgba(12,12,10,0.8) 0%,rgba(12,12,10,0.54) 28%,rgba(12,12,10,0.24) 54%,rgba(12,12,10,0) 90%)"></div>
+    <div style="position:absolute;left:0;right:0;top:0;height:180px;pointer-events:none;background:linear-gradient(to bottom,rgba(12,12,10,0.55) 0%,rgba(12,12,10,0.28) 55%,rgba(12,12,10,0) 100%)"></div>
+    <div style="position:relative;padding:clamp(72px,5.8vw,92px) clamp(16px,3cqi,44px) clamp(30px,3.6cqi,60px);max-width:{{ heroTextW }}">
+      <h1 style="margin:0;font:700 clamp(32px,4.6cqi,78px)/0.97 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#ffffff;text-wrap:balance">Roadside Vegetation Management</h1>
+      <p style="margin:clamp(16px,1.8cqi,24px) 0 0;max-width:52ch;font:400 clamp(15px,1.3cqi,20px)/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.82);text-wrap:pretty">GreenTec reach mowers and the cutting heads that go on them - verges, ditches, hedges, trees and guardrails.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,2.4cqi,34px)">
+        <a href="#enquire" style="background:#f4a72d;color:#141412;padding:21px 30px;min-height:56px;display:flex;align-items:center;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase" style-hover="background:#ffffff">Get a recommendation</a>
+        <a href="tel:0753158020" style="border:1px solid rgba(255,255,255,0.45);color:#ffffff;padding:21px 30px;min-height:56px;display:flex;align-items:center;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase" style-hover="border-color:#f4a72d;color:#f4a72d">07 5315 8020</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY PAGE NAV -->
+<nav style="position:sticky;top:{{ navTop }};z-index:50;background:#1d1d1a;border-bottom:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;overflow-x:auto;-webkit-overflow-scrolling:touch">
+  <sc-for list="{{ pageNav }}" as="n" hint-placeholder-count="7">
+    <a href="{{ n.href }}" style="flex:0 0 auto;padding:0 clamp(11px,1.3cqi,19px);min-height:52px;display:flex;align-items:center;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.72);white-space:nowrap" style-hover="color:#f4a72d">{{ n.label }}</a>
+  </sc-for>
+  <a href="#enquire" style="flex:0 0 auto;margin-left:auto;background:#f4a72d;color:#141412;padding:0 clamp(16px,1.8cqi,26px);min-height:52px;display:flex;align-items:center;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap" style-hover="background:#F4F3F1">Get a Recommendation</a>
+</nav>
+
+<!-- 2 - PICK YOUR REACH -->
+<section id="reach" class="om-rise" style="background:#F4F3F1;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <h2 style="margin:0;font:700 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">How Much Reach Do You Need?</h2>
+  <p style="margin:14px 0 clamp(20px,2.2cqi,30px);max-width:60ch;font:400 clamp(15px,1.25cqi,18px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">Your tractor weight and tyre setup combined with the distance you need to reach, terrain and task determine which size arm is suitable for you.</p>
+
+  <div style="display:grid;grid-template-columns:{{ cols4 }};gap:clamp(12px,1.4cqi,20px)">
+    <sc-for list="{{ reachTiles }}" as="r" hint-placeholder-count="4">
+      <button onClick="{{ r.pick }}" style="text-align:left;cursor:pointer;background:{{ r.bg }};border:1px solid rgba(20,20,18,0.14);border-top:3px solid {{ r.accent }};padding:clamp(20px,2.2cqi,30px);display:flex;flex-direction:column;min-height:clamp(190px,19cqi,250px)">
+        <span style="font:700 clamp(28px,3cqi,44px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:{{ r.fg }}">{{ r.range }}</span>
+        <span style="margin-top:14px;font:700 clamp(15px,1.4cqi,19px)/1.25 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:{{ r.fg }}">{{ r.models }}</span>
+        <span style="margin-top:10px;font:400 14px/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:{{ r.sub }};text-wrap:pretty">{{ r.tractor }}</span>
+        <span style="margin-top:auto;padding-top:18px;display:flex;align-items:center;gap:9px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:{{ r.fg }}">{{ r.state }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div id="reach-results" style="margin-top:clamp(14px,1.6cqi,22px);background:#FFFFFF;border:1px solid rgba(20,20,18,0.16);border-top:3px solid #f4a72d;padding:clamp(20px,2.4cqi,34px);scroll-margin-top:80px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:12px">
+      <h3 style="margin:0;font:700 clamp(19px,1.9cqi,27px)/1.05 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ bandTitle }}</h3>
+      <span style="font:500 14px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.6)">{{ bandNote }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ bandCols }};gap:10px;margin-top:18px">
+      <sc-for list="{{ bandModels }}" as="m" hint-placeholder-count="4">
+        <a href="{{ m.href }}" style="background:#F4F3F1;border:1px solid rgba(20,20,18,0.14);display:flex;flex-direction:column" style-hover="border-color:#141412">
+          <div role="img" aria-label="{{ m.name }}" style="{{ m.imgBox }}"></div>
+          <div style="padding:16px 18px;display:flex;flex-direction:column;gap:7px;flex:1">
+            <span style="font:700 clamp(15px,1.4cqi,19px)/1.15 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ m.name }}</span>
+            <span style="font:600 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ m.reach }}</span>
+            <span style="font:400 13px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.65);text-wrap:pretty">{{ m.note }}</span>
+            <span style="margin-top:auto;padding-top:12px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141412">View <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></span>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:clamp(18px,2cqi,28px)">
+    <a href="#enquire" style="background:#141412;color:#F4F3F1;padding:19px 28px;min-height:52px;display:flex;align-items:center;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#f4a72d;color:#141412">Not sure? Get a recommendation</a>
+    <button onClick="{{ toggleSpecs }}" style="border:1px solid rgba(20,20,18,0.3);background:transparent;color:#141412;cursor:pointer;padding:19px 28px;min-height:52px;display:flex;align-items:center;gap:10px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">{{ specsLabel }} <span style="color:#f4a72d">{{ specsSign }}</span></button>
+  </div>
+
+  <sc-if value="{{ specsOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="margin-top:clamp(16px,1.8cqi,24px)">
+      <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(20,20,18,0.16)">
+        <table style="width:100%;min-width:620px;border-collapse:collapse;font:400 15px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">
+          <thead>
+            <tr style="background:#141412;color:#F4F3F1">
+              <th style="text-align:left;padding:14px 18px;font:700 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">Model</th>
+              <th style="text-align:left;padding:14px 18px;font:700 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">Reach</th>
+              <th style="text-align:left;padding:14px 18px;font:700 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">Drive</th>
+              <th style="text-align:left;padding:14px 18px;font:700 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">Mounting</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ reachRows }}" as="r" hint-placeholder-count="9">
+              <tr style="border-bottom:1px solid rgba(20,20,18,0.12)">
+                <td style="padding:13px 18px;font-weight:600;white-space:nowrap">{{ r.model }}</td>
+                <td style="padding:13px 18px;color:#141412;font-weight:600">{{ r.reach }}</td>
+                <td style="padding:13px 18px;color:rgba(20,20,18,0.7)">{{ r.drive }}</td>
+                <td style="padding:13px 18px;color:rgba(20,20,18,0.7)">{{ r.mount }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ cols2 }};gap:clamp(12px,1.4cqi,20px);margin-top:clamp(12px,1.4cqi,20px)">
+        <div style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);border-left:3px solid #f4a72d;padding:clamp(18px,2cqi,26px)">
+          <div style="font:700 clamp(15px,1.4cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">PTO driven - the standard build</div>
+          <p style="margin:10px 0 0;font:400 15px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">S and PLUS models carry their own pump and oil tank, driven off the PTO at 540–750 rpm. Your tractor supplies no oil - PTO, weight and mounting are what matter.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);border-left:3px solid rgba(20,20,18,0.3);padding:clamp(18px,2cqi,26px)">
+          <div style="font:700 clamp(15px,1.4cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">Hydraulic driven - Basic Front</div>
+          <p style="margin:10px 0 0;font:400 15px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">Scorpion 330–630 and Spider 520 / 620 can be built without a pump, running on the carrier's hydraulics instead. Cheaper where the machine already has the flow, and best suited to hedge and tree work.</p>
+        </div>
+      </div>
+      <p style="margin:12px 0 0;font:400 13px/1.5 'General Sans','GeneralSans-Variable',sans-serif;font-style:italic;color:rgba(20,20,18,0.55);max-width:80ch">Published GreenTec reach figures. Left/right arm and front, rear and reverse mount variants exist in each series - we confirm the exact build with you.</p>
+    </div>
+  </sc-if>
+</section>
+
+<!-- 3 - CHOOSE THE HEAD -->
+<section id="heads" class="om-rise" style="background:#FFFFFF;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <h2 style="margin:0;font:700 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">Then Pick the Head</h2>
+  <p style="margin:14px 0 clamp(20px,2.2cqi,30px);max-width:60ch;font:400 clamp(15px,1.25cqi,18px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">Six heads cover the whole road corridor. Most operations start with a flail and add from there.</p>
+  <div style="display:grid;grid-template-columns:{{ headCols }};gap:clamp(12px,1.4cqi,20px)">
+    <sc-for list="{{ heads }}" as="h" hint-placeholder-count="6">
+      <a href="{{ h.href }}" style="background:#F4F3F1;border:1px solid rgba(20,20,18,0.14);display:flex;flex-direction:column" style-hover="border-color:#141412">
+        <sc-if value="{{ h.hasImg }}" hint-placeholder-val="{{ true }}">
+          <div role="img" aria-label="{{ h.name }}" style="{{ h.bg }}"></div>
+        </sc-if>
+        <sc-if value="{{ h.noImg }}" hint-placeholder-val="{{ false }}">
+          <div style="height:clamp(150px,15cqi,200px);background:#141412;border-bottom:2px dashed rgba(244,167,45,0.55);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;font:600 10px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#f4a72d">{{ h.asset }}</div>
+        </sc-if>
+        <div style="padding:clamp(18px,2cqi,26px);display:flex;flex-direction:column;flex:1">
+          <span style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f4a72d">{{ h.job }}</span>
+          <h3 style="margin:10px 0 0;font:700 clamp(18px,1.7cqi,24px)/1.06 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ h.name }}</h3>
+          <p style="margin:10px 0 0;font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">{{ h.d }}</p>
+          <span style="margin-top:14px;font:500 14px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ h.models }}</span>
+          <span style="margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:9px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141412">View range <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></span>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- 3b - SKID STEER -->
+<section id="skidsteer" class="om-rise" style="background:#F4F3F1;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <div style="display:grid;grid-template-columns:{{ skidCols }};gap:clamp(20px,2.6cqi,44px);align-items:start">
+    <div>
+      <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5);margin-bottom:12px">Skid steer carrier</div>
+      <h2 style="margin:0;font:700 clamp(24px,3cqi,44px)/0.98 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412;max-width:24ch;text-wrap:balance">Virnig Skid Steer Slashers</h2>
+      <p style="margin:14px 0 0;max-width:56ch;font:400 clamp(15px,1.25cqi,18px)/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.72);text-wrap:pretty">Reserves, batters, access tracks and rough open ground where a loader gets in easier than a tractor and arm. Rated from 76 mm on the V40 through to 203 mm on the V60 and V70.</p>
+      <div style="display:grid;gap:10px;margin-top:20px">
+        <sc-for list="{{ slashers }}" as="s" hint-placeholder-count="4">
+          <a href="{{ s.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:14px;background:#FFFFFF;border:1px solid rgba(20,20,18,0.16);padding:16px 18px;min-height:60px" style-hover="border-color:#141412">
+            <span style="font:700 clamp(15px,1.4cqi,19px)/1.15 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ s.name }}</span>
+            <span style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.65);text-align:right">{{ s.spec }} <span style="color:#f4a72d;font-weight:700"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></span>
+          </a>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
+        <a href="products.html?category=skid-steer-slashers" style="background:#141412;color:#F4F3F1;padding:18px 26px;min-height:52px;display:flex;align-items:center;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#f4a72d;color:#141412">View slasher range</a>
+        <a href="#enquire" style="border:1px solid rgba(20,20,18,0.3);color:#141412;padding:18px 26px;min-height:52px;display:flex;align-items:center;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="border-color:#141412">Get a recommendation</a>
+      </div>
+    </div>
+    <div>
+      <div style="height:clamp(220px,24cqi,340px);overflow:hidden;background:#141412"><img src="https://www.dte-equipment.com.au/wp-content/uploads/2025/07/Skid-Steer-Brush-Cutter-Virnig-Manufacturing-Industrial-Rotary-Cutter-Attachment.jpg" alt="Virnig industrial rotary cutter clearing scrub" style="width:100%;height:100%;object-fit:cover" /></div>
+      <div style="margin-top:12px;background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);border-left:3px solid rgba(20,20,18,0.3);padding:clamp(18px,2cqi,26px)">
+        <div style="font:700 clamp(15px,1.4cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">Past maintenance vegetation?</div>
+        <p style="margin:10px 0 0;font:400 15px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">Once the corridor is established woody regrowth that needs processing rather than mowing, a drum or disc mulcher is the right tool - on 90+ hp high-flow skid steers only.</p>
+        <a href="land-clearing.html" style="display:flex;align-items:center;gap:9px;margin-top:14px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#141412" style-hover="color:#f4a72d">Land clearing &amp; mulching <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 - VIDEO -->
+<section id="videos" class="om-rise" style="background:#141412;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <h2 style="margin:0 0 clamp(18px,2cqi,26px);font:700 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1">See It Working</h2>
+  <div style="display:flex;gap:1px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.18);margin-bottom:clamp(12px,1.4cqi,20px);flex-wrap:wrap">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+      <button onClick="{{ t.select }}" style="flex:1 1 140px;border:0;cursor:pointer;padding:17px 16px;min-height:56px;font:600 11px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</button>
+    </sc-for>
+  </div>
+  <div style="position:relative;aspect-ratio:16/9;background:#1d1d1a;border:1px solid rgba(255,255,255,0.16);overflow:hidden">
+    <iframe src="{{ videoSrc }}" title="DTE Equipment roadside equipment video" allow="accelerometre; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block"></iframe>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(14px,1.8cqi,30px);margin-top:16px;font:400 14px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.7)">
+    <span><strong style="color:#F4F3F1">Head:</strong> {{ clipHead }}</span>
+    <span><strong style="color:#F4F3F1">Carrier:</strong> {{ clipCarrier }}</span>
+    <a href="{{ clipHref }}" style="color:#f4a72d;font-weight:600">{{ clipLink }} <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+  </div>
+</section>
+
+<!-- 5 - PROOF -->
+<sc-if value="{{ showProof }}" hint-placeholder-val="{{ false }}">
+<section id="proof" class="om-rise" style="background:#F4F3F1;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 clamp(18px,2cqi,28px)">
+    <h2 style="margin:0;font:700 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">In the Field</h2>
+    <div style="display:flex;align-items:center;gap:10px">
+      <button onClick="{{ prevStory }}" aria-label="Previous testimonial" style="border:1px solid rgba(20,20,18,0.3);background:transparent;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font:700 18px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412" style-hover="border-color:#141412;background:#141412;color:#F4F3F1">←</button>
+      <span style="font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:rgba(20,20,18,0.6)">{{ storyCount }}</span>
+      <button onClick="{{ nextStory }}" aria-label="Next testimonial" style="border:1px solid rgba(20,20,18,0.3);background:transparent;cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;font:700 18px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412" style-hover="border-color:#141412;background:#141412;color:#F4F3F1"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square"/></svg></button>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ proofCols }};border:1px solid rgba(20,20,18,0.16);background:#FFFFFF">
+    <div style="position:relative;min-height:clamp(240px,26cqi,400px);background:#141412;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(20px,2.4cqi,36px);gap:12px">
+      <sc-if value="{{ storyHasPhoto }}" hint-placeholder-val="{{ false }}">
+        <div role="img" aria-label="{{ storyName }}" style="{{ storyImgBox }}"></div>
+      </sc-if>
+      <sc-if value="{{ storyNoPhoto }}" hint-placeholder-val="{{ true }}">
+        <span style="font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d">Photo slot - upload here</span>
+        <p style="margin:0;max-width:38ch;font:500 clamp(15px,1.25cqi,18px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1;text-wrap:pretty">{{ storyPhotoBrief }}</p>
+      </sc-if>
+    </div>
+    <div style="padding:clamp(22px,2.6cqi,40px);display:flex;flex-direction:column">
+      <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.45);margin-bottom:14px">{{ storyName }}</div>
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:10px 18px;font:400 15px/1.35 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">
+        <span style="font-weight:600;color:rgba(20,20,18,0.5)">Machine</span><span>{{ storyMachine }}</span>
+        <span style="font-weight:600;color:rgba(20,20,18,0.5)">Carrier</span><span>{{ storyCarrier }}</span>
+        <span style="font-weight:600;color:rgba(20,20,18,0.5)">Location</span><span>{{ storyLocation }}</span>
+      </div>
+      <div style="margin-top:22px;padding:20px;background:#F4F3F1;border-left:3px solid #f4a72d;font:500 clamp(15px,1.3cqi,19px)/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-wrap:pretty">{{ storyQuote }}</div>
+      <a href="{{ storyHref }}" style="margin-top:auto;padding-top:22px;display:flex;align-items:center;gap:10px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#141412" style-hover="color:#f4a72d">{{ storyLinkLabel }} <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:16px">
+    <sc-for list="{{ storyDots }}" as="d" hint-placeholder-count="3">
+      <button onClick="{{ d.go }}" aria-label="Show testimonial" style="border:0;cursor:pointer;width:34px;height:6px;padding:0;background:{{ d.bg }}"></button>
+    </sc-for>
+  </div>
+</section>
+</sc-if>
+
+<!-- 6 - ENQUIRE -->
+<section id="enquire" class="om-rise" style="background:#141412;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <div style="display:grid;grid-template-columns:{{ formCols }};gap:clamp(22px,3cqi,52px);align-items:start">
+    <div>
+      <h2 style="margin:0;font:700 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:20ch;text-wrap:balance">Tell Us What You're Maintaining</h2>
+      <p style="margin:16px 0 0;max-width:46ch;font:400 clamp(15px,1.2cqi,18px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.65);text-wrap:pretty">The corridor, the tractor and roughly how far you need to reach. We'll come back with the arm and head combination that suits it.</p>
+      <a href="tel:0753158020" style="display:inline-flex;align-items:center;gap:12px;margin-top:24px;border:1px solid rgba(255,255,255,0.28);padding:18px 22px;min-height:52px;color:#F4F3F1" style-hover="border-color:#f4a72d;color:#f4a72d">
+        <span style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Or call</span>
+        <span style="font:700 21px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif">07 5315 8020</span>
+      </a>
+    </div>
+    <div style="background:#1d1d1a;border:1px solid rgba(255,255,255,0.16);border-top:3px solid #f4a72d;padding:clamp(20px,2.4cqi,34px)">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:{{ cols2 }};gap:14px">
+          <label style="display:grid;gap:8px;font:600 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Name
+            <input value="{{ fName }}" onChange="{{ setName }}" style="background:#141412;border:1px solid rgba(255,255,255,0.22);color:#F4F3F1;padding:15px 14px;min-height:52px;font:400 16px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none" />
+          </label>
+          <label style="display:grid;gap:8px;font:600 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Organisation
+            <input value="{{ fOrg }}" onChange="{{ setOrg }}" style="background:#141412;border:1px solid rgba(255,255,255,0.22);color:#F4F3F1;padding:15px 14px;min-height:52px;font:400 16px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none" />
+          </label>
+          <label style="display:grid;gap:8px;font:600 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Phone
+            <input value="{{ fPhone }}" onChange="{{ setPhone }}" style="background:#141412;border:1px solid rgba(255,255,255,0.22);color:#F4F3F1;padding:15px 14px;min-height:52px;font:400 16px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none" />
+          </label>
+          <label style="display:grid;gap:8px;font:600 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">Email
+            <input value="{{ fEmail }}" onChange="{{ setEmail }}" style="background:#141412;border:1px solid rgba(255,255,255,0.22);color:#F4F3F1;padding:15px 14px;min-height:52px;font:400 16px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none" />
+          </label>
+        </div>
+        <label style="display:grid;gap:8px;margin-top:14px;font:600 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.5)">What are you maintaining, and on what tractor?
+          <textarea value="{{ fNotes }}" onChange="{{ setNotes }}" rows="4" placeholder="e.g. 60 km of shire verges and ditches, John Deere 6120M, need about 6 m reach" style="background:#141412;border:1px solid rgba(255,255,255,0.22);color:#F4F3F1;padding:15px 14px;font:400 16px/1.5 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;resize:vertical"></textarea>
+        </label>
+        <label style="display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;margin-top:14px;border:1px dashed rgba(244,167,45,0.55);background:#141412;padding:18px;cursor:pointer;min-height:56px">
+          <span style="font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f4a72d">Attach photos - optional</span>
+          <span style="font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.5)">{{ fileNote }}</span>
+          <input type="file" multiple="{{ true }}" accept="image/*,video/*" onChange="{{ setFiles }}" style="display:none" />
+        </label>
+        <button onClick="{{ submit }}" style="width:100%;margin-top:16px;border:0;background:#f4a72d;color:#141412;cursor:pointer;padding:20px 24px;min-height:56px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">Get a recommendation</button>
+        <div style="margin-top:12px;font:400 13px/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:#f4a72d">{{ err }}</div>
+        <p style="margin:12px 0 0;font:400 12px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.4)">Prototype form - submissions are held in the browser and are not yet sent anywhere. Call 07 5315 8020 for a real reply today.</p>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:clamp(20px,2.4cqi,34px) 0">
+          <div style="font:700 clamp(21px,2cqi,30px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#f4a72d">Enquiry received</div>
+          <p style="margin:14px auto 0;max-width:42ch;font:400 15px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.7);text-wrap:pretty">A roadside equipment specialist will come back to you. If it's urgent, call 07 5315 8020.</p>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- 7 - WHY DTE -->
+<section class="om-rise" style="background:#FFFFFF;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <h2 style="margin:0 0 clamp(18px,2cqi,26px);font:700 clamp(24px,3cqi,44px)/0.98 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412;max-width:26ch;text-wrap:balance">We Configure the Whole System</h2>
+  <div style="display:grid;grid-template-columns:{{ cols4 }};gap:clamp(12px,1.4cqi,20px)">
+    <sc-for list="{{ whyDte }}" as="w" hint-placeholder-count="4">
+      <div style="border-top:2px solid #f4a72d;padding-top:16px">
+        <div style="font:700 clamp(15px,1.4cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ w.h }}</div>
+        <p style="margin:9px 0 0;font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.68);text-wrap:pretty">{{ w.d }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- 7b - ROADSIDE VEGETATION MANAGEMENT -->
+<section id="guides" class="om-rise" style="background:#141412;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <h2 style="margin:0 0 clamp(20px,2.2cqi,32px);font:700 clamp(24px,3cqi,44px)/0.98 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1">Roadside Vegetation Management</h2>
+  <div style="display:grid;grid-template-columns:{{ cols2 }};gap:clamp(20px,2.4cqi,40px)">
+    <sc-for list="{{ guides }}" as="g" hint-placeholder-count="5">
+      <div>
+        <h3 style="margin:0;font:700 clamp(18px,1.6cqi,24px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ g.h }}</h3>
+        <p style="margin:12px 0 0;max-width:62ch;font:400 16px/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.72);text-wrap:pretty">{{ g.p1 }}</p>
+        <p style="margin:12px 0 0;max-width:62ch;font:400 16px/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.72);text-wrap:pretty">{{ g.p2 }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- 8 - FAQ -->
+<section id="faqs" class="om-rise" style="background:#F4F3F1;padding:clamp(30px,4cqi,70px) clamp(16px,3cqi,44px)">
+  <h2 style="margin:0 0 clamp(18px,2cqi,26px);font:700 clamp(24px,3cqi,44px)/0.98 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">Common Questions</h2>
+  <div style="display:grid;border-top:1px solid rgba(20,20,18,0.16);max-width:90ch">
+    <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="8">
+      <div style="border-bottom:1px solid rgba(20,20,18,0.16)">
+        <button onClick="{{ f.toggle }}" style="width:100%;background:transparent;border:0;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 0;min-height:60px;text-align:left;font:600 clamp(16px,1.35cqi,19px)/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ f.q }} <span style="color:#f4a72d;font:700 20px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif">{{ f.sign }}</span></button>
+        <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;padding:0 0 20px;max-width:76ch;font:400 16px/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.72);text-wrap:pretty">{{ f.a }}</p>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+  <p style="margin:clamp(20px,2.2cqi,30px) 0 0;max-width:80ch;font:400 15px/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.6);text-wrap:pretty">Roadside vegetation management covers verge and ditch mowing, embankments, heavy vegetation reduction, hedge maintenance, overhanging limbs, guardrail mowing and weed control around paved infrastructure. The right equipment depends on reach, vegetation type and density, branch diametre, terrain and the carrier you already run - which is why we start from your machine rather than a catalogueue.</p>
+</section>
+
+<!-- CLOSER -->
+<section style="position:relative;background:#141412;overflow:hidden">
+  <img src="uploads/Roadside Image.jpg" alt="Reach mower working a road verge" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.4" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,10,0.95) 10%,rgba(12,12,10,0.55) 100%)"></div>
+  <div style="position:relative;padding:clamp(40px,5.2cqi,96px) clamp(16px,3cqi,44px)">
+    <h2 style="margin:0;max-width:22ch;font:700 clamp(26px,3.8cqi,60px)/0.97 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;text-wrap:balance">Let&rsquo;s Match It To Your Tractor, Skid Steer, Excavator or Telehandler!</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(20px,2.2cqi,32px)">
+      <a href="#enquire" style="background:#f4a72d;color:#141412;padding:20px 30px;min-height:56px;display:flex;align-items:center;font:600 14px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#F4F3F1">Get a recommendation</a>
+      <a href="tel:0753158020" style="border:1px solid rgba(255,255,255,0.4);color:#F4F3F1;padding:20px 30px;min-height:56px;display:flex;align-items:center;font:600 14px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="border-color:#f4a72d;color:#f4a72d">Call DTE Equipment · 07 5315 8020</a>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <div style="position:sticky;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.2);border-top:1px solid rgba(20,20,18,0.2)">
+    <a href="#enquire" style="background:#f4a72d;color:#141412;padding:18px;min-height:56px;display:flex;align-items:center;justify-content:center;text-align:center;font:600 12px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase">Get a recommendation</a>
+    <a href="tel:0753158020" style="background:#141412;color:#F4F3F1;padding:18px;min-height:56px;display:flex;align-items:center;justify-content:center;font:600 12px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase">Call</a>
+  </div>
+</sc-if>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" show-lead="{{ false }}" hint-size="100%,1100px"></dc-import>
+</div>
+
+</div>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
+const G = 'https://greentec.eu/wp-content/uploads/';
+const DTE = 'https://www.dte-equipment.com.au/wp-content/uploads/';
+
+const PAGE_SEO = {"title":"Roadside & Verge Mowing Attachments | DTE Equipment","description":"Greentec reach mowers and flail mowers for roadside, verge and council maintenance work.","path":"roadside.html"};
+
+class Component extends DCLogic {
+  state = {
+    w: 1440, view: 'desktop', tab: 'verge', faq: -1, specs: false, band: 2, story: 0,
+    sent: false, err: '', files: 0,
+    name: '', org: '', phone: '', email: '', notes: ''
+  };
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  componentDidMount() {
+    import('./seo-meta.js').then((m) => m.applySEO(PAGE_SEO));
+
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    this.setState({ w: window.innerWidth, view: view });
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  set(k) { return (e) => { const v = e.target.value; this.setState((s) => { const n = {}; n[k] = v; n.err = ''; return n; }); }; }
+
+  imgBox(url, height) {
+    return 'height:' + height + ';background-color:#141412;background-image:url("' + url + '");background-size:cover;background-position:center';
+  }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const tab = this.state.tab;
+    const headH = 'clamp(150px,15cqi,200px)';
+
+    const clips = {
+      verge: { id: 'YVnZdoTZ0d4', head: 'FR flail mower', carrier: 'Tractor, PTO driven arm', href: 'products.html?category=flail-mowers', link: 'Flail mowers' },
+      ditch: { id: 'gnoGNleA1sg', head: 'FR flail mower', carrier: 'Tractor, Scorpion 530–830', href: 'products.html?category=reach-mowers', link: 'Reach mowers' },
+      hedge: { id: 'z0XiUeKf6iE', head: 'HL cutterbar', carrier: 'Tractor or loader', href: 'products.html?category=cutterbars-trimmers', link: 'Cutterbars' },
+      saw: { id: 'XJKrZ1UUfBM', head: 'QuadSaw LRS', carrier: 'Reach mower, Multi Carrier or excavator', href: 'products.html?category=quadsaws-tree-saws', link: 'QuadSaws' }
+    };
+    const clip = clips[tab];
+
+    const faqData = [
+      { q: 'What is a reach mower?', a: 'A hydraulic arm on the tractor that carries a cutting head out beyond the machine - over the verge, down into a ditch, up a batter or above the cab. GreenTec calls them boom mowers. The Scorpion and Spider ranges cover 3.3 m to 8.3 m of horizontal reach.' },
+      { q: 'Does my tractor need high hydraulic flow?', a: "Not for the standard machines. Every S and PLUS model is self-contained - it carries its own pump and oil tank and runs off the PTO at 540–750 rpm, so your tractor supplies no oil at all. Only the Basic Front models are hydraulically driven from the carrier, and that's where flow and pressure have to be checked." },
+      { q: 'What size tractor do I need?', a: 'Reach and weight go together. As a guide the Scorpion 330 suits tractors from around 1,500 kg, the 430 from around 2,200 kg, the 530 from around 4,000 kg and the 630 from around 5,000 kg, with the 730 and 830 needing more again. Send us the make and model and we will confirm it.' },
+      { q: 'Front mount or rear mount?', a: 'Both are available. Rear mounting on a 4-point frame is the usual arrangement for the PTO-driven S and PLUS models; front, reverse and loader mounting is also offered, and the Basic Front series is purpose-built for front lifts and loaders. Left and right arm versions mean the arm works on the side you need.' },
+      { q: 'Flail mower or RX 133?', a: 'Flail for routine verge, ditch and thicket work on a regular cycle - it processes what it cuts and follows the ground on its roller. RX 133 when the vegetation is heavy or woody, or where branches, stumps and stony ground would punish a flail rotor.' },
+      { q: 'What do I use for roadside branches and trees?', a: 'It depends on branch size and finish. A rotary hedge cutter (RC 102 / 132 / 162) cuts and shreds lighter material. A cutterbar (HL or HS, 1.5–2.4 m) makes a clean cut with limited projection. A QuadSaw handles the heavier limbs - LRS 1402 up to 10 cm through to the LRS 2402 with a capacity of up to 210 mm material.' },
+      { q: 'How do you mow under guardrails?', a: 'With an obstacle-following barrier mower. The GreenTec RI 82 runs a 0.8 m three-blade head on a spring-loaded arm beside the rail; the head deflects around each post and returns behind it, so the pass keeps going instead of stopping for hand crews.' },
+      { q: 'Can I use the heads on a machine other than a tractor?', a: 'Yes - a GreenTec Multi Carrier mounts to a loader, telehandler or skid steer and runs off the machine\u2019s hydraulics. The Multi Carrier is the PUMA range, covering 2303 to 3303 including Tele versions, and it takes the same heads with the exception of the flail mowers and the RX 133. The FOX was designed around the RI 82 barrier mower.' },
+      { q: 'Do I need a Scorpion or a Spider reach arm?', a: 'The Scorpion is the conventional single-side arm - the standard, most cost-effective choice for verge, ditch and batter work down one side of the road, from 3.3 m to 8.3 m. The Spider is built on a different geometry that lets the arm work either side of the tractor, which suits tree, hedge and detail work and awkward corridors where you cannot always position the tractor perfectly. Spider covers 5.2 m to 8.2 m. If most of your work is repetitive verge mowing, Scorpion. If it is mixed vegetation, trees and constant repositioning, look at the Spider.' },
+      { q: 'Can a QuadSaw mount on an excavator?', a: 'Yes. GreenTec builds excavator adapter kits for the LRS saws, including flow-divider options, so the saw can run off the excavator\u2019s hydraulics. The saw can also be mounted on tractor reach arms, GreenTec Multi Carriers, telehandlers and loaders. What has to be checked is the machine\u2019s hydraulic flow and pressure, the boom capacity at full reach with the saw on it, and the correct bracket and circuit for your model. Send us the excavator make, model and hydraulic details and we will confirm the combination.' },
+      { q: 'What does the GreenTec RotorFlex do?', a: 'RotorFlex is the rotating head mount option on GreenTec arms. It gives the head 270\u00b0 of movement on one axis and 180\u00b0 on the other, so the same head can be presented correctly to the ground, a batter, a ditch face, a hedge side or overhead work - and turned right around - without repositioning the tractor. It is offered as an adapter across the FR flails, RC hedge cutters, cutterbars, RM and LRS saws, and with AutoFlex the head holds its set angle as the arm moves through its arc. The exact adapter depends on the arm and the head, so we specify it with the build.' },
+      { q: 'With the Scorpion or Spider, can I mow backwards?', a: 'Yes - that is what RotorFlex is for. The rotating head mount gives 270\u00b0 of movement on one axis and 180\u00b0 on the other, so the mowing head can be turned right around and worked in reverse without repositioning or remounting anything. It means you can work back along a verge, out of a dead end or around an obstacle instead of turning the tractor, and present the head correctly to the vegetation either way.' },
+      { q: 'When is a reach mower the wrong tool?', a: 'When the ground is broad, open and accessible - a wide rotary mower like the Tiger 510 covers 5.1 m per pass and will always beat an arm on hectares per hour. And once vegetation becomes established woody regrowth that needs processing rather than mowing, a skid-steer mulcher is the right machine.' }
+    ];
+
+    const bands = [
+      { range: 'Under 4 m', title: 'Under 4 m - Scorpion 330', note: 'Compact tractors from about 1,500 kg', models: [
+        { name: 'Scorpion 330', href: 'product.html?f=reach-mower-scorpion-330', reach: '3.3 m arm', note: 'S · PLUS · S BF · PLUS BF', img: 'https://greentec.eu/wp-content/uploads/2022/11/Scorpion-4-S-image-cover-desktop-0.webp' }
+      ] },
+      { range: '4–5 m', title: '4–5 m - Scorpion 430 / 490', note: 'Small tractors from about 2,200 kg', models: [
+        { name: 'Scorpion 430', href: 'product.html?f=reach-mower-scorpion-430', reach: '4.3 m arm', note: 'S · PLUS · S BF · PLUS BF', img: 'https://greentec.eu/wp-content/uploads/2022/11/Scorpion-4-PLUS-image-cover-desktop-0.webp' },
+        { name: 'Scorpion 490 PLUS', href: 'product.html?p=reach-mower-scorpion-490-plus', reach: '4.9 m arm', note: 'PLUS only - compact tractors, left or right arm', img: 'https://greentec.eu/wp-content/uploads/2025/10/Scorpion-490-15-scaled-2000x1334.jpg' }
+      ] },
+      { range: '5–6.5 m', title: '5–6.5 m - Scorpion 530 / 630 · Spider 520 / 620', note: 'Medium tractors from about 4,000–5,000 kg', models: [
+        { name: 'Scorpion 530', href: 'product.html?f=reach-mower-scorpion-530', reach: '5.3 m arm', note: 'S · PLUS · S BF', img: 'https://greentec.eu/wp-content/uploads/2022/12/Scorpion-530-S-image-cover-desktop-0-2.webp' },
+        { name: 'Scorpion 630', href: 'product.html?f=reach-mower-scorpion-630', reach: '6.3 m arm', note: 'S · PLUS · S BF', img: 'https://greentec.eu/wp-content/uploads/2022/12/Scorpion-630-S-image-cover-desktop-0.webp' },
+        { name: 'Spider 520 PLUS', href: 'product.html?p=reach-mower-spider-520-plus', reach: '5.2 m arm', note: 'Works both sides, head kept in view', img: 'https://greentec.eu/wp-content/uploads/2023/04/Spider-520-PLUS-image-cover-desktop-0.webp' },
+        { name: 'Spider 620 PLUS', href: 'product.html?p=reach-mower-spider-620-plus', reach: '6.2 m arm', note: 'Works both sides, front or rear mount', img: 'https://greentec.eu/wp-content/uploads/2023/04/Spider-620-PLUS-image-cover-desktop-0.webp' }
+      ] },
+      { range: '7 m+', title: '7 m and over - Scorpion 730 / 830 · Spider 720 / 820', note: 'Large tractors with the weight and linkage to carry it', models: [
+        { name: 'Scorpion 730', href: 'product.html?f=reach-mower-scorpion-730', reach: '7.3 m arm', note: 'S · PLUS', img: 'https://greentec.eu/wp-content/uploads/2022/12/Scorpion-730-S-image-cover-desktop-0.webp' },
+        { name: 'Scorpion 830', href: 'product.html?f=reach-mower-scorpion-830', reach: '8.3 m arm', note: 'S · PLUS', img: 'https://greentec.eu/wp-content/uploads/2022/12/Scorpion-830-S-image-cover-desktop-0.webp' },
+        { name: 'Spider 720 PLUS', href: 'product.html?p=spider-720-plus', reach: '7.2 m arm', note: 'Both sides, extended tree and drain work', img: 'https://greentec.eu/wp-content/uploads/2023/03/Spider-720-PLUS-image-cover-desktop-0.webp' },
+        { name: 'Spider 820 PLUS', href: 'product.html?p=reach-mower-spider-820-plus', reach: '8.2 m arm', note: 'Longest Spider arm, works both sides', img: 'https://greentec.eu/wp-content/uploads/2023/04/Spider-820-PLUS-image-cover-desktop-0.webp' }
+      ] }
+    ];
+    const bandIdx = Math.min(this.state.band, bands.length - 1);
+    const band = bands[bandIdx];
+
+    const stories = [
+      { name: 'Testimonial slot 1 - council / contractor to be confirmed', machine: 'GreenTec Scorpion + FR flail', carrier: '[Tractor make and model]', location: '[Region]', quote: '[Customer quote goes here.]', href: 'news.html', linkLabel: 'Watch the video article', photo: '', photoBrief: 'Customer tractor and reach mower on the road - arm out, head working, finished verge behind.', placeholder: true },
+      { name: 'Testimonial slot 2 - council / contractor to be confirmed', machine: 'GreenTec Spider + RX 133', carrier: '[Tractor make and model]', location: '[Region]', quote: '[Customer quote goes here.]', href: 'news.html', linkLabel: 'Watch the video article', photo: '', photoBrief: 'Heavy vegetation pass - RX 133 in woody roadside growth, before and after visible.', placeholder: true },
+      { name: 'Testimonial slot 3 - council / contractor to be confirmed', machine: 'GreenTec QuadSaw LRS', carrier: '[Carrier make and model]', location: '[Region]', quote: '[Customer quote goes here.]', href: 'news.html', linkLabel: 'Watch the video article', photo: '', photoBrief: 'Tree and limb work over the road corridor - saw at height, clearance envelope visible.', placeholder: true }
+    ];
+    const showProof = stories.some((s) => !s.placeholder);
+    const storyIdx = Math.min(this.state.story, stories.length - 1);
+    const sty = stories[storyIdx];
+
+    return {
+      pageNav: [
+        { label: 'Reach arms', href: '#reach' },
+        { label: 'Heads', href: '#heads' },
+        { label: 'Skid steer', href: '#skidsteer' },
+        { label: 'Videos', href: '#videos' },
+        { label: 'In the field', href: '#proof' },
+        { label: 'Vegetation management', href: '#guides' },
+        { label: 'FAQs', href: '#faqs' }
+      ].filter((n) => n.href !== '#proof' || showProof),
+      navTop: narrow ? '64px' : '76px',
+      bandTitle: band.title, bandNote: band.note,
+      bandCols: narrow ? '1fr' : 'repeat(3,1fr)',
+      bandModels: band.models.map((m) => ({ name: m.name, href: m.href, reach: m.reach, note: m.note, imgBox: 'aspect-ratio:4/3;background-color:#141412;background-image:url("' + m.img + '");background-size:cover;background-position:center' })),
+      storyName: sty.name, storyMachine: sty.machine, storyCarrier: sty.carrier, storyLocation: sty.location,
+      storyQuote: sty.quote, storyHref: sty.href, storyLinkLabel: sty.linkLabel,
+      storyImgBox: 'position:absolute;inset:0;width:100%;height:100%;background-color:#141412;background-image:url("' + sty.photo + '");background-size:cover;background-position:center', storyPhoto: sty.photo, storyHasPhoto: !!sty.photo, storyNoPhoto: !sty.photo, storyPhotoBrief: sty.photoBrief,
+      storyCount: (storyIdx + 1) + ' / ' + stories.length,
+      prevStory: () => this.setState({ story: (storyIdx - 1 + stories.length) % stories.length }),
+      nextStory: () => this.setState({ story: (storyIdx + 1) % stories.length }),
+      storyDots: stories.map((x, i) => ({ bg: i === storyIdx ? '#f4a72d' : 'rgba(20,20,18,0.22)', go: () => this.setState({ story: i }) })),
+      showProof: showProof,
+      guides: [
+        { h: 'Importance of roadside vegetation management', p1: 'Vegetation on a road corridor is a safety asset when it is controlled and a liability when it is not. Unmanaged growth hides signage and guideposts, closes down sight distance on curves and intersections, obscures wildlife and pedestrians, and stops drivers seeing the edge of the seal at night.',
+          p2: 'It also has consequences beyond visibility. Growth in table drains and culverts holds water on the pavement and shortens the life of the seal, standing dry fuel raises fire risk along the corridor, and roadsides are one of the main pathways weeds travel between properties. Managing it on a planned cycle - rather than reacting when complaints arrive - keeps drainage working, keeps fuel loads down and keeps crews out of live traffic doing hand work.' },
+        { h: 'Do I need a forward-reaching reach mower?', p1: 'A forward-reaching arm puts the head ahead of the tractor\u2019s cab, directly in the operator\u2019s natural line of sight, instead of behind the rear axle. On a busy road that is a real advantage: the operator can see the head, the obstacle and the traffic together, without working over their shoulder, and can react before the head reaches a guidepost, culvert headwall or tree.',
+          p2: 'It suits mixed work - trees, hedges, awkward corridors, frequent repositioning - and it is where the GreenTec Scorpion and Spider geometry earns its place.' },
+        { h: 'What is the weight requirement for a 6.3 m reach arm?', p1: 'A 6.3 m arm such as the Scorpion 630 is generally matched to tractors from about 5,000 kg. The number is a starting point, not the whole answer - what actually keeps the machine safe is the combination of tractor mass, wheel track width, tyre and ballast setup, and the linkage or subframe carrying the arm.',
+          p2: 'Reach works against you: the further the head goes out, the more the load tries to lift the opposite wheel, and that effect is worse on a crossfall, a soft shoulder or a batter. Counterweighting, wheel spacing and mounting position are all part of the specification, along with PTO speed for the pump-driven models. Send us the make, model, tyre setup and how you intend to work, and we will confirm whether the 6.3 m arm is the right one.' },
+        { h: 'RX 133 slashing head vs FR 122 mulching head', p1: 'The FR 122 is a 1.2 m flail head and the everyday tool for cyclic roadside work. It processes what it cuts into finer material and follows ground contour on its rear roller, which gives a tidy finish on grass, weeds and light thicket and keeps material on the verge rather than across the seal.',
+          p2: 'The RX 133 is a 1.3 m slashing head running a tri-blade rotor, built for heavy and woody vegetation, branches, stumps and stony ground where a flail mower takes a beating. It severs material rather than reprocessing it, so the finish is coarser. In rough conditions its maintenance is less than a standard flail mower. Most operations run the flail as the standard head and add the RX 133 for the heavy corridors.' },
+        { h: 'Roadside tree maintenance', p1: 'Tree work on a corridor is about maintaining a clearance envelope - over the traffic lanes, above signs and lighting, and back from the shoulder - on a cycle, before limbs become a hazard or an emergency job. The right head depends on branch diametre and the finish the road authority expects.',
+          p2: 'Rotary hedge cutters handle lighter branch material and shred it as they go. Cutterbars make a clean, controlled cut with limited projection, which matters in residential and high-traffic areas. QuadSaw LRS tree saws take the heavier limbs, and can be run from a tractor reach arm, a GreenTec Multi Carrier, a telehandler or an excavator. What decides the build is the reach and height you need, the branch size and the machine you already own.' }
+      ],
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow, phone: mobile || layoutW < 760,
+      heroTextW: narrow ? '100%' : '58ch',
+      cols2: narrow ? '1fr' : 'repeat(2,1fr)',
+      cols3: narrow ? '1fr' : 'repeat(3,1fr)',
+      cols4: narrow ? 'repeat(2,1fr)' : 'repeat(4,1fr)',
+      headCols: narrow ? '1fr' : 'repeat(3,1fr)',
+      photoCols: narrow ? '1fr' : 'repeat(2,1fr)',
+      proofCols: narrow ? '1fr' : '1fr 1fr',
+      formCols: narrow ? '1fr' : '1fr 1.2fr',
+
+      reachTiles: [
+        { range: 'Under 4 m', models: 'Scorpion 330', tractor: 'Compact tractors from about 1,500 kg. Paths, residential streets, tight corridors.', accent: 'rgba(20,20,18,0.25)' },
+        { range: '4–5 m', models: 'Scorpion 430 / 490', tractor: 'Small tractors from about 2,200 kg. Verges, hedges, narrow tracks.', accent: 'rgba(20,20,18,0.25)' },
+        { range: '5–6.5 m', models: 'Scorpion 530 / 630 · Spider 520 / 620', tractor: 'Medium tractors from about 4,000–5,000 kg. The usual choice for council and contractor verge and ditch work.', accent: '#f4a72d' },
+        { range: '7 m+', models: 'Scorpion 730 / 830 · Spider 720 / 820', tractor: 'Large tractors with the weight and linkage to carry it. Wide verges, deep drains, extended tree work.', accent: '#f4a72d' }
+      ].map((r, i) => ({
+        range: r.range, models: r.models, tractor: r.tractor, accent: r.accent,
+        bg: i === bandIdx ? '#141412' : '#FFFFFF',
+        fg: i === bandIdx ? '#F4F3F1' : '#141412',
+        sub: i === bandIdx ? 'rgba(255,255,255,0.7)' : 'rgba(20,20,18,0.68)',
+        state: i === bandIdx ? 'Showing models ↓' : 'Select',
+        pick: () => {
+          this.setState({ band: i });
+          setTimeout(() => {
+            const el = document.getElementById('reach-results');
+            if (!el) return;
+            const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }, 50);
+        }
+      })),
+
+      specsOpen: this.state.specs,
+      specsLabel: this.state.specs ? 'Hide all models' : 'See all models & drive types',
+      specsSign: this.state.specs ? '−' : '+',
+      toggleSpecs: () => this.setState({ specs: !this.state.specs }),
+
+      reachRows: [
+        { model: 'Scorpion 330 S / PLUS', reach: '3.3 m', drive: 'PTO, own pump', mount: 'Front · rear · reverse' },
+        { model: 'Scorpion 430 S / PLUS', reach: '4.3 m', drive: 'PTO, own pump', mount: 'Front · rear · reverse' },
+        { model: 'Scorpion 490 PLUS', reach: '4.9 m', drive: 'PTO, own pump', mount: 'Compact tractors, left or right arm' },
+        { model: 'Scorpion 530 S / PLUS', reach: '5.3 m', drive: 'PTO, own pump', mount: 'Rear, medium tractors' },
+        { model: 'Scorpion 630 S / PLUS', reach: '6.3 m', drive: 'PTO, own pump', mount: 'Rear, medium–large tractors' },
+        { model: 'Scorpion 730 S / PLUS', reach: '7.3 m', drive: 'PTO, own pump', mount: 'Rear, large tractors' },
+        { model: 'Scorpion 830 S / PLUS', reach: '8.3 m', drive: 'PTO, own pump', mount: 'Rear, large tractors' },
+        { model: 'Scorpion 330 / 430 / 530 / 630 Basic Front', reach: '3.3–6.3 m', drive: 'Carrier hydraulics', mount: 'Loaders and front lifts' },
+        { model: 'Spider 520 / 620 PLUS', reach: '5.2 / 6.2 m', drive: 'PTO, or hydraulic driven', mount: 'Front or rear, both sides' },
+        { model: 'Spider 720 / 820 PLUS', reach: '7.2 / 8.2 m', drive: 'PTO, own pump', mount: 'Front or rear, both sides' }
+      ],
+
+      heads: [
+        { job: 'Grass & thicket', name: 'FR flail mowers', d: 'The everyday head. Processes what it cuts and follows ground contour on the rear roller.', models: 'FR 92 · 112 · 122 · 122 VB · 162 - 0.9 to 1.6 m', href: 'products.html?category=flail-mowers', img: G + '2022/10/FR-92-112-image-slider-desktop-1-1829x640.webp', asset: '' },
+        { job: 'Heavy vegetation', name: 'RX 133', d: 'Seven rotors, chain or blade systems. For heavy growth, branches, stumps and stony ground.', models: '1.3 m · 350 kg · 85–110 L/min', href: 'product.html?p=rx-133', img: G + '2023/08/RX-133-image-slider-desktop-1-1829x640.webp', asset: '' },
+        { job: 'Hedges', name: 'RC rotary hedge cutters', d: 'Cuts and shreds lighter branches in one pass - for recurring hedge and shrub maintenance.', models: 'RC 102 · 132 · 162 - 1.0 to 1.6 m', href: 'products.html?category=rotary-mulchers', img: G + '2022/10/RM-232-cover-image-desktop-0-1.webp', asset: '' },
+        { job: 'Clean cutting', name: 'HL & HS cutterbars', d: 'A clean mechanical cut with limited material projection - better in residential and high-traffic areas.', models: 'HL 152–242 · HS 172–242 - 1.5 to 2.4 m', href: 'products.html?category=cutterbars-trimmers', img: DTE + '2023/06/HS-172-Featured-image-1.png', asset: '' },
+        { job: 'Trees & limbs', name: 'GreenTec QuadSaws', d: 'Where branch diametre is the constraint. Also mounts to Multi Carriers and excavators.', models: 'LRS 1402 · 1602 · 2002 · 2402', href: 'products.html?category=quadsaws-tree-saws', img: 'uploads/Orchards Image.jpg', asset: '' },
+        { job: 'Guardrails & kerbs', name: 'RI 82 & BR brushes', d: 'The barrier mower deflects around guardrail posts; the weed brushes clean kerbs, gutters and paved edges.', models: 'RI 82 - 0.8 m · BR 70 / BR 90', href: 'product.html?p=ri80-barrier-mower', img: G + '2022/10/FOX-image-cover-desktop-1.webp', asset: '' }
+      ].map((h) => ({
+        job: h.job, name: h.name, d: h.d, models: h.models, href: h.href, asset: h.asset,
+        hasImg: !!h.img, noImg: !h.img,
+        bg: h.img ? this.imgBox(h.img, headH) : ''
+      })),
+
+      tabs: [
+        { key: 'verge', label: 'Verge mowing' },
+        { key: 'ditch', label: 'Ditches & batters' },
+        { key: 'hedge', label: 'Hedge cutting' },
+        { key: 'saw', label: 'Trees & limbs' }
+      ].map((t) => ({
+        label: t.label,
+        bg: tab === t.key ? '#f4a72d' : '#1d1d1a',
+        fg: tab === t.key ? '#141412' : '#F4F3F1',
+        select: () => this.setState({ tab: t.key })
+      })),
+      videoSrc: 'https://www.youtube-nocookie.com/embed/' + clip.id + '?rel=0',
+      clipHead: clip.head, clipCarrier: clip.carrier, clipHref: clip.href, clipLink: clip.link,
+
+      skidCols: narrow ? '1fr' : '1.15fr 0.85fr',
+      slashers: [
+        { name: 'Virnig V40', spec: '76 mm · 1.5–1.8 m · standard flow', href: 'product.html?p=v40-open-front' },
+        { name: 'Virnig V50', spec: '102–152 mm · 1.5–2.1 m · closed, floating or open front', href: 'product.html?p=v50-open-front' },
+        { name: 'Virnig V60', spec: '203 mm · 1.8–2.1 m · industrial rotary cutter', href: 'product.html?p=v60-open-front' },
+        { name: 'Virnig V70', spec: '203 mm · 1.8–2.1 m · high flow only, fastest recovery', href: 'product.html?p=v70-open-front' },
+        { name: 'Virnig X30', spec: '102 mm · mini excavator - batters, drains, behind guardrail', href: 'product.html?p=x30-mini-ex' }
+      ],
+
+      whyDte: [
+        { h: 'The right reach', d: 'Reach and arm weight matched to your tractor - the longest arm is the wrong answer if the machine cannot carry it safely.' },
+        { h: 'The right head', d: 'Matched to the vegetation, not the brochure. Flail, RX 133, hedge cutter, cutterbar and saw all solve different problems.' },
+        { h: 'Correct setup', d: 'Mounting, PTO or hydraulic drive, brackets and commissioning specified as one system before the order goes in.' },
+        { h: 'Support after', d: 'Flails, blades and wear parts held in Australia, and technical help through the working life of the machine.' }
+      ],
+
+      faqs: faqData.map((f, i) => ({
+        q: f.q, a: f.a,
+        open: this.state.faq === i,
+        sign: this.state.faq === i ? '−' : '+',
+        toggle: () => this.setState({ faq: this.state.faq === i ? -1 : i })
+      })),
+
+      notSent: !this.state.sent, sent: this.state.sent, err: this.state.err,
+      fName: this.state.name, fOrg: this.state.org, fPhone: this.state.phone,
+      fEmail: this.state.email, fNotes: this.state.notes,
+      setName: this.set('name'), setOrg: this.set('org'), setPhone: this.set('phone'),
+      setEmail: this.set('email'), setNotes: this.set('notes'),
+      setFiles: (e) => this.setState({ files: (e.target.files || []).length }),
+      fileNote: this.state.files ? this.state.files + ' attached' : 'Photos of the corridor help',
+      submit: () => {
+        if (!this.state.name || !(this.state.phone || this.state.email)) { this.setState({ err: 'Name plus a phone number or email, and we can get back to you.' }); return; }
+        this.setState({ sent: true, err: '' });
+      },
+
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

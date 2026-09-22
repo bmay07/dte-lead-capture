@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  button, input { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="background:#141412;padding:calc(clamp(30px,4cqi,58px) + clamp(72px,5.8vw,92px)) clamp(16px,3cqi,44px) clamp(30px,3.4cqi,48px)">
+  <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px"><a href="index.html">Home</a> <span style="color:#f4a72d">/</span> FAQ</div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px">
+    <h1 style="margin:0;max-width:15ch;font:700 clamp(36px,5.6cqi,88px)/0.94 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.014em;text-transform:uppercase;color:#F4F3F1;text-wrap:balance">The questions we get asked</h1>
+    <p style="margin:0;max-width:38ch;font:400 clamp(15px,1.15cqi,18px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.6);text-wrap:pretty">Straight answers on fit, flow, freight and what happens when something breaks. If yours isn't here, call us - we'd rather talk it through.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(24px,2.8cqi,38px)">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+      <button onClick="{{ t.pick }}" style="background:{{ t.bg }};color:{{ t.fg }};border:1px solid {{ t.bd }};padding:13px 18px;min-height:46px;cursor:pointer;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase">{{ t.label }}</button>
+    </sc-for>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#F4F3F1;padding:clamp(36px,4.4cqi,72px) clamp(16px,3cqi,44px)">
+  <div style="display:grid;border-top:1px solid rgba(20,20,18,0.18);max-width:{{ faqMax }}">
+    <sc-for list="{{ items }}" as="q" hint-placeholder-count="6">
+      <div style="border-bottom:1px solid rgba(20,20,18,0.18)">
+        <button onClick="{{ q.toggle }}" style="width:100%;background:transparent;border:0;cursor:pointer;text-align:left;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:clamp(20px,2.2cqi,28px) 0;min-height:56px">
+          <span style="min-width:0">
+            <span style="display:block;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f4a72d;margin-bottom:10px">{{ q.cat }}</span>
+            <span style="display:block;font:700 clamp(17px,1.6cqi,24px)/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.008em;color:#141412;text-wrap:pretty">{{ q.question }}</span>
+          </span>
+          <span style="flex:0 0 auto;width:32px;height:32px;border:1px solid rgba(20,20,18,0.24);display:flex;align-items:center;justify-content:center;font:600 18px/1 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;background:{{ q.iconBg }}">{{ q.icon }}</span>
+        </button>
+        <sc-if value="{{ q.open }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:0 0 clamp(22px,2.4cqi,30px)">
+            <p style="margin:0;max-width:70ch;font:400 clamp(15px,1.25cqi,18px)/1.65 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.78);text-wrap:pretty">{{ q.answer }}</p>
+            <sc-if value="{{ q.hasLink }}" hint-placeholder-val="{{ false }}">
+              <a href="{{ q.href }}" style="display:inline-block;margin-top:18px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#141412;border-bottom:2px solid #f4a72d;padding-bottom:6px">{{ q.linkLabel }} <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#141412;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px)">
+  <div style="display:grid;grid-template-columns:{{ cols2 }};gap:clamp(24px,3cqi,56px);align-items:center">
+    <div>
+      <h2 style="margin:0;font:700 clamp(26px,3.4cqi,52px)/0.98 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:18ch;text-wrap:balance">Still not sure?</h2>
+      <p style="margin:18px 0 0;max-width:48ch;font:400 clamp(15px,1.2cqi,18px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.65);text-wrap:pretty">Most of these questions have a "depends on your machine" answer hiding behind them. Tell us the carrier and the job and we'll give you the specific one.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <button type="button" data-quote="FAQ page" style="background:#f4a72d;color:#141412;border:0;padding:22px 30px;min-height:56px;cursor:pointer;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#ffffff">Ask us directly</button>
+      <a href="tel:0753158020" style="display:flex;align-items:center;gap:10px;padding:20px 6px;color:#ffffff" style-hover="color:#f4a72d"><span style="font:600 17px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;font-variant-numeric:tabular-nums">07 5315 8020</span></a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+
+</div>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const FAQS = [
+  { cat: 'Choosing', q: 'How do I know which attachment suits my machine?', a: 'It comes down to three numbers: your hydraulic flow in litres per minute, your operating pressure, and the operating weight your carrier can safely handle. Give us those and the job you need done, and we will tell you what fits - and what does not. Hydraulics being wrong is the single most common reason an attachment disappoints.', href: 'products.html', label: 'Browse by vehicle' },
+  { cat: 'Choosing', q: 'Drum mulcher or disc mulcher?', a: 'Drum for control and finish - property maintenance, roadsides, firebreaks and anywhere debris matters. Disc for speed and aggression - open country, heavy timber, maximum acres per day. If you need both, most operators buy the drum first because it handles a wider range of work.', href: 'article.html?n=drum-mulcher-vs-disc-mulcher-which-forestry-mulcher-to-buy', label: 'Read the full comparison' },
+  { cat: 'Choosing', q: 'What size tractor or skid steer do I need?', a: 'For quadsaws and multi carriers, weight and hydraulic capacity matter more than horsepower. For V70 mulchers you want a large-frame, high-flow skid steer. We have written guides for both, and we will check your specific machine before quoting.', href: 'article.html?n=what-size-skid-steer-do-i-need-for-a-v70-drum-or-disc-mulcher', label: 'Skid steer sizing guide' },
+  { cat: 'Choosing', q: 'Can I try one before I buy?', a: 'Where we can, yes. We run on-site demonstrations across Australia and New Zealand, usually alongside a customer already running the machine. Ask early - demo units book out through the busy season.' },
+  { cat: 'Buying', q: 'Do you sell direct or through dealers?', a: 'Both. We are the exclusive authorised partner for Greentec and Virnig across Australia and New Zealand, and we sell direct as well as through a dealer network. Whichever way you buy, the specification and support come from us.' },
+  { cat: 'Buying', q: 'How long is delivery?', a: 'Stocked models generally ship within days. Anything built to order runs on the factory lead time, which we will confirm in writing on your quote rather than guess at. We will not quote a date we cannot hold.' },
+  { cat: 'Buying', q: 'Is finance available?', a: 'Yes - chattel mortgage, lease, rental and seasonal payment structures through broker partners who understand agricultural and civil equipment. Most applications come back within 24 to 48 hours.', href: 'finance.html', label: 'Finance options' },
+  { cat: 'Buying', q: 'Do you deliver to New Zealand?', a: 'Yes. We are the authorised partner for both markets and freight to New Zealand regularly. Freight is quoted separately so you can see exactly what it costs rather than having it buried in the machine price.' },
+  { cat: 'Running it', q: 'Which teeth should I be running?', a: 'Steel for soft soil, fine finish and maximum productivity - at the cost of regular sharpening. Carbide for rock, sand and abrasive ground - longer life, no sharpening, slightly less aggressive. Teeth always go on in opposing pairs, and you can mix steel and carbide on a drum to balance the two.', href: 'article.html?n=how-to-choose-the-right-teeth-for-my-mulcher', label: 'Full tooth guide' },
+  { cat: 'Running it', q: 'Do you set the machine up and train the operator?', a: 'Yes. Attachments are fitted, tuned and handed over running, not dropped on a pallet. We walk operators through settings, tooth choice and what to watch in the first hundred hours - then call back a few weeks later to see how it is cutting.' },
+  { cat: 'Running it', q: 'What maintenance does it actually need?', a: 'Daily greasing and a pre-start walk-around, weekly tooth rotation or sharpening, and a hydraulic inspection each season before your busy window. The operator manual sets the intervals; we have a summary on the service page.', href: 'service.html', label: 'Service schedule' },
+  { cat: 'Support', q: 'Are parts held in Australia?', a: 'Yes. Teeth, blades, wear liners, skid shoes, hoses and seal kits are stocked locally. A machine waiting on a container from Europe or the States is not earning, which is the whole reason we hold stock here.', href: 'service.html', label: 'Parts and service' },
+  { cat: 'Support', q: 'What is covered by warranty?', a: 'Manufacturing defects are covered; wear items such as teeth, blades and skid shoes are not, because they are consumed by normal use. Register the machine when it arrives and a claim never depends on you finding the invoice. Registration does not limit your rights under the Australian Consumer Law.', href: 'warranty.html', label: 'Register your machine' },
+  { cat: 'Support', q: 'Something has broken mid-job. What now?', a: 'Call us on 07 5315 8020 with the model and serial off the plate and a photo if you can get one. We will identify the part and tell you what is in stock the same day where possible.' }
+];
+
+const PAGE_SEO = {"title":"Frequently Asked Questions | DTE Equipment","description":"Answers on choosing, buying, running and supporting Greentec and Virnig attachments.","path":"faq.html"};
+
+class Component extends DCLogic {
+  state = { w: 1440, view: 'desktop', cat: 'All', open: 0 };
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  componentDidMount() {
+    import('./seo-meta.js').then((m) => m.applySEO(PAGE_SEO));
+
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    this.setState({ w: window.innerWidth, view: view });
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const cats = ['All', 'Choosing', 'Buying', 'Running it', 'Support'];
+    const cat = this.state.cat;
+    const list = cat === 'All' ? FAQS : FAQS.filter((f) => f.cat === cat);
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow,
+      phone: mobile || layoutW < 760,
+      cols2: narrow ? '1fr' : 'minmax(0,1.3fr) minmax(0,1fr)',
+      faqMax: narrow ? 'none' : '1000px',
+      tabs: cats.map((c) => ({
+        label: c,
+        bg: c === cat ? '#f4a72d' : 'transparent',
+        fg: c === cat ? '#141412' : '#F4F3F1',
+        bd: c === cat ? '#f4a72d' : 'rgba(255,255,255,0.24)',
+        pick: () => this.setState({ cat: c, open: 0 })
+      })),
+      items: list.map((f, i) => ({
+        cat: f.cat,
+        question: f.q,
+        answer: f.a,
+        open: this.state.open === i,
+        icon: this.state.open === i ? '−' : '+',
+        iconBg: this.state.open === i ? '#f4a72d' : 'transparent',
+        hasLink: !!f.href,
+        href: f.href || '',
+        linkLabel: f.label || '',
+        toggle: () => this.setState({ open: this.state.open === i ? -1 : i })
+      })),
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

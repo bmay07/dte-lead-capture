@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  /* Micro-curve: 2px - softens every hard corner without reading as "rounded UI". */
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  input, select, button { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  .om-rail { scrollbar-width:none; }
+  .om-rail::-webkit-scrollbar { display:none; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="products" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="background:#141412;padding:calc(clamp(20px,2.2cqi,30px) + clamp(72px,5.8vw,92px)) clamp(16px,3cqi,44px) clamp(20px,2.2cqi,30px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45)"><a href="index.html" style-hover="color:#ffffff">Home</a> <span style="color:rgba(255,255,255,0.3)">/</span> <a href="products.html" style-hover="color:#ffffff">Products</a> <span style="color:rgba(255,255,255,0.3)">/</span> <a href="{{ categoryHref }}" style-hover="color:#ffffff">{{ category }}</a> <span style="color:rgba(255,255,255,0.3)">/</span> <span style="color:rgba(255,255,255,0.75)">{{ name }}</span></div>
+</section>
+
+<section class="om-rise" style="background:#141412;display:grid;grid-template-columns:{{ cols2 }};align-items:stretch;border-bottom:1px solid rgba(255,255,255,0.14)">
+  <div style="background:#1d1d1b;min-height:clamp(300px,40cqi,600px);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;left:0;z-index:2;background:#f4a72d;color:#141412;padding:9px 13px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;display:{{ badgeDisplay }}">{{ badge }}</div>
+    <sc-if value="{{ loaded }}" hint-placeholder-val="{{ false }}">
+      <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ name }}" style="width:100%;height:100%;min-height:clamp(300px,40cqi,600px);object-fit:{{ fit }};object-position:{{ imagePos }};padding:{{ imagePad }}" />
+    </sc-if>
+    <sc-if value="{{ hasHeroNav }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ heroPrev }}" aria-label="Previous image" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);z-index:2;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:0;cursor:pointer;background:rgba(20,20,18,0.72);color:#F4F3F1"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button type="button" onClick="{{ heroNext }}" aria-label="Next image" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);z-index:2;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:0;cursor:pointer;background:rgba(20,20,18,0.72);color:#F4F3F1"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+      <div style="position:absolute;bottom:16px;left:0;right:0;z-index:2;display:flex;justify-content:center;gap:7px">
+        <sc-for list="{{ heroDots }}" as="hd" hint-placeholder-count="0">
+          <span style="width:7px;height:7px;border-radius:999px;background:{{ hd.bg }}"></span>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
+  <div style="padding:clamp(32px,4cqi,70px) clamp(16px,3cqi,44px);display:flex;flex-direction:column;justify-content:center">
+    <div style="display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:20px"><span style="width:8px;height:8px;background:#f4a72d;display:block"></span>{{ brand }} · {{ typeLabel }}</div>
+    <h1 style="margin:0;font:800 clamp(30px,3.8cqi,60px)/0.94 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;text-wrap:balance">{{ name }}</h1>
+    <p style="margin:20px 0 0;max-width:46ch;font:400 clamp(16px,1.25cqi,20px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.72);text-wrap:pretty">{{ summary }}</p>
+
+    <sc-for list="{{ variantGroups }}" as="vg" hint-placeholder-count="0">
+      <div style="margin-top:clamp(22px,2.4cqi,32px)">
+        <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:12px">{{ vg.name }}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ vg.terms }}" as="t" hint-placeholder-count="2">
+            <button onClick="{{ t.pick }}" style="background:{{ t.bg }};color:{{ t.fg }};border:1px solid {{ t.bd }};padding:15px 22px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:{{ t.cursor }}">{{ t.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <sc-if value="{{ hasKeyNumbers }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:clamp(24px,2.8cqi,36px);display:grid;grid-template-columns:{{ keyCols }};border-top:1px solid rgba(255,255,255,0.18)">
+        <sc-for list="{{ keyNumbers }}" as="k" hint-placeholder-count="3">
+          <div style="padding:18px 18px 18px 0;border-bottom:1px solid rgba(255,255,255,0.18)">
+            <div style="font:800 clamp(22px,2.2cqi,32px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#f4a72d">{{ k.v }}</div>
+            <div style="margin-top:8px;font:500 10px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.55)">{{ k.k }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <div style="margin-top:clamp(22px,2.4cqi,32px);display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ fitTags }}" as="t" hint-placeholder-count="3">
+        <a href="{{ t.href }}" style="border:1px solid rgba(255,255,255,0.28);color:#F4F3F1;padding:11px 14px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;min-height:44px;display:inline-flex;align-items:center" style-hover="background:#f4a72d;color:#141412;border-color:#f4a72d">{{ t.label }}</a>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(22px,2.4cqi,32px)">
+      <a href="tel:0753158020" style="background:#f4a72d;color:#141412;padding:20px 28px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#F4F3F1">Talk To A Specialist</a>
+      <button type="button" data-quote="Product page" data-quote-subject="{{ quoteCtx }}" style="border:1px solid rgba(255,255,255,0.45);background:transparent;color:#F4F3F1;padding:20px 28px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;border-radius:2px;cursor:pointer" style-hover="background:#F4F3F1;color:#141412">Request a quote <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ showQuadsawProof }}" hint-placeholder-val="{{ false }}">
+<section style="background:#141412;padding:0 clamp(16px,3cqi,44px) clamp(20px,2.2cqi,30px)">
+  <a href="case-study.html?n=jack-evans-hedging-at-pinecliff-freedman-racing" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2cqi,28px);background:#1c1c1a;border-left:3px solid #f4a72d;padding:clamp(18px,2cqi,26px)" style-hover="background:#232320">
+    <span style="font:700 clamp(30px,3cqi,40px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1">1<span style="font-size:0.5em;color:rgba(255,255,255,0.5)"> operator, down from 3</span></span>
+    <span style="flex:1;min-width:180px;font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.72)">Pinecliff Freedman Racing put one Quadsaw operator on the job that used to take three - with a finer finish. <span style="color:#f4a72d;font-weight:600">Read the story →</span></span>
+  </a>
+</section>
+</sc-if>
+
+<section class="om-rise" style="background:#F4F3F1;display:grid;grid-template-columns:{{ cols2 }};align-items:start">
+  <div style="padding:clamp(36px,4.5cqi,80px) clamp(16px,3cqi,44px);border-right:1px solid rgba(20,20,18,0.14)">
+    <div style="display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:20px"><span style="width:8px;height:8px;background:#141412;display:block"></span>Overview</div>
+    <p style="margin:0;max-width:58ch;font:400 clamp(16px,1.3cqi,20px)/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-wrap:pretty">{{ body }}</p>
+
+    <div style="margin-top:clamp(30px,3.4cqi,48px);font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:16px">WHAT IT DOES FOR YOU</div>
+    <div style="display:grid;border-top:1px solid rgba(20,20,18,0.16)">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="5">
+        <div style="display:flex;padding:16px 0;border-bottom:1px solid rgba(20,20,18,0.16)">
+          <span style="font:400 clamp(15px,1.1cqi,17px)/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ f.text }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ hasWarning }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:26px;border-left:4px solid #f4a72d;background:#FFFFFF;padding:18px 20px">
+        <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;color:#141412;margin-bottom:9px">SAFETY &amp; REQUIREMENTS</div>
+        <div style="font:400 14px/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ warning }}</div>
+      </div>
+    </sc-if>
+  </div>
+
+  <div style="padding:clamp(36px,4.5cqi,80px) clamp(16px,3cqi,44px)">
+    <button type="button" onClick="{{ toggleSpecs }}" aria-expanded="{{ specsExpanded }}" aria-controls="spec-table" style="display:{{ specsToggleDisplay }};width:100%;align-items:center;justify-content:space-between;gap:16px;background:transparent;border:0;cursor:pointer;padding:0 0 20px;text-align:left;min-height:44px">
+      <span style="display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.6)"><span style="width:8px;height:8px;background:#141412;display:block"></span>Specifications ({{ specCount }})</span>
+      <span aria-hidden="true" style="transform:{{ specsIconRotate }};transition:transform .2s ease"><svg viewBox="0 0 10 6" width="10" height="6"><path d="M1 1L5 5L9 1" fill="none" stroke="#141412" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+    </button>
+    <div style="display:{{ specsHeadingDisplay }};align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:20px"><span style="width:8px;height:8px;background:#141412;display:block"></span>Specifications</div>
+    <sc-if value="{{ specsExpanded }}" hint-placeholder-val="{{ true }}">
+      <div id="spec-table" style="border-top:1px solid rgba(20,20,18,0.16)">
+        <sc-for list="{{ specs }}" as="s" hint-placeholder-count="6">
+          <div style="display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(20,20,18,0.16)">
+            <span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:rgba(20,20,18,0.6)">{{ s.k }}</span>
+            <span style="font:600 clamp(14px,1.05cqi,16px)/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-align:right">{{ s.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ hasCarriers }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-top:clamp(24px,2.6cqi,34px)">
+        <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:12px">MOUNTS ON</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <sc-for list="{{ carriers }}" as="c" hint-placeholder-count="2">
+            <span style="border:1px solid rgba(20,20,18,0.26);color:#141412;padding:10px 13px;font:400 14px/1 'General Sans','GeneralSans-Variable',sans-serif;border-radius:2px">{{ c.label }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="margin-top:clamp(28px,3cqi,42px);background:#141412;padding:clamp(24px,2.6cqi,34px)">
+      <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:14px">NOT SURE IT FITS YOUR MACHINE?</div>
+      <div style="font:800 clamp(20px,2cqi,28px)/1.06 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">We Size This Every Week.</div>
+      <p style="margin:12px 0 0;font:400 15px/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.6)">Tell us your machine's flow rate and weight and we'll confirm the right model before you buy.</p>
+      <a href="tel:0753158020" style="display:inline-block;margin-top:20px;font:800 clamp(24px,2.4cqi,34px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1;border-bottom:3px solid #f4a72d;padding-bottom:4px">07 5315 8020</a>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ hasFeatureBlocks }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#FFFFFF;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px);border-top:1px solid rgba(20,20,18,0.14)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(22px,2.6cqi,36px)">
+      <h2 style="margin:0;max-width:20ch;font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">Built Into The Machine</h2>
+      <p style="margin:0;max-width:34ch;font:400 clamp(15px,1.15cqi,17px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.66)">The detail that decides whether it is still working in five seasons.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ grid3 }};gap:clamp(12px,1.4cqi,20px)">
+      <sc-for list="{{ featureBlocks }}" as="f" hint-placeholder-count="6">
+        <div style="background:#F4F3F1;border:1px solid rgba(20,20,18,0.14);display:flex;flex-direction:column;border-radius:2px">
+          <sc-if value="{{ f.hasImg }}" hint-placeholder-val="{{ false }}"><div style="height:{{ f.h }};overflow:hidden;background:#FFFFFF"><img loading="lazy" decoding="async" src="{{ f.img }}" alt="{{ f.headline }}" style="width:100%;height:100%;object-fit:contain;padding:18px" /></div></sc-if>
+          <div style="flex:1;padding:22px 24px 26px;border-top:1px solid rgba(20,20,18,0.1)">
+            <h3 style="margin:0;font:800 clamp(16px,1.3cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ f.headline }}</h3>
+            <p style="margin:10px 0 0;font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.72);text-wrap:pretty">{{ f.desc }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasAction }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#141412;position:relative;min-height:clamp(300px,36cqi,560px);display:flex;align-items:flex-end">
+    <sc-if value="{{ loaded }}" hint-placeholder-val="{{ false }}">
+      <img loading="lazy" decoding="async" src="{{ action }}" alt="{{ name }} working" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+    </sc-if>
+    <div style="position:relative;background:#141412;border-top:5px solid #f4a72d;padding:clamp(22px,2.6cqi,38px) clamp(22px,3cqi,48px) clamp(22px,2.6cqi,36px) clamp(16px,3cqi,44px);max-width:min(100%,720px)">
+      <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:12px">IN THE FIELD</div>
+      <div style="font:800 clamp(22px,2.6cqi,40px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.01em;text-transform:uppercase;color:#F4F3F1">{{ name }}</div>
+      <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+        <button type="button" onClick="{{ openVideo }}" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:transparent;border:0;padding:0;cursor:pointer;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#f4a72d">{{ videoLabel }} <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></button>
+      </sc-if>
+      <a href="{{ videoHref }}" style="display:{{ videoLinkDisplay }};margin-top:16px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#f4a72d">{{ videoLabel }} <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ videoOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeVideo }}" style="position:fixed;inset:0;z-index:400;background:rgba(20,20,19,0.86);display:flex;align-items:center;justify-content:center;padding:clamp(14px,4vh,60px) 16px">
+    <div onClick="{{ stop }}" style="width:100%;max-width:960px;position:relative">
+      <button type="button" onClick="{{ closeVideo }}" aria-label="Close video" style="position:absolute;top:-44px;right:0;background:transparent;border:1px solid rgba(255,255,255,0.5);color:#F4F3F1;width:36px;height:36px;font-size:18px;line-height:1;cursor:pointer;border-radius:2px">&#10005;</button>
+      <div style="position:relative;width:100%;padding-top:56.25%;background:#000">
+        <iframe src="{{ videoEmbedSrc }}" title="{{ name }} - video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ hasGallery }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#F4F3F1;padding:clamp(36px,4cqi,72px) 0;border-top:1px solid rgba(20,20,18,0.14)">
+    <div style="padding:0 clamp(16px,3cqi,44px);display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:20px"><span style="width:8px;height:8px;background:#f4a72d;display:block"></span>The Machine</div>
+    <div style="position:relative">
+    <div ref="{{ galleryRailRef }}" class="om-rail" style="display:flex;gap:clamp(10px,1.2cqi,16px);overflow-x:auto;padding:0 clamp(16px,3cqi,44px);scroll-snap-type:x mandatory">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="4">
+        <div style="flex:0 0 auto;width:clamp(260px,32cqi,440px);height:clamp(190px,22cqi,300px);background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);border-radius:2px;scroll-snap-align:start;overflow:hidden">
+          <img loading="lazy" decoding="async" src="{{ g.src }}" alt="{{ name }}" style="width:100%;height:100%;object-fit:cover" />
+        </div>
+      </sc-for>
+    </div>
+    <button onClick="{{ scrollGalleryLeft }}" aria-label="Scroll left" style="display:{{ railArrowDisplay }};position:absolute;left:20px;top:50%;transform:translateY(-50%);z-index:2;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:0;cursor:pointer;background:rgba(20,20,18,0.72);color:#F4F3F1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button onClick="{{ scrollGalleryRight }}" aria-label="Scroll right" style="display:{{ railArrowDisplay }};position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:2;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:0;cursor:pointer;background:rgba(20,20,18,0.72);color:#F4F3F1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasEquipment }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#F4F3F1;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px);border-top:1px solid rgba(20,20,18,0.14)">
+    <h2 style="margin:0 0 clamp(22px,2.6cqi,36px);font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">What's Included</h2>
+    <div style="display:grid;grid-template-columns:{{ cols2 }};gap:clamp(20px,3cqi,56px)">
+      <div>
+        <div style="display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:18px"><span style="width:8px;height:8px;background:#f4a72d;display:block"></span>Standard equipment</div>
+        <div style="display:grid;border-top:1px solid rgba(20,20,18,0.16)">
+          <sc-for list="{{ standard }}" as="e" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid rgba(20,20,18,0.16)">
+              <sc-if value="{{ e.hasImg }}" hint-placeholder-val="{{ false }}"><div style="flex:0 0 auto;width:56px;height:56px;background:#FFFFFF;border:1px solid rgba(20,20,18,0.12)"><img loading="lazy" decoding="async" src="{{ e.img }}" alt="" style="width:100%;height:100%;object-fit:contain;padding:6px" /></div></sc-if>
+              <span style="font:400 clamp(15px,1.1cqi,17px)/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ e.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:18px"><span style="width:8px;height:8px;background:#141412;display:block"></span>Optional equipment</div>
+        <div style="display:grid;border-top:1px solid rgba(20,20,18,0.16)">
+          <sc-for list="{{ optional }}" as="e" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid rgba(20,20,18,0.16)">
+              <sc-if value="{{ e.hasImg }}" hint-placeholder-val="{{ false }}"><div style="flex:0 0 auto;width:56px;height:56px;background:#FFFFFF;border:1px solid rgba(20,20,18,0.12)"><img loading="lazy" decoding="async" src="{{ e.img }}" alt="" style="width:100%;height:100%;object-fit:contain;padding:6px" /></div></sc-if>
+              <span style="font:400 clamp(15px,1.1cqi,17px)/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ e.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ noOptional }}" hint-placeholder-val="{{ false }}">
+          <p style="margin:0;font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.6)">Options are specified per order. Talk to us about what the job needs.</p>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasTools }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#141412;padding:clamp(40px,5cqi,90px) 0 clamp(40px,5cqi,80px)">
+    <div style="padding:0 clamp(16px,3cqi,44px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(22px,2.6cqi,34px)">
+      <h2 style="margin:0;max-width:18ch;font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1">One Carrier. {{ toolCount }} Tools.</h2>
+      <p style="margin:0;max-width:34ch;font:400 clamp(15px,1.15cqi,17px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.6)">Swap the head and the same machine earns its keep all season.</p>
+    </div>
+    <div style="position:relative">
+    <div ref="{{ toolsRailRef }}" class="om-rail" style="display:flex;gap:clamp(10px,1.2cqi,16px);overflow-x:auto;padding:0 clamp(16px,3cqi,44px);scroll-snap-type:x mandatory">
+      <sc-for list="{{ tools }}" as="t" hint-placeholder-count="5">
+        <a href="{{ t.href }}" style="flex:0 0 auto;width:clamp(190px,20cqi,260px);background:#F4F3F1;border-radius:2px;scroll-snap-align:start;display:flex;flex-direction:column" style-hover="background:#f4a72d">
+          <sc-if value="{{ t.hasImg }}" hint-placeholder-val="{{ false }}"><div style="height:clamp(140px,14cqi,180px);background:#FFFFFF;overflow:hidden"><img loading="lazy" decoding="async" src="{{ t.img }}" alt="{{ t.text }}" style="width:100%;height:100%;object-fit:contain;padding:14px" /></div></sc-if>
+          <div style="padding:16px 18px 20px;font:600 clamp(14px,1.05cqi,16px)/1.25 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ t.text }}</div>
+        </a>
+      </sc-for>
+    </div>
+    <button onClick="{{ scrollToolsLeft }}" aria-label="Scroll left" style="display:{{ railArrowDisplay }};position:absolute;left:20px;top:50%;transform:translateY(-50%);z-index:2;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:0;cursor:pointer;background:rgba(20,20,18,0.72);color:#F4F3F1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button onClick="{{ scrollToolsRight }}" aria-label="Scroll right" style="display:{{ railArrowDisplay }};position:absolute;right:20px;top:50%;transform:translateY(-50%);z-index:2;align-items:center;justify-content:center;width:34px;height:34px;border-radius:999px;border:0;cursor:pointer;background:rgba(20,20,18,0.72);color:#F4F3F1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasAppExamples }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#FFFFFF;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px);border-top:1px solid rgba(20,20,18,0.14)">
+    <h2 style="margin:0 0 clamp(22px,2.6cqi,36px);font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">Where It Earns Its Keep</h2>
+    <div style="display:grid;grid-template-columns:{{ grid3 }};gap:clamp(12px,1.4cqi,20px)">
+      <sc-for list="{{ appExamples }}" as="a" hint-placeholder-count="4">
+        <div style="border:1px solid rgba(20,20,18,0.14);border-radius:2px;overflow:hidden;background:#F4F3F1">
+          <sc-if value="{{ a.hasImg }}" hint-placeholder-val="{{ false }}"><div style="height:clamp(170px,17cqi,230px);background:#141412"><img loading="lazy" decoding="async" src="{{ a.img }}" alt="{{ a.text }}" style="width:100%;height:100%;object-fit:cover" /></div></sc-if>
+          <div style="padding:18px 20px 22px;font:600 clamp(15px,1.15cqi,18px)/1.25 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ a.text }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasDocs }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#F4F3F1;padding:clamp(36px,4cqi,70px) clamp(16px,3cqi,44px);border-top:1px solid rgba(20,20,18,0.14)">
+    <div style="display:grid;grid-template-columns:{{ grid3 }};gap:clamp(12px,1.4cqi,20px)">
+      <sc-for list="{{ docs }}" as="d" hint-placeholder-count="3">
+        <button onClick="{{ d.open }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.16);border-radius:2px;padding:24px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:left;width:100%" style-hover="border-color:#141412">
+          <div>
+            <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.55);margin-bottom:9px">PDF DOWNLOAD</div>
+            <div style="font:800 clamp(16px,1.3cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ d.label }}</div>
+          </div>
+          <span style="flex:0 0 auto;width:40px;height:40px;background:#f4a72d;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" stroke="#141412" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasFaqs }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#141412;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(22px,2.6cqi,34px)">
+      <h2 style="margin:0;max-width:18ch;font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1">Questions We Get Asked</h2>
+      <a href="tel:0753158020" style="font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#f4a72d;border-bottom:2px solid #f4a72d;padding-bottom:6px">Ask us yours <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ cols2 }};gap:0 clamp(24px,3cqi,56px);border-top:1px solid rgba(255,255,255,0.18)">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+        <div style="border-bottom:1px solid rgba(255,255,255,0.18)">
+          <button type="button" onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" aria-controls="{{ f.id }}" style="width:100%;background:transparent;border:0;cursor:pointer;text-align:left;padding:20px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;min-height:44px">
+            <span style="font:600 clamp(15px,1.2cqi,18px)/1.25 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#f4a72d">{{ f.q }}</span>
+            <span aria-hidden="true" style="flex:0 0 auto;margin-top:4px;transform:{{ f.iconRotate }};transition:transform .2s ease"><svg viewBox="0 0 10 6" width="10" height="6"><path d="M1 1L5 5L9 1" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+          </button>
+          <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+            <p id="{{ f.id }}" style="margin:0 0 22px;max-width:62ch;font:400 clamp(14px,1.05cqi,16px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.72);text-wrap:pretty">{{ f.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasSiblings }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#FFFFFF;padding:clamp(40px,5cqi,80px) clamp(16px,3cqi,44px);border-top:1px solid rgba(20,20,18,0.14)">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(18px,2.2cqi,28px)">
+      <h2 style="margin:0;font:800 clamp(24px,3cqi,44px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">{{ seriesHeading }}</h2>
+      <span style="font:400 15px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.6)">Same platform, different size class.</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ siblings }}" as="s" hint-placeholder-count="4">
+        <a href="{{ s.href }}" style="border:1px solid rgba(20,20,18,0.26);background:{{ s.bg }};color:{{ s.fg }};padding:14px 18px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:2px" style-hover="background:#141412;color:#F4F3F1">{{ s.label }}</a>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ hasRelated }}" hint-placeholder-val="{{ false }}">
+<section class="om-rise" style="background:#F4F3F1;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px);border-top:1px solid rgba(20,20,18,0.14)">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(20px,2.4cqi,32px)">
+    <h2 style="margin:0;font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">{{ relatedHeading }}</h2>
+    <a href="products.html" style="font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#141412;border-bottom:2px solid #f4a72d;padding-bottom:6px">All products <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ grid3 }};gap:clamp(12px,1.4cqi,20px)">
+    <sc-for list="{{ related }}" as="p" hint-placeholder-count="0">
+      <a href="{{ p.href }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);display:flex;flex-direction:column;border-radius:2px" style-hover="border-color:#141412">
+        <div style="flex:0 0 auto;height:clamp(200px,20cqi,270px);overflow:hidden;padding:{{ p.pad }}"><img loading="lazy" decoding="async" src="{{ p.image }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:{{ p.fit }}" /></div>
+        <div style="flex:1;padding:18px 22px 22px;border-top:1px solid rgba(20,20,18,0.1)">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;color:rgba(20,20,18,0.55);margin-bottom:9px">{{ p.category }}</div>
+          <h3 style="margin:0 0 14px;font:800 clamp(16px,1.3cqi,20px)/1.08 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ p.name }}</h3>
+          <div style="display:grid;gap:8px;padding-top:12px;border-top:1px solid rgba(20,20,18,0.12)">
+            <sc-for list="{{ p.headlineSpecs }}" as="hs" hint-placeholder-count="2">
+              <div style="display:flex;justify-content:space-between;gap:12px;font:400 12px/1.3 'General Sans','GeneralSans-Variable',sans-serif">
+                <span style="color:rgba(20,20,18,0.55);text-transform:uppercase;letter-spacing:.06em;font-size:10px">{{ hs.k }}</span>
+                <span style="color:#141412;font-weight:600">{{ hs.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <section style="background:#141412;padding:clamp(36px,5cqi,60px) clamp(16px,3cqi,44px);border-top:1px solid rgba(255,255,255,0.14)">
+    <h2 style="margin:0;font:700 clamp(28px,7cqi,44px)/1.02 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:18ch;text-wrap:balance">Want a price on this one?</h2>
+    <p style="margin:16px 0 0;max-width:46ch;font:400 16px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68);text-wrap:pretty">We'll check it against your carrier's flow and pressure before we quote.</p>
+    <button type="button" data-quote="Product mobile" style="margin-top:26px;width:100%;background:#f4a72d;color:#141412;border:0;padding:22px 28px;min-height:56px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Get a quote</button>
+  </section>
+</sc-if>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+
+</div>
+
+<sc-if value="{{ gateOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ gateClose }}" style="position:fixed;inset:0;z-index:400;background:rgba(20,20,19,0.74);display:flex;align-items:flex-start;justify-content:center;padding:clamp(14px,4vh,60px) 16px;overflow:auto">
+    <div onClick="{{ stop }}" style="width:100%;max-width:540px;background:#F4F3F1;border-radius:4px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.45)">
+      <div style="background:#141412;padding:clamp(22px,3cqi,30px) clamp(20px,3cqi,32px);display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+        <div style="min-width:0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:11px">YOU'RE DOWNLOADING</div>
+          <div style="font:800 clamp(19px,2cqi,26px)/1.06 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ gateTitle }}</div>
+          <div style="margin-top:8px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.5)">{{ gateMeta }}</div>
+        </div>
+        <button onClick="{{ gateClose }}" style="flex:0 0 auto;background:transparent;border:1px solid rgba(255,255,255,0.3);color:#F4F3F1;width:38px;height:38px;font:400 17px/1 'General Sans','GeneralSans-Variable',sans-serif;cursor:pointer;border-radius:2px" style-hover="border-color:#f4a72d;color:#f4a72d">✕</button>
+      </div>
+
+      <sc-if value="{{ gateDone }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:clamp(26px,3.4cqi,40px) clamp(20px,3cqi,32px)">
+          <div style="font:800 clamp(20px,2cqi,27px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412;margin-bottom:12px">Your file is on its way</div>
+          <p style="margin:0 0 22px;font:400 16px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">{{ gateDoneMsg }}</p>
+          <button onClick="{{ gateClose }}" style="width:100%;background:#141412;color:#F4F3F1;border:0;padding:22px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:2px" style-hover="background:#f4a72d;color:#141412">Done</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ gateFormOn }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:clamp(24px,3cqi,34px) clamp(20px,3cqi,32px) clamp(26px,3.4cqi,38px)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input type="text" autocomplete="given-name" placeholder="FIRST NAME *" value="{{ gateFn }}" onChange="{{ setFn }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+            <input type="text" autocomplete="family-name" placeholder="LAST NAME *" value="{{ gateLn }}" onChange="{{ setLn }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+            <input type="email" autocomplete="email" inputmode="email" placeholder="EMAIL *" value="{{ gateEm }}" onChange="{{ setEm }}" style="grid-column:1 / -1;background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+            <input type="tel" autocomplete="tel" inputmode="tel" placeholder="PHONE *" value="{{ gatePh }}" onChange="{{ setPh }}" style="grid-column:1 / -1;background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+          </div>
+          <div style="margin:22px 0 10px;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.55)">What best describes your business?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px">
+            <sc-for list="{{ gateSegs }}" as="s" hint-placeholder-count="9">
+              <button onClick="{{ s.pick }}" style="background:{{ s.bg }};color:{{ s.fg }};border:1px solid rgba(20,20,18,0.24);padding:11px 13px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px">{{ s.label }}</button>
+            </sc-for>
+          </div>
+          <button onClick="{{ gateSubmit }}" style="margin-top:24px;width:100%;background:{{ gateBtnBg }};color:{{ gateBtnFg }};border:0;padding:24px;display:flex;align-items:center;justify-content:center;gap:10px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:{{ gateBtnCursor }};border-radius:2px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download now</button>
+          <div style="margin-top:13px;font:400 12px/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.55);text-wrap:pretty">{{ gateHint }}</div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<div style="position:sticky;bottom:0;left:0;right:0;z-index:150;background:#141412;display:flex;justify-content:center">
+  <div style="width:100%;max-width:{{ frameWidth }};border-top:1px solid rgba(255,255,255,0.16);display:flex;align-items:center;gap:10px;padding:12px clamp(16px,3vw,44px);padding-bottom:calc(12px + env(safe-area-inset-bottom))">
+    <a href="tel:0753158020" style="flex:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.4);color:#F4F3F1;padding:14px 16px;min-height:48px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;white-space:nowrap" style-hover="background:#F4F3F1;color:#141412">Call Us</a>
+    <button type="button" data-quote="Product sticky bar" data-quote-subject="{{ quoteCtx }}" style="flex:2;background:#f4a72d;color:#141412;border:0;padding:14px 16px;min-height:48px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;white-space:nowrap" style-hover="background:#F4F3F1">Get A Quote</button>
+  </div>
+</div>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}"  style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}"  style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const GATE_SEGMENTS = [
+  'Orchard', 'Council', 'Mulching / Slashing / Mowing', 'Tree Maintenance / Arborist',
+  'Landscaping', 'Civil / Earthmoving', 'Cattle Farmer (Leucaena)', 'Hire Company', 'Other'
+];
+
+class Component extends DCLogic {
+  static youtubeId(url) {
+    if (!url) return '';
+    const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{6,})/);
+    return m ? m[1] : '';
+  }
+
+  state = { heroIdx: 0, heroSlug: '', w: 1440, view: 'desktop', data: null, fam: null, vfam: null, famSlug: '', arm: '', config: '', vModel: '', slug: '', videoOpen: false, faqOpen: null, specsExpanded: null, gate: null, gFn: '', gLn: '', gEm: '', gPh: '', gSeg: '', gDone: false };
+
+  openGate(item) { this.setState({ gate: item, gFn: '', gLn: '', gEm: '', gPh: '', gSeg: '', gDone: false }); }
+  gateValid() {
+    const s = this.state;
+    return !!(s.gFn.trim() && s.gLn.trim() && /.+@.+\..+/.test(s.gEm.trim()) && s.gPh.replace(/\D/g, '').length >= 8);
+  }
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  setRailRef(name) {
+    if (!this.railRefs) this.railRefs = {};
+    return (el) => { this.railRefs[name] = el; };
+  }
+  scrollRail(name, dir) {
+    const el = this.railRefs && this.railRefs[name];
+    if (el) el.scrollBy({ left: dir * Math.round(el.clientWidth * 0.8), behavior: 'smooth' });
+  }
+
+  componentDidMount() {
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    const q = new URLSearchParams(location.search);
+    this.setState({
+      w: window.innerWidth, view: view,
+      slug: q.get('p') || (q.get('f') ? '' : 'quadsaw-lrs-2402'),
+      famSlug: q.get('f') || '',
+      // same arg shape as WooCommerce's ?attribute_pa_arm-type / ?attribute_pa_config
+      arm: q.get('arm') || q.get('attribute_pa_arm-type') || '',
+      config: q.get('config') || q.get('attribute_pa_config') || '',
+      vModel: q.get('model') || q.get('attribute_pa_model') || ''
+    });
+    import('./site-data.js').then((m) => this.setState({ data: m }));
+    import('./product-families.js').then((m) => this.setState({ fam: m }));
+    import('./virnig-variations.js').then((m) => this.setState({ vfam: m }));
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  // Turn a spreadsheet header ("Maximum Reach (m)") into a compact label + unit-suffixed value.
+  fmtSpec(k, v) {
+    const unit = (k.match(/\(([^)]+)\)\s*$/) || [])[1] || '';
+    const key = k.replace(/\s*\([^)]*\)\s*$/, '').trim();
+    let val = String(v).trim();
+    if (unit && !new RegExp(unit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$', 'i').test(val)) {
+      val = unit === 'deg' ? val.replace(/°$/, '') + '°' : val + ' ' + unit;
+    }
+    return { k: key, v: val };
+  }
+
+  // Headline figures are metric only, rounded to the nearest 10 mm.
+  // '60" (1524 mm)' -> '1520 mm'   |   '60" / 66"' -> '1520 / 1680 mm'
+  metricOnly(value) {
+    const round10 = (n) => (Math.round(n / 10) * 10).toLocaleString('en-AU');
+    const v = String(value).trim();
+
+    // an explicit mm/m bracket wins - round every number inside it
+    const br = v.match(/\(([^)]*\b(?:mm|m)\b[^)]*)\)/);
+    if (br) {
+      const nums = br[1].match(/[\d.,]+/g) || [];
+      if (nums.length) {
+        const isMetres = /\bm\b/.test(br[1]) && !/\bmm\b/.test(br[1]);
+        const sep = br[1].indexOf('–') >= 0 ? ' – ' : ' / ';
+        const out = nums.map((n) => {
+          const num = parseFloat(n.replace(/,/g, ''));
+          return isMetres ? String(num) : round10(num);
+        });
+        return out.join(sep) + (isMetres ? ' m' : ' mm');
+      }
+    }
+    // already metric, no bracket
+    if (/\b(mm|m|kg|L\/min|MPa|RPM)\b/.test(v) && !/["″]/.test(v)) {
+      return v.replace(/([\d.,]+)\s*mm/g, (_, n) => round10(parseFloat(n.replace(/,/g, ''))) + ' mm');
+    }
+    // inches only - convert
+    const inches = v.match(/([\d.,]+)\s*["″]/g);
+    if (inches) {
+      const out = inches.map((x) => round10(parseFloat(x.replace(/[^\d.]/g, '')) * 25.4));
+      return out.join(' / ') + ' mm';
+    }
+    return v;
+  }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const phone = mobile || layoutW < 760;
+    // null = no explicit user choice yet - follow the viewport reactively;
+    // once the user clicks, lock to their choice regardless of viewport
+    const faqOpenResolved = this.state.faqOpen === null ? (phone ? -1 : 0) : this.state.faqOpen;
+    const specsExpandedResolved = this.state.specsExpanded === null ? !phone : this.state.specsExpanded;
+    const d = this.state.data;
+    const famMod = this.state.fam;
+    let family = null, variation = null;
+    if (d && famMod) {
+      if (this.state.famSlug) family = famMod.familyBySlug(d.products, this.state.famSlug);
+      else if (this.state.slug) {
+        const hit = famMod.familyForProduct(d.products, this.state.slug);
+        if (hit) { family = hit.family; variation = hit.variation; }
+      }
+      if (family) {
+        const arm = this.state.arm || (variation ? variation.arm : family.variations[0].arm);
+        const cfg = this.state.config || (variation ? variation.config : family.variations[0].config);
+        variation = famMod.pickVariation(family, arm, cfg);
+      }
+    }
+    const p = variation ? variation.product : (d ? (d.bySlug(this.state.slug) || d.products[0]) : null);
+    const HERO_POS = { 'https://greentec.eu/wp-content/uploads/2022/10/banner-desktop-1.webp': '75% center' };
+    const heroImages = p ? [p.image, ...((p.gallery || []).filter((g) => g !== p.image))] : [];
+    if (p && this.state.heroSlug !== p.slug) {
+      this.state.heroSlug = p.slug; this.state.heroIdx = 0;
+    }
+    const heroIdx = Math.min(this.state.heroIdx, Math.max(0, heroImages.length - 1));
+    const seoKey = p ? p.slug : '';
+    if (this._lastSeoKey !== seoKey && p) {
+      this._lastSeoKey = seoKey;
+      import('./seo-meta.js').then((m) => m.applySEO({
+        title: p.name + ' | ' + p.category + ' | DTE Equipment',
+        description: p.summary,
+        path: 'product.html?p=' + p.slug,
+        image: p.image
+      }));
+    }
+
+    const vMod = this.state.vfam;
+    const vFamily = (p && vMod) ? vMod.buildVirnigFamily(p) : null;
+    const vSel = vFamily ? vMod.virnigVariation(vFamily, this.state.vModel) : null;
+    const activeSpecs = vSel ? vSel.specs : (p ? p.specs : []);
+
+    // one selector row per attribute, exactly the Woo variation matrix
+    const variantGroups = family ? family.attributes.map((attr) => ({
+      name: attr.name,
+      terms: attr.terms.map((t) => {
+        const nextArm = attr.key === 'arm' ? t.slug : variation.arm;
+        const nextCfg = attr.key === 'config' ? t.slug : variation.config;
+        const exists = !!family.variations.find((v) => v.arm === nextArm && v.config === nextCfg);
+        const on = (attr.key === 'arm' ? variation.arm : variation.config) === t.slug;
+        return {
+          label: t.label,
+          bg: on ? '#f4a72d' : 'transparent',
+          fg: on ? '#141412' : (exists ? '#F4F3F1' : 'rgba(255,255,255,0.28)'),
+          bd: on ? '#f4a72d' : (exists ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.14)'),
+          cursor: exists ? 'pointer' : 'not-allowed',
+          pick: () => { if (exists) this.setState({ arm: nextArm, config: nextCfg }); }
+        };
+      })
+    })) : [];
+
+    if (vFamily) {
+      variantGroups.push({
+        name: vFamily.attribute.name,
+        terms: vFamily.variations.map((v) => {
+          const on = v.term === vSel.term;
+          return {
+            label: v.sublabel ? v.label + '  ' + v.sublabel : v.label,
+            bg: on ? '#f4a72d' : 'transparent',
+            fg: on ? '#141412' : '#F4F3F1',
+            bd: on ? '#f4a72d' : 'rgba(255,255,255,0.35)',
+            cursor: 'pointer',
+            pick: () => this.setState({ vModel: v.term })
+          };
+        })
+      });
+    }
+
+    const specsAll = activeSpecs.map((s) => this.fmtSpec(s[0], s[1]));
+    const keyNumbers = specsAll.filter((s) => /^[\d.,]/.test(s.v)).slice(0, 3).map((s) => ({ k: s.k, v: this.metricOnly(s.v) }));
+    const fBlocks = p && p.featureBlocks ? p.featureBlocks.filter((f) => f.h && f.d) : [];
+    const std = p && p.standard ? p.standard : [];
+    const opt = p && p.optional ? p.optional : [];
+    const tools = p && p.tools ? p.tools : [];
+    const appEx = p && p.appExamples ? p.appExamples : [];
+    const docs = [];
+    if (p && p.docs) {
+      if (p.docs.brochure) docs.push({ label: 'Brochure', href: p.docs.brochure });
+      if (p.docs.guide) docs.push({ label: 'User guide', href: p.docs.guide });
+      if (p.docs.parts) docs.push({ label: 'Parts book', href: p.docs.parts });
+    }
+    const g = this.state.gate;
+    const gValid = this.gateValid();
+
+    const all = d ? d.products : [];
+    const bySeries = p && p.series ? all.filter((x) => x.series === p.series && x.slug !== p.slug) : [];
+
+    // Resolve a compatible-tool name ("LRS 2402 Tree Saw") to a catalogueue product by
+    // series + model, not a loose substring - "RC 102" must not match "RC 1020".
+    const toolProduct = (label) => {
+      const m = String(label).match(/^([A-Za-z]{1,7})\s?(\d{2,4}[A-Za-z]*)/);
+      if (!m) return null;
+      const series = m[1].toUpperCase();
+      const model = m[2].toUpperCase();
+      return all.find((x) =>
+        String(x.series || '').toUpperCase() === series &&
+        String(x.model || '').toUpperCase().replace(/\s+/g, '') === model
+      ) || null;
+    };
+    const toolHref = (label) => {
+      const hit = toolProduct(label);
+      return hit ? 'product.html?p=' + hit.slug : 'products.html';
+    };
+
+    // "Often paired with" is manufacturer pairing data, never inference.
+    // A carrier lists the tools it takes; a tool is paired with the carriers that list it.
+    // Anything with no stated pairing (all Virnig attachments) shows no section at all.
+    let related = [];
+    if (p) {
+      if (p.tools && p.tools.length) {
+        const seen = {};
+        p.tools.forEach((t) => {
+          const hit = toolProduct(t.t);
+          if (hit && hit.slug !== p.slug && !seen[hit.slug]) { seen[hit.slug] = 1; related.push(hit); }
+        });
+      } else {
+        const seenC = {};
+        all.forEach((c) => {
+          if (!c.tools || !c.tools.length || c.slug === p.slug) return;
+          const fits = c.tools.some((t) => {
+            const hit = toolProduct(t.t);
+            return hit && hit.slug === p.slug;
+          });
+          if (fits && !seenC[c.slug]) { seenC[c.slug] = 1; related.push(c); }
+        });
+      }
+      // Collapse S / PLUS / BF siblings - they are one variable product now.
+      if (famMod) {
+        const seenFam = {};
+        related = related.filter((x) => {
+          const hit = famMod.familyForProduct(all, x.slug);
+          const key = hit ? hit.family.slug : x.slug;
+          if (seenFam[key]) return false;
+          seenFam[key] = 1;
+          if (hit) { x = Object.assign({}, x, { name: hit.family.name, href: 'product.html?f=' + hit.family.slug }); }
+          return true;
+        }).map((x) => {
+          const hit = famMod.familyForProduct(all, x.slug);
+          return hit ? Object.assign({}, x, { name: hit.family.name, famHref: 'product.html?f=' + hit.family.slug }) : x;
+        });
+      }
+      related = related.slice(0, 3);
+    }
+
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      railArrowDisplay: 'flex',
+      galleryRailRef: this.setRailRef('gallery'), scrollGalleryLeft: () => this.scrollRail('gallery', -1), scrollGalleryRight: () => this.scrollRail('gallery', 1),
+      toolsRailRef: this.setRailRef('tools'), scrollToolsLeft: () => this.scrollRail('tools', -1), scrollToolsRight: () => this.scrollRail('tools', 1),
+      loaded: !!d,
+      variantGroups: variantGroups,
+      narrow: narrow,
+      phone: phone,
+      cols2: narrow ? '1fr' : 'repeat(2,1fr)',
+      grid3: narrow ? '1fr' : (layoutW >= 1300 ? 'repeat(3,1fr)' : 'repeat(2,1fr)'),
+      keyCols: keyNumbers.length >= 3 && !phone ? 'repeat(3,1fr)' : (keyNumbers.length >= 2 ? 'repeat(2,1fr)' : '1fr'),
+      name: vSel ? vSel.name : (p ? p.name : 'Loading…'),
+      brand: p ? p.brand : '',
+      category: p ? p.category : '',
+      showQuadsawProof: !!(p && p.category === 'Quadsaws & Tree Saws'),
+      categoryHref: p ? 'products.html?category=' + (d && d.categoryMeta && d.categoryMeta[p.category] ? d.categoryMeta[p.category].slug : encodeURIComponent(p.category)) : 'products.html',
+      typeLabel: p ? (p.type || p.category) : '',
+      summary: p ? p.summary : '',
+      body: p ? p.body : '',
+      image: heroImages.length ? heroImages[heroIdx] : (p ? p.image : ''),
+      imagePos: HERO_POS[heroImages[heroIdx]] || 'center',
+      fit: p && p.fit ? p.fit : 'contain',
+      imagePad: p && (p.fit || 'contain') === 'contain' ? 'clamp(30px,4cqi,64px)' : '0',
+      hasHeroNav: heroImages.length > 1,
+      heroPrev: () => this.setState({ heroIdx: (heroIdx - 1 + heroImages.length) % heroImages.length }),
+      heroNext: () => this.setState({ heroIdx: (heroIdx + 1) % heroImages.length }),
+      heroDots: heroImages.map((src, i) => ({ bg: i === heroIdx ? '#f4a72d' : 'rgba(255,255,255,0.4)' })),
+      badge: p && p.badge ? p.badge : '',
+      badgeDisplay: p && p.badge ? 'block' : 'none',
+      action: p && p.action ? p.action : '',
+      hasAction: !!(p && p.action),
+      videoHref: p && p.video ? p.video : 'videos.html',
+      videoLabel: p && p.video ? 'WATCH THIS MACHINE WORKING' : 'WATCH THE RANGE WORKING',
+      hasVideo: !!(p && p.video && Component.youtubeId(p.video)),
+      videoLinkDisplay: (p && p.video && Component.youtubeId(p.video)) ? 'none' : 'inline-block',
+      videoOpen: this.state.videoOpen,
+      videoEmbedSrc: p && p.video ? 'https://www.youtube.com/embed/' + Component.youtubeId(p.video) + '?autoplay=1&rel=0' : '',
+      openVideo: () => this.setState({ videoOpen: true }),
+      closeVideo: () => this.setState({ videoOpen: false }),
+      hasWarning: !!(p && p.warning),
+      warning: p && p.warning ? p.warning : '',
+      fitTags: p ? p.vehicles.map((v) => ({ label: v, href: 'products.html?v=' + encodeURIComponent(v) })) : [],
+      carriers: p && p.carriers ? p.carriers.map((c) => ({ label: c })) : [],
+      hasCarriers: !!(p && p.carriers && p.carriers.length),
+      features: p ? p.features.map((f) => ({ text: f })) : [],
+      specs: specsAll,
+      specCount: specsAll.length,
+      specsExpanded: specsExpandedResolved,
+      specsToggleDisplay: phone ? 'flex' : 'none',
+      specsHeadingDisplay: phone ? 'none' : 'flex',
+      specsIconRotate: specsExpandedResolved ? 'rotate(180deg)' : 'none',
+      toggleSpecs: () => this.setState({ specsExpanded: !specsExpandedResolved }),
+      keyNumbers: keyNumbers,
+      hasKeyNumbers: keyNumbers.length > 1,
+      featureBlocks: fBlocks.map((f) => ({ headline: f.h, desc: f.d, img: f.img || '', hasImg: !!f.img, h: f.img ? 'clamp(150px,15cqi,200px)' : '0' })),
+      hasFeatureBlocks: fBlocks.length > 0,
+      gallery: (p && p.gallery ? p.gallery : []).map((src) => ({ src: src })),
+      hasGallery: !!(p && p.gallery && p.gallery.length),
+      faqs: p && p.faqs ? p.faqs.map((f, i) => ({
+        q: f.q, a: f.a, id: 'faq-' + i,
+        open: faqOpenResolved === i,
+        iconRotate: faqOpenResolved === i ? 'rotate(180deg)' : 'none',
+        toggle: () => this.setState({ faqOpen: faqOpenResolved === i ? -1 : i })
+      })) : [],
+      hasFaqs: !!(p && p.faqs && p.faqs.length),
+      hasEquipment: std.length > 0 || opt.length > 0,
+      standard: std.map((e) => ({ text: e.t, img: e.img || '', hasImg: !!e.img })),
+      optional: opt.map((e) => ({ text: e.t, img: e.img || '', hasImg: !!e.img })),
+      noOptional: opt.length === 0,
+      tools: tools.map((t) => ({ text: t.t, img: t.img || '', hasImg: !!t.img, href: toolHref(t.t) })),
+      hasTools: tools.length > 0,
+      toolCount: tools.length,
+      appExamples: appEx.map((a) => ({ text: a.t, img: a.img || '', hasImg: !!a.img })),
+      hasAppExamples: appEx.length > 0,
+      quoteCtx: p ? p.name : 'Product enquiry',
+      docs: docs.map((x) => ({ label: x.label, open: () => this.openGate({ title: (p ? p.name : '') + ' - ' + x.label, meta: (p && p.brand ? p.brand : '') + ' · ' + x.label + ' · PDF', href: x.href }) })),
+      gateOpen: !!g,
+      gateTitle: g ? g.title : '',
+      gateMeta: g ? g.meta : '',
+      gateDone: !!g && this.state.gDone,
+      gateFormOn: !!g && !this.state.gDone,
+      gateDoneMsg: g ? 'The ' + g.title + ' is opening now, and a copy is on its way to ' + this.state.gEm.trim() + '. Our team can see which document you took, so any follow-up will be about this machine - nothing else.' : '',
+      gateFn: this.state.gFn, gateLn: this.state.gLn, gateEm: this.state.gEm, gatePh: this.state.gPh,
+      setFn: (e) => this.setState({ gFn: e.target.value }),
+      setLn: (e) => this.setState({ gLn: e.target.value }),
+      setEm: (e) => this.setState({ gEm: e.target.value }),
+      setPh: (e) => this.setState({ gPh: e.target.value }),
+      gateBtnBg: gValid ? '#f4a72d' : 'rgba(20,20,18,0.14)',
+      gateBtnFg: gValid ? '#141412' : 'rgba(20,20,18,0.4)',
+      gateBtnCursor: gValid ? 'pointer' : 'not-allowed',
+      gateHint: gValid ? 'Tagged as: ' + (g ? g.title : '') : 'First name, last name, email and phone are all required.',
+      gateSubmit: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        if (!this.gateValid()) return;
+        if (g && g.href) window.open(g.href, '_blank', 'noopener');
+        this.setState({ gDone: true });
+      },
+      gateClose: () => this.setState({ gate: null }),
+      stop: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
+      gateSegs: GATE_SEGMENTS.map((s) => ({
+        label: s,
+        bg: this.state.gSeg === s ? '#141412' : 'transparent',
+        fg: this.state.gSeg === s ? '#f4a72d' : 'rgba(20,20,18,0.75)',
+        pick: () => this.setState({ gSeg: this.state.gSeg === s ? '' : s })
+      })),
+      hasDocs: docs.length > 0,
+      hasSiblings: bySeries.length > 0,
+      hasRelated: related.length > 0,
+      relatedHeading: (p && p.tools && p.tools.length) ? 'Often Paired With' : 'Fits These Carriers',
+      seriesHeading: p && p.series ? 'The ' + p.series + ' Range' : 'The Range',
+      siblings: bySeries.map((x) => ({ href: 'product.html?p=' + x.slug, label: x.name.replace(/^Greentec\s+/, ''), bg: 'transparent', fg: '#141412' })),
+      related: related.map((x) => ({ href: x.famHref || ('product.html?p=' + x.slug), image: x.image, name: x.name, category: x.category, headlineSpecs: (x.specs || []).map((s) => this.fmtSpec(s[0], s[1])).filter((s) => /^[\d.,]/.test(s.v)).slice(0, 3), fit: x.fit || 'contain', pad: (x.fit || 'contain') === 'cover' ? '0' : 'clamp(20px,2.2cqi,30px)' })),
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&amp;display=swap" rel="stylesheet">
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  /* Micro-curve: 2px - softens every hard corner without reading as "rounded UI". */
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  input, select, button { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="products" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="background:#141412;padding:calc(clamp(30px,4cqi,58px) + clamp(72px,5.8vw,92px)) clamp(16px,3cqi,44px) clamp(34px,4cqi,56px);border-bottom:1px solid rgba(255,255,255,0.14)">
+  <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px"><a href="index.html">Home</a> <span style="color:#f4a72d">/</span> <a href="products.html" style="color:{{ crumbColor }}">Products</a><span style="display:{{ crumbCatShow }}"> <span style="color:#f4a72d">/</span> {{ crumbCat }}</span></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px">
+    <h1 style="margin:0;font:800 clamp(38px,6cqi,96px)/0.9 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.015em;text-transform:uppercase;color:#F4F3F1">{{ pageH1 }}</h1>
+    <p style="margin: 0; max-width: 40ch; font: 400 clamp(15px,1.15cqi,18px)/1.5 'General Sans','GeneralSans-Variable',sans-serif; color: rgba(255,255,255,0.6); text-wrap: pretty; width: 363px; height: 105px">{{ pageIntro }} Need Assistance? Call <a href="tel:0753158020" style="color:#f4a72d">07 5315 8020</a>.</p>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#F4F3F1;display:grid;grid-template-columns:{{ layout }};align-items:start">
+
+  <aside style="border-right:1px solid rgba(20,20,18,0.14);padding:clamp(24px,2.6cqi,34px) clamp(16px,2cqi,28px);position:{{ railPos }};top:0">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div style="font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#141412">Filters</div>
+      <button onClick="{{ toggleFilters }}" style="border:1px solid rgba(20,20,18,0.3);background:transparent;color:#141412;padding:9px 12px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;cursor:pointer;display:{{ filterBtnDisplay }};border-radius:2px">{{ filterBtnLabel }}</button>
+    </div>
+
+    <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:22px">
+        <label for="rangeSearch" style="display:block;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:12px">SEARCH</label>
+        <input id="rangeSearch" name="rangeSearch" type="search" autocomplete="off" placeholder="Model, series or job…" value="{{ query }}" onChange="{{ onQuery }}" style="width:100%;margin-bottom:26px;border:1px solid rgba(20,20,18,0.26);background:#FFFFFF;color:#141412;padding:14px 13px;font:400 15px/1 'General Sans','GeneralSans-Variable',sans-serif;border-radius:2px">
+
+        <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:12px">BRAND</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:26px">
+          <sc-for list="{{ brandOpts }}" as="o" hint-placeholder-count="3">
+            <button onClick="{{ o.click }}" style="border:1px solid rgba(20,20,18,0.26);background:{{ o.bg }};color:{{ o.fg }};padding:11px 13px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;cursor:pointer;border-radius:2px">{{ o.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:12px">VEHICLE</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:26px">
+          <sc-for list="{{ vehicleOpts }}" as="o" hint-placeholder-count="6">
+            <button onClick="{{ o.click }}" style="border:1px solid rgba(20,20,18,0.26);background:{{ o.bg }};color:{{ o.fg }};padding:11px 13px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;cursor:pointer;border-radius:2px">{{ o.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:12px">APPLICATION</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:26px">
+          <sc-for list="{{ marketOpts }}" as="o" hint-placeholder-count="5">
+            <button onClick="{{ o.click }}" style="border:1px solid rgba(20,20,18,0.26);background:{{ o.bg }};color:{{ o.fg }};padding:11px 13px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;cursor:pointer;border-radius:2px">{{ o.label }}</button>
+          </sc-for>
+        </div>
+
+        <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(20,20,18,0.6);margin-bottom:12px">CATEGORY</div>
+        <div style="display:grid;border-top:1px solid rgba(20,20,18,0.14)">
+          <sc-for list="{{ categoryOpts }}" as="o" hint-placeholder-count="12">
+            <button onClick="{{ o.click }}" style="border:0;border-bottom:1px solid rgba(20,20,18,0.14);background:{{ o.bg }};color:{{ o.fg }};padding:13px 10px;font:400 14px/1.2 'General Sans','GeneralSans-Variable',sans-serif;text-align:left;cursor:pointer;display:flex;justify-content:space-between;gap:10px;border-radius:2px"><span>{{ o.label }}</span><span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;opacity:.55">{{ o.count }}</span></button>
+          </sc-for>
+        </div>
+
+        <button onClick="{{ reset }}" style="margin-top:22px;width:100%;border:1px solid rgba(20,20,18,0.3);background:transparent;color:#141412;padding:15px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;border-radius:2px" style-hover="background:#141412;color:#F4F3F1">Reset filters</button>
+      </div>
+    </sc-if>
+  </aside>
+
+  <div style="padding:clamp(24px,2.6cqi,34px) clamp(16px,3cqi,44px) clamp(50px,6cqi,90px);min-width:0">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-bottom:20px;border-bottom:1px solid rgba(20,20,18,0.14);margin-bottom:clamp(16px,2cqi,26px)">
+      <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(20,20,18,0.66)">{{ resultLabel }}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ activeChips }}" as="chip" hint-placeholder-count="0">
+          <button onClick="{{ chip.clear }}" style="background:#141412;color:#f4a72d;border:0;padding:10px 12px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;border-radius:2px">{{ chip.label }} <span style="opacity:.7">✕</span></button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:{{ grid }};gap:clamp(12px,1.4cqi,20px)">
+      <sc-for list="{{ items }}" as="p" hint-placeholder-count="0">
+        <a href="{{ p.href }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);display:flex;flex-direction:column;position:relative;border-radius:2px" style-hover="border-color:#141412">
+          <div style="flex:0 0 auto;height:clamp(230px,24cqi,320px);overflow:hidden;padding:{{ p.pad }};display:flex;align-items:center;justify-content:center;position:relative;{{ p.boxStyle }}">
+            <img loading="lazy" decoding="async" src="{{ p.image }}" alt="{{ p.name }}" style="width:100%;height:100%;object-fit:{{ p.fit }};transform:{{ p.rotate }}">
+          </div>
+          <div style="flex:1;padding:20px 22px 24px;border-top:1px solid rgba(20,20,18,0.1)">
+            <div style="display:flex;justify-content:space-between;gap:10px;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;color:rgba(20,20,18,0.55);margin-bottom:10px"><span>{{ p.brand }}</span><span>{{ p.category }}</span></div>
+            <h3 style="margin:0;font:800 clamp(17px,1.4cqi,21px)/1.08 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ p.name }}</h3>
+            <span style="display:{{ p.variantShow }};margin-top:10px;border:1px solid rgba(20,20,18,0.3);padding:6px 9px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.75)">{{ p.variantLabel }}</span>
+            <p style="margin:9px 0 0;font:400 14px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.66);text-wrap:pretty">{{ p.summary }}</p>
+            <div style="margin-top:14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#141412">VIEW DETAIL <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"></path></svg></div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+      <div style="display:grid;grid-template-columns:{{ grid }};gap:clamp(12px,1.4cqi,20px)">
+        <div style="background:#ffffff;border:1px solid rgba(20,20,18,0.14);border-radius:2px;height:clamp(360px,38cqi,460px)"></div>
+        <div style="background:#ffffff;border:1px solid rgba(20,20,18,0.14);border-radius:2px;height:clamp(360px,38cqi,460px)"></div>
+        <div style="background:#ffffff;border:1px solid rgba(20,20,18,0.14);border-radius:2px;height:clamp(360px,38cqi,460px)"></div>
+        <div style="background:#ffffff;border:1px solid rgba(20,20,18,0.14);border-radius:2px;height:clamp(360px,38cqi,460px)"></div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <div style="border:1px solid rgba(20,20,18,0.16);padding:clamp(30px,4cqi,60px);text-align:center;border-radius:2px">
+        <div style="font:800 clamp(22px,2.4cqi,34px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">No match on those filters</div>
+        <p style="margin:14px auto 0;max-width:40ch;font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.66)">We distribute more than the models shown here. Tell us the machine and the job and we'll tell you what fits.</p>
+        <a href="tel:0753158020" style="display:inline-block;margin-top:22px;background:#f4a72d;color:#141412;padding:18px 26px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase">Call 07 5315 8020</a>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <section style="background:#141412;padding:clamp(36px,5cqi,60px) clamp(16px,3cqi,44px);border-top:1px solid rgba(255,255,255,0.14)">
+    <h2 style="margin:0;font:700 clamp(28px,7cqi,44px)/1.02 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:18ch;text-wrap:balance">Not sure which one fits?</h2>
+    <p style="margin:16px 0 0;max-width:46ch;font:400 16px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68);text-wrap:pretty">Tell us the machine you run and the job it has to do - we'll narrow the list for you.</p>
+    <button type="button" data-quote="Products mobile" style="margin-top:26px;width:100%;background:#f4a72d;color:#141412;border:0;padding:22px 28px;min-height:56px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Get a quote</button>
+  </section>
+</sc-if>
+
+<section style="background:#141412;padding:clamp(40px,5cqi,80px) clamp(16px,3cqi,44px);border-top:1px solid rgba(255,255,255,0.14)">
+  <div style="display:flex;align-items:center;gap:11px;font:500 12px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:18px"><span style="width:22px;height:2px;background:#f4a72d;display:block"></span>Full Range Index</div>
+  <h2 style="margin:0 0 clamp(24px,2.8cqi,40px);font:800 clamp(24px,3cqi,42px)/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1">Every attachment, by category</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:clamp(22px,2.6cqi,36px)">
+    <div>
+      <a href="products.html?category=reach-mowers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Reach Mowers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=reach-mower-scorpion-330-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 330 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-330-s" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 330 S</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-330-s-bf" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 330 S BF</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-330-plus-bf" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 330-PLUS BF</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-430-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 430 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-430-s" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 430 S</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-430-s-bf" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 430 S BF</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-430-plus-bf" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 430-PLUS BF</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-490-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 490 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-530-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 530 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-530-s" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 530 S</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-530-s-bf" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 530 S BF</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-630-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 630 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-630-s" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 630 S</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-630-s-bf" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 630 S BF</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-730-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 730 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-730-s" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 730 S</a></li>
+        <li><a href="product.html?p=scorpion-830-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 830 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-scorpion-830-s" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Scorpion 830 S</a></li>
+        <li><a href="product.html?p=reach-mower-spider-520-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Spider 520 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-spider-620-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Spider 620 PLUS</a></li>
+        <li><a href="product.html?p=spider-720-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Spider 720 PLUS</a></li>
+        <li><a href="product.html?p=reach-mower-spider-820-plus" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Reach Mower Spider 820 PLUS</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=multi-carriers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Multi Carriers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=multi-carrier-fox" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi carrier FOX</a></li>
+        <li><a href="product.html?p=multi-carrier-puma-2303" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi Carrier PUMA 2303</a></li>
+        <li><a href="product.html?p=multi-carrier-puma-2803" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi Carrier PUMA 2803</a></li>
+        <li><a href="product.html?p=multi-carrier-puma-2803-tele" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi Carrier PUMA 2803 Tele</a></li>
+        <li><a href="product.html?p=multi-carrier-puma-3303" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi Carrier PUMA 3303</a></li>
+        <li><a href="product.html?p=multi-carrier-puma-3303-tele" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi Carrier PUMA 3303 Tele</a></li>
+        <li><a href="product.html?p=hxf-2802-tele" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Multi Carrier HXF 2802 Tele</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=quadsaws-tree-saws" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Quadsaws &amp; Tree Saws</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=lrs-1402" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw LRS 1402</a></li>
+        <li><a href="product.html?p=lrs-1602" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw LRS 1602</a></li>
+        <li><a href="product.html?p=lrs-2002" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw LRS 2002</a></li>
+        <li><a href="product.html?p=quadsaw-lrs-2402" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw LRS 2402</a></li>
+        <li><a href="product.html?p=twinsaw-lrs-1602" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw TWINSAW LRS 1602</a></li>
+        <li><a href="product.html?p=twinsaw-lrs-2002" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw TWINSAW LRS 2002</a></li>
+        <li><a href="product.html?p=twinsaw-lrs-2402" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Quadsaw TWINSAW LRS 2402</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=cutterbars-trimmers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Cutterbars &amp; Trimmers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=hl-152" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HL 152</a></li>
+        <li><a href="product.html?p=hl-182" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HL 182</a></li>
+        <li><a href="product.html?p=hl-212" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HL 212</a></li>
+        <li><a href="product.html?p=hl-242" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HL 242</a></li>
+        <li><a href="product.html?p=hs-172" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HS 172</a></li>
+        <li><a href="product.html?p=hs-212" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HS 212</a></li>
+        <li><a href="product.html?p=cutterbar-hs-242" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Cutterbar HS 242</a></li>
+        <li><a href="product.html?p=hx-170" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Tree Trimmer HX 170</a></li>
+        <li><a href="product.html?p=hx-230" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Tree Trimmer HX 230</a></li>
+        <li><a href="product.html?p=hx-270" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Tree Trimmer HX 270</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=rotary-mulchers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Rotary Mulchers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=rc-102" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Rotary Hedge Cutter RC 102</a></li>
+        <li><a href="product.html?p=rc-132" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Rotary Hedge Cutter RC 132</a></li>
+        <li><a href="product.html?p=rc-162" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Rotary Hedge Cutter RC 162</a></li>
+        <li><a href="product.html?p=rm-232" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Rotary Mulcher RM 232</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=flail-mowers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Flail Mowers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=flail-mower-fr-112" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Flail Mower FR 112</a></li>
+        <li><a href="product.html?p=fr-122" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Flail Mower FR 122</a></li>
+        <li><a href="product.html?p=fr-122-vb" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Flail Mower FR 122 VB</a></li>
+        <li><a href="product.html?p=fr-162" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Flail Mower FR 162</a></li>
+        <li><a href="product.html?p=fr-92" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Flail Mower FR 92</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=barrier-mowers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Barrier Mowers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=ri80-barrier-mower" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Barrier Mower RI 82</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=brush-cutters" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Brush Cutters</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=rx-133" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Brush Cutter RX 133</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=rotary-mowers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Rotary Mowers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=tiger-510" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Tiger 510 Rotary Mower</a></li>
+        <li><a href="product.html?p=tiger-725" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Tiger 725 Rotary Mower</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=specialist-tools" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Specialist Tools</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=gr-70" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Ditch Cleaner GR 70</a></li>
+        <li><a href="product.html?p=lg" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Leaf Blower LG</a></li>
+        <li><a href="product.html?p=s-165" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Sickle Bar Mower S 165</a></li>
+        <li><a href="product.html?p=s-190" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Sickle Bar Mower S 190</a></li>
+        <li><a href="product.html?p=s-210" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Sickle Bar Mower S 210</a></li>
+        <li><a href="product.html?p=s-240" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Sickle Bar Mower S 240</a></li>
+        <li><a href="product.html?p=br-70" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Weed Brush BR 70</a></li>
+        <li><a href="product.html?p=br-90" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Greentec Weed Brush BR 90</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=skid-steer-slashers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Skid Steer Slashers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=v40-closed-front" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V40 Closed Front Rotary Brush Cutter</a></li>
+        <li><a href="product.html?p=v40-open-front" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V40 Open Front Rotary Brush Cutter</a></li>
+        <li><a href="product.html?p=v50-closed-front" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V50 Closed Front Rotary Brush Cutter</a></li>
+        <li><a href="product.html?p=v50-floating-deck" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V50 Floating Deck Rotary Brush Cutter</a></li>
+        <li><a href="product.html?p=v50-open-front" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V50 Open Front Rotary Brush Cutter</a></li>
+        <li><a href="product.html?p=v60-open-front" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V60 Open Front Rotary Brush Cutter</a></li>
+        <li><a href="product.html?p=v70-open-front" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V70 Open Front Rotary Brush Cutter</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=skid-steer-drum-mulchers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Skid Steer Drum Mulchers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=v70-drum-mulcher" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V70 Drum Mulcher</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=skid-steer-disc-mulchers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Skid Steer Disc Mulchers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=v70-tree-disc-mulcher" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig V70 Tree Disc Mulcher</a></li>
+      </ul>
+    </div>
+    <div>
+      <a href="products.html?category=excavator-slashers" style="display:block;margin-bottom:12px;font:700 13px/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#f4a72d">Excavator Slashers</a>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px">
+        <li><a href="product.html?p=x30-mini-ex" style="font:400 14px/1.3 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68)">Virnig X30 Mini Excavator Rotary Brush Cutter</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+
+</div>
+
+<div style="position:sticky;bottom:0;left:0;right:0;z-index:150;background:#141412;display:flex;justify-content:center">
+  <div style="width:100%;max-width:{{ frameWidth }};border-top:1px solid rgba(255,255,255,0.16);display:flex;align-items:center;gap:10px;padding:12px clamp(16px,3vw,44px);padding-bottom:calc(12px + env(safe-area-inset-bottom))">
+    <a href="tel:0753158020" style="flex:1;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.4);color:#F4F3F1;padding:14px 16px;min-height:48px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;white-space:nowrap" style-hover="background:#F4F3F1;color:#141412">Call Us</a>
+    <button type="button" data-quote="Products sticky bar" style="flex:2;background:#f4a72d;color:#141412;border:0;padding:14px 16px;min-height:48px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;cursor:pointer;white-space:nowrap" style-hover="background:#F4F3F1">Get A Quote <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"></path></svg></button>
+  </div>
+</div>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { w: 1440, view: 'desktop', data: null, fam: null, brand: '', vehicle: '', market: '', category: '', q: '', filtersOpen: true };
+
+  // clean-URL slugs (?category=slug) - mirrors site-data.js's categoryMeta so the
+  // right category resolves synchronously, before that module finishes loading
+  static CATEGORY_SLUGS = {
+    'reach-mowers': 'Reach Mowers', 'boom-mowers': 'Reach Mowers' /* legacy slug */, 'multi-carriers': 'Multi Carriers',
+    'quadsaws-tree-saws': 'Quadsaws & Tree Saws', 'cutterbars-trimmers': 'Cutterbars & Trimmers',
+    'rotary-mulchers': 'Rotary Mulchers', 'flail-mowers': 'Flail Mowers',
+    'barrier-mowers': 'Barrier Mowers', 'brush-cutters': 'Brush Cutters',
+    'rotary-mowers': 'Rotary Mowers', 'specialist-tools': 'Specialist Tools',
+    'skid-steer-slashers': 'Skid Steer Slashers', 'skid-steer-drum-mulchers': 'Skid Steer Drum Mulchers',
+    'skid-steer-disc-mulchers': 'Skid Steer Disc Mulchers', 'excavator-slashers': 'Excavator Slashers'
+  };
+
+  // legacy/short category names (old ?c= links) still resolve to the real category
+  resolveCategory(v) {
+    if (!v) return '';
+    const alias = {
+      'quadsaws': 'Quadsaws & Tree Saws',
+      'tree saws': 'Quadsaws & Tree Saws',
+      'boom arms': 'Reach Mowers',
+      'boom mowers': 'Reach Mowers',
+      'cutterbars': 'Cutterbars & Trimmers',
+      'trimmers': 'Cutterbars & Trimmers',
+      'mulchers': 'Skid Steer Drum Mulchers',
+      'forestry mulchers': 'Skid Steer Drum Mulchers',
+      'slashers': 'Skid Steer Slashers'
+    };
+    const real = ['Reach Mowers','Multi Carriers','Quadsaws & Tree Saws','Cutterbars & Trimmers','Rotary Mulchers','Flail Mowers','Barrier Mowers','Brush Cutters','Rotary Mowers','Specialist Tools','Skid Steer Slashers','Skid Steer Drum Mulchers','Skid Steer Disc Mulchers','Excavator Slashers'];
+    const hit = real.find((c) => c.toLowerCase() === v.toLowerCase());
+    return hit || alias[v.toLowerCase()] || v;
+  }
+
+  // one filter change updates state AND rewrites the URL - each category gets its
+  // own clean, bookmarkable ?category=slug link; other filters ride alongside it
+  setFilter(key, value) {
+    const st = this.state;
+    const next = {
+      brand: key === 'brand' ? (st.brand === value ? '' : value) : st.brand,
+      vehicle: key === 'vehicle' ? (st.vehicle === value ? '' : value) : st.vehicle,
+      market: key === 'market' ? (st.market === value ? '' : value) : st.market,
+      category: key === 'category' ? (st.category === value ? '' : value) : st.category
+    };
+    this.setState(next);
+    this.pushUrl(next);
+  }
+
+  pushUrl(next) {
+    const params = new URLSearchParams();
+    if (next.category) params.set('category', Component.slugFor(next.category));
+    if (next.brand) params.set('b', next.brand);
+    if (next.vehicle) params.set('v', next.vehicle);
+    if (next.market) params.set('a', next.market);
+    const qs = params.toString();
+    try { history.pushState(null, '', location.pathname + (qs ? '?' + qs : '')); } catch (e) {}
+  }
+
+  static slugFor(categoryName) {
+    const hit = Object.keys(Component.CATEGORY_SLUGS).find((s) => Component.CATEGORY_SLUGS[s] === categoryName);
+    return hit || categoryName;
+  }
+
+  // per-category document title + meta description - distinct primary keyword each
+  syncHead() {
+    const d = this.state.data;
+    const cat = this.state.category;
+    // re-run once data finishes loading even if the category itself hasn't changed - // otherwise the pre-data-load fallback title/description sticks permanently
+    const key = cat + '::' + (d && d.categoryMeta ? '1' : '0');
+    if (this._lastHeadKey === key) return;
+    this._lastHeadKey = key;
+    const meta = d && d.categoryMeta ? d.categoryMeta[cat] : null;
+    import('./seo-meta.js').then((m) => m.applySEO({
+      title: meta ? meta.title : 'The Range - Attachments for Every Job | DTE Equipment',
+      description: meta ? meta.description : 'Every attachment DTE Equipment distributes, filtered by the machine you run and the job you do - Greentec and Virnig for Australian conditions.',
+      path: 'products.html' + (meta ? '?category=' + meta.slug : '')
+    }));
+  }
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); this.syncHead(); }
+
+  componentDidMount() {
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    const q = new URLSearchParams(location.search);
+    const slugCat = Component.CATEGORY_SLUGS[q.get('category') || ''] || '';
+    this.setState({
+      w: window.innerWidth, view: view,
+      brand: q.get('b') || '', vehicle: q.get('v') || '', market: q.get('a') || '',
+      category: slugCat || this.resolveCategory(q.get('c') || '')
+    });
+    import('./site-data.js').then((m) => this.setState({ data: m }));
+    Promise.all([import('./product-families.js'), import('./virnig-variations.js')])
+      .then(([f, v]) => { f.attachVirnig(v); this.setState({ fam: f }); });
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const phone = mobile || layoutW < 760;
+    const d = this.state.data;
+    const fam = this.state.fam;
+    // one card per variable-product family; simple products pass through unchanged
+    const all = (d && fam) ? fam.catalogueueEntries(d.products) : (d ? d.products : []);
+    const apps = d ? d.applications : [];
+
+    const st = this.state;
+    const q = st.q.trim().toLowerCase();
+    const matchesQuery = (p) => !q || (p.name + ' ' + (p.series || '') + ' ' + (p.type || '') + ' ' + (p.variantLabel || '') + ' ' + p.category + ' ' + p.summary).toLowerCase().indexOf(q) >= 0;
+    const pass = (p, skip) => (
+      matchesQuery(p) &&
+      (skip === 'brand' || !st.brand || p.brand === st.brand) &&
+      (skip === 'vehicle' || !st.vehicle || p.vehicles.indexOf(st.vehicle) >= 0) &&
+      (skip === 'market' || !st.market || p.markets.indexOf(st.market) >= 0) &&
+      (skip === 'category' || !st.category || p.category === st.category)
+    );
+    const items = all.filter((p) => pass(p)).slice().sort((a, b) => {
+      const ab = /LRS 2402/i.test(a.name || '') ? 0 : 1;
+      const bb = /LRS 2402/i.test(b.name || '') ? 0 : 1;
+      return ab - bb;
+    });
+
+    const opt = (label, value, key) => ({
+      label: label,
+      bg: st[key] === value ? '#141412' : 'transparent',
+      fg: st[key] === value ? '#f4a72d' : '#141412',
+      click: () => this.setFilter(key, value)
+    });
+    const catMeta = (d && d.categoryMeta && st.category) ? d.categoryMeta[st.category] : null;
+    this.syncHead();
+
+    const cats = (d ? d.categories : []).map((c) => {
+      const o = opt(c, c, 'category');
+      o.count = all.filter((p) => pass(p, 'category') && p.category === c).length;
+      return o;
+    }).filter((o) => o.count > 0 || st.category === o.label);
+
+    const chips = [];
+    if (q) chips.push({ label: '“' + st.q.trim() + '”', clear: () => this.setState({ q: '' }) });
+    if (st.brand) chips.push({ label: st.brand, clear: () => this.setState({ brand: '' }) });
+    if (st.vehicle) chips.push({ label: st.vehicle, clear: () => this.setState({ vehicle: '' }) });
+    if (st.market) chips.push({ label: st.market, clear: () => this.setState({ market: '' }) });
+    if (st.category) chips.push({ label: st.category, clear: () => this.setFilter('category', st.category) });
+
+    const cols = narrow ? '1fr' : (width >= 1500 ? 'repeat(3,1fr)' : 'repeat(2,1fr)');
+
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow,
+      phone: phone,
+      pageH1: catMeta ? catMeta.h1 : (st.category || 'The Range'),
+      pageIntro: catMeta ? catMeta.description : 'Every attachment we distribute, filtered by the machine you own and the job you do.',
+      crumbCat: st.category,
+      crumbCatShow: st.category ? 'inline' : 'none',
+      crumbColor: st.category ? 'rgba(255,255,255,0.45)' : '#F4F3F1',
+      layout: narrow ? '1fr' : 'minmax(240px,280px) 1fr',
+      railPos: narrow ? 'static' : 'sticky',
+      grid: cols,
+      filterBtnDisplay: narrow ? 'block' : 'none',
+      filterBtnLabel: this.state.filtersOpen ? 'HIDE' : 'SHOW',
+      filtersOpen: narrow ? this.state.filtersOpen : true,
+      toggleFilters: () => this.setState({ filtersOpen: !this.state.filtersOpen }),
+      brandOpts: (d ? d.brands : []).map((b) => opt(b, b, 'brand')),
+      vehicleOpts: (d ? d.vehicles : []).map((v) => opt(v, v, 'vehicle')),
+      marketOpts: apps.map((a) => opt(a.name, a.slug, 'market')),
+      categoryOpts: cats,
+      activeChips: chips,
+      items: items.map((p) => ({
+        href: p.href || ('product.html?p=' + p.slug),
+        variantLabel: p.variantLabel || '',
+        variantShow: p.variantLabel ? 'inline-block' : 'none',
+        image: p.image, name: p.name, brand: p.brand, category: p.category, summary: p.summary,
+        fit: p.fit || 'contain', pad: p.fit === 'cover' ? '0' : 'clamp(22px,2.4cqi,34px)',
+        rotate: p.slug === 'lrs-1402' ? 'rotate(-90deg)' : 'none',
+        boxStyle: p.slug === 'lrs-1402' ? 'aspect-ratio:1;height:auto' : ''
+      })),
+      empty: !!d && items.length === 0,
+      loading: !d,
+      resultLabel: d ? (items.length + (items.length === 1 ? ' machine' : ' machines')) : 'Loading range…',
+      query: st.q,
+      onQuery: (e) => this.setState({ q: e.target.value }),
+      reset: () => { this.setState({ brand: '', vehicle: '', market: '', category: '', q: '' }); try { history.pushState(null, '', location.pathname); } catch (e) {} },
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+</script>
+</body>
+</html>

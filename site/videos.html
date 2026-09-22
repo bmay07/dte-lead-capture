@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  /* Micro-curve: 2px - softens every hard corner without reading as "rounded UI". */
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  button { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="media" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#141412;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="background:#141412;padding:calc(clamp(30px,4cqi,58px) + clamp(72px,5.8vw,92px)) clamp(16px,3cqi,44px) clamp(30px,3.4cqi,48px)">
+  <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px"><a href="index.html">Home</a> <span style="color:#f4a72d">/</span> Videos</div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px">
+    <h1 style="margin:0;font:800 clamp(38px,6cqi,96px)/0.9 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.015em;text-transform:uppercase;color:#F4F3F1">Watch It Work</h1>
+    <p style="margin:0;max-width:36ch;font:400 clamp(15px,1.15cqi,18px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.6);text-wrap:pretty">Machines in real Australian conditions - not a showroom. Every clip is a job we've been on.</p>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#141412;padding:0 clamp(16px,3cqi,44px) clamp(30px,3.4cqi,48px)">
+  <div style="position:relative;width:100%;padding-top:56.25%;background:#141412;border:1px solid rgba(255,255,255,0.16);border-radius:2px">
+    <iframe src="{{ playerSrc }}" title="{{ currentTitle }}" allow="accelerometre; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block"></iframe>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:14px;margin-top:20px">
+    <h2 style="margin:0;font:800 clamp(20px,2.2cqi,32px)/1.04 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ currentTitle }}</h2>
+    <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f4a72d">{{ currentCategory }}</div>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#141412;padding:0 clamp(16px,3cqi,44px) clamp(50px,6cqi,100px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.16);margin-bottom:clamp(18px,2cqi,28px)">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="3">
+      <button onClick="{{ t.pick }}" style="background:{{ t.bg }};color:{{ t.fg }};border:1px solid {{ t.bd }};padding:13px 18px;min-height:44px;cursor:pointer;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase">{{ t.label }}</button>
+    </sc-for>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ grid3 }};gap:clamp(12px,1.4cqi,20px)">
+    <sc-for list="{{ items }}" as="v" hint-placeholder-count="0">
+      <div style="border:1px solid {{ v.border }};background:#141412;display:flex;flex-direction:column;border-radius:2px">
+        <button onClick="{{ v.play }}" style="border:0;background:transparent;padding:0;cursor:pointer;text-align:left;display:block">
+          <span style="position:relative;display:block;width:100%;padding-top:56.25%;overflow:hidden;background:#000">
+            <img loading="lazy" decoding="async" src="{{ v.thumb }}" alt="{{ v.title }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.92" />
+            <span style="position:absolute;inset:0;background:rgba(0,0,0,0.15)"></span>
+            <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(20,20,18,0.82);border-radius:12px;display:flex;align-items:center;justify-content:center">
+              <span style="display:block;width:0;height:0;border-left:20px solid #ffffff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px"></span>
+            </span>
+          </span>
+        </button>
+        <span style="display:block;padding:18px 20px 20px">
+          <span style="display:block;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f4a72d;margin-bottom:10px">{{ v.category }}</span>
+          <span style="display:block;font:800 clamp(15px,1.25cqi,19px)/1.12 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ v.title }}</span>
+          <sc-if value="{{ v.articleHref }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ v.articleHref }}" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#F4F3F1;border-bottom:2px solid #f4a72d;padding-bottom:5px" style-hover="color:#f4a72d">Read the story <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+          </sc-if>
+        </span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#F4F3F1;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:clamp(20px,2.4cqi,32px)">
+    <h2 style="margin:0;max-width:20ch;font:800 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#141412">Video Stories</h2>
+    <a href="news.html" style="font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#141412;border-bottom:2px solid #f4a72d;padding-bottom:6px">All guides &amp; resources <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ grid3 }};gap:clamp(12px,1.4cqi,20px)">
+    <sc-for list="{{ storyItems }}" as="v" hint-placeholder-count="0">
+      <div style="border:1px solid {{ v.border }};background:#141412;display:flex;flex-direction:column;border-radius:2px">
+        <button onClick="{{ v.play }}" style="border:0;background:transparent;padding:0;cursor:pointer;text-align:left;display:block">
+          <span style="position:relative;display:block;width:100%;padding-top:56.25%;overflow:hidden;background:#000">
+            <img loading="lazy" decoding="async" src="{{ v.thumb }}" alt="{{ v.title }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.92" />
+            <span style="position:absolute;inset:0;background:rgba(0,0,0,0.15)"></span>
+            <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(20,20,18,0.82);border-radius:12px;display:flex;align-items:center;justify-content:center">
+              <span style="display:block;width:0;height:0;border-left:20px solid #ffffff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px"></span>
+            </span>
+          </span>
+        </button>
+        <span style="display:block;padding:18px 20px 20px">
+          <span style="display:block;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f4a72d;margin-bottom:10px">{{ v.category }}</span>
+          <span style="display:block;font:800 clamp(15px,1.25cqi,19px)/1.12 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ v.title }}</span>
+          <sc-if value="{{ v.articleHref }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ v.articleHref }}" style="display:inline-flex;align-items:center;gap:8px;margin-top:14px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#F4F3F1;border-bottom:2px solid #f4a72d;padding-bottom:5px" style-hover="color:#f4a72d">Read the story <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+          </sc-if>
+        </span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <section style="background:#141412;padding:clamp(36px,5cqi,60px) clamp(16px,3cqi,44px);border-top:1px solid rgba(255,255,255,0.14)">
+    <h2 style="margin:0;font:700 clamp(28px,7cqi,44px)/1.02 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:18ch;text-wrap:balance">Want to see one in person?</h2>
+    <p style="margin:16px 0 0;max-width:46ch;font:400 16px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68);text-wrap:pretty">We run on-site demos across Australia and New Zealand.</p>
+    <button type="button" data-quote="Videos mobile" style="margin-top:26px;width:100%;background:#f4a72d;color:#141412;border:0;padding:22px 28px;min-height:56px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Get a quote</button>
+  </section>
+</sc-if>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+
+</div>
+
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:500;background:rgba(8,8,7,0.92);display:flex;align-items:center;justify-content:center;padding:clamp(16px,4cqi,60px)" onClick="{{ closeModal }}">
+    <div style="position:relative;width:100%;max-width:1100px" onClick="{{ stopClick }}">
+      <button onClick="{{ closeModal }}" aria-label="Close" style="position:absolute;right:0;top:-48px;width:36px;height:36px;background:transparent;border:1px solid rgba(255,255,255,0.4);color:#F4F3F1;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:2px" style-hover="border-color:#f4a72d;color:#f4a72d">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 4L20 20M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div style="position:relative;width:100%;padding-top:56.25%;background:#000;border:1px solid rgba(255,255,255,0.16)">
+        <iframe src="{{ modalSrc }}" title="{{ currentTitle }}" allow="accelerometre; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block"></iframe>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}"  style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}"  style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const PAGE_SEO = {"title":"Watch The Range Working | DTE Equipment","description":"Greentec and Virnig attachments working in real Australian conditions.","path":"videos.html"};
+
+class Component extends DCLogic {
+  state = { w: 1440, view: 'desktop', data: null, current: 0, modalOpen: false, activeId: null };
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  componentDidMount() {
+    import('./seo-meta.js').then((m) => m.applySEO(PAGE_SEO));
+
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    const k = new URLSearchParams(location.search).get('k');
+    this.setState({ w: window.innerWidth, view: view, kind: (k === 'field' || k === 'walkaround') ? k : 'all' });
+    import('./site-data.js').then((m) => this.setState({ data: m }));
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const phone = mobile || layoutW < 760;
+    const d = this.state.data;
+    const kind = this.state.kind;
+    const all = d ? d.videos : [];
+    const machineAll = all.filter((x) => !x.story);
+    const storyAll = all.filter((x) => !!x.story);
+    const vids = (kind === 'all' ? machineAll : machineAll.filter((x) => x.kind === kind));
+    const cur = vids[this.state.current] || vids[0] || null;
+    const activeId = this.state.activeId;
+    const active = activeId ? all.find((x) => x.id === activeId) : null;
+
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow,
+      phone: phone,
+      grid3: narrow ? '1fr' : (layoutW >= 1300 ? 'repeat(3,1fr)' : 'repeat(2,1fr)'),
+      tabs: [['all', 'All videos'], ['field', 'Machines in the field'], ['walkaround', 'Machine walk arounds']].map((t) => ({
+        label: t[1],
+        bg: t[0] === kind ? '#f4a72d' : 'transparent',
+        fg: t[0] === kind ? '#141412' : '#F4F3F1',
+        bd: t[0] === kind ? '#f4a72d' : 'rgba(255,255,255,0.24)',
+        pick: () => this.setState({ kind: t[0], current: 0 })
+      })),
+      playerSrc: cur ? 'https://www.youtube.com/embed/' + cur.id + '?rel=0' : 'about:blank',
+      currentTitle: active ? active.title : (cur ? cur.title : 'Loading…'),
+      currentCategory: cur ? cur.category : '',
+      items: vids.map((v, i) => ({
+        title: v.title, category: v.category,
+        thumb: 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg',
+        border: v.id === activeId ? '#f4a72d' : 'rgba(255,255,255,0.18)',
+        play: () => this.setState({ current: i, activeId: v.id, modalOpen: true }),
+        articleHref: v.slug ? ((v.study ? 'case-study.html?n=' : 'article.html?n=') + v.slug) : ''
+      })),
+      storyItems: storyAll.map((v) => ({
+        title: v.title, category: v.category,
+        thumb: 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg',
+        border: v.id === activeId ? '#f4a72d' : 'rgba(255,255,255,0.18)',
+        play: () => this.setState({ activeId: v.id, modalOpen: true }),
+        articleHref: v.slug ? ((v.study ? 'case-study.html?n=' : 'article.html?n=') + v.slug) : ''
+      })),
+      modalOpen: this.state.modalOpen,
+      modalSrc: active ? 'https://www.youtube.com/embed/' + active.id + '?rel=0&autoplay=1' : 'about:blank',
+      closeModal: () => this.setState({ modalOpen: false }),
+      stopClick: (e) => e.stopPropagation(),
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+</script>
+</body>
+</html>
