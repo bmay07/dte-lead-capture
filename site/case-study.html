@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  button { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="media" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="position:relative;background:#141412;min-height:clamp(420px,50cqi,720px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden">
+  <sc-if value="{{ hasImage }}" hint-placeholder-val="{{ false }}">
+    <img loading="lazy" decoding="async" src="{{ image }}" alt="{{ operation }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+  </sc-if>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,10,0.9) 0%,rgba(12,12,10,0.36) 52%,rgba(12,12,10,0.08) 100%)"></div>
+  <div style="position:absolute;top:calc(clamp(20px,3cqi,44px) + clamp(72px,5.8vw,92px));left:clamp(16px,3cqi,44px);background:#141412;padding:10px 14px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.7)"><a href="index.html">Home</a> <span style="color:#f4a72d">/</span> <a href="news.html">Case studies</a></div>
+  <div style="position:relative;padding:0 clamp(16px,3cqi,44px) clamp(28px,3.2cqi,52px);max-width:min(100%,1100px)">
+    <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">{{ sector }} <span style="color:rgba(255,255,255,0.4)">·</span> {{ location }}</div>
+    <h1 style="margin:0;font:700 clamp(30px,5cqi,80px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.014em;text-transform:uppercase;color:#ffffff;text-wrap:balance">{{ operation }}</h1>
+    <p style="margin:18px 0 0;max-width:56ch;font:400 clamp(16px,1.3cqi,20px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.78);text-wrap:pretty">{{ excerpt }}</p>
+  </div>
+</section>
+
+<section style="background:#141412;border-top:1px solid rgba(255,255,255,0.14);display:grid;grid-template-columns:{{ statCols }}">
+  <sc-for list="{{ stats }}" as="s" hint-placeholder-count="3">
+    <div style="padding:{{ statPad }};border-right:1px solid rgba(255,255,255,0.14)">
+      <div style="font:{{ statValFont }} 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;color:#f4a72d">{{ s.v }}</div>
+      <div style="margin-top:{{ statLabelGap }};font:{{ statLabelFont }} 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.62)">{{ s.l }}</div>
+    </div>
+  </sc-for>
+</section>
+
+<section class="om-rise" style="background:#F4F3F1;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px) clamp(30px,3.4cqi,50px)">
+  <div style="display:grid;grid-template-columns:{{ cols2 }};gap:clamp(14px,1.6cqi,24px)">
+    <div style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);border-top:3px solid #141412;padding:clamp(24px,2.6cqi,38px)">
+      <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5)">The challenge</div>
+      <p style="margin:16px 0 0;font:400 clamp(16px,1.25cqi,19px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-wrap:pretty">{{ challenge }}</p>
+    </div>
+    <div style="background:#141412;border:1px solid #141412;border-top:3px solid #f4a72d;padding:clamp(24px,2.6cqi,38px)">
+      <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d">The result</div>
+      <p style="margin:16px 0 0;font:400 clamp(16px,1.25cqi,19px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1;text-wrap:pretty">{{ result }}</p>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+  <section class="om-rise" style="background:#F4F3F1;padding:0 clamp(16px,3cqi,44px) clamp(30px,3.4cqi,50px)">
+    <div style="position:relative;width:100%;padding-top:56.25%;background:#141412;overflow:hidden">
+      <iframe src="{{ embedSrc }}" title="{{ operation }}" allow="accelerometre; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="position:absolute;inset:0;width:100%;height:100%;border:0;display:block"></iframe>
+    </div>
+  </section>
+</sc-if>
+
+<section class="om-rise" style="background:#F4F3F1;padding:0 clamp(16px,3cqi,44px) clamp(40px,5cqi,90px)">
+  <div style="display:grid;grid-template-columns:{{ storyCols }};gap:clamp(28px,3.4cqi,64px);align-items:start">
+    <div style="min-width:0">
+      <div style="display:flex;align-items:center;gap:11px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(20,20,18,0.55);padding-bottom:18px;border-bottom:1px solid rgba(20,20,18,0.18);margin-bottom:clamp(22px,2.4cqi,32px)"><span style="width:8px;height:8px;background:#141412;display:block"></span>The full story</div>
+      <sc-for list="{{ paras }}" as="p" hint-placeholder-count="3">
+        <sc-if value="{{ p.isHeading }}" hint-placeholder-val="{{ false }}">
+          <h2 style="margin:clamp(28px,3cqi,42px) 0 16px;max-width:34ch;font:700 clamp(21px,1.9cqi,30px)/1.15 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.01em;text-transform:uppercase;color:#141412">{{ p.text }}</h2>
+        </sc-if>
+        <sc-if value="{{ p.isSub }}" hint-placeholder-val="{{ false }}">
+          <h3 style="margin:clamp(22px,2.4cqi,32px) 0 12px;max-width:40ch;font:600 clamp(17px,1.4cqi,21px)/1.2 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ p.text }}</h3>
+        </sc-if>
+        <sc-if value="{{ p.isPara }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0 0 20px;max-width:66ch;font:400 clamp(16px,1.25cqi,19px)/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-wrap:pretty">{{ p.text }}</p>
+        </sc-if>
+        <sc-if value="{{ p.isLink }}" hint-placeholder-val="{{ false }}">
+          <a href="{{ p.href }}" style="display:inline-flex;align-items:center;gap:12px;margin:0 0 26px;background:#f4a72d;color:#141412;padding:18px 24px;min-height:48px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase" style-hover="background:#141412;color:#F4F3F1">{{ p.label }} <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+        </sc-if>
+        <sc-if value="{{ p.isList }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;gap:10px;margin:0 0 24px;max-width:66ch">
+            <sc-for list="{{ p.items }}" as="li" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start">
+                <span style="width:6px;height:6px;margin-top:10px;background:#f4a72d;display:block"></span>
+                <span style="font:400 clamp(16px,1.2cqi,18px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-wrap:pretty">{{ li.text }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ p.isImage }}" hint-placeholder-val="{{ false }}">
+          <figure style="margin:clamp(24px,2.6cqi,38px) 0"><img loading="lazy" decoding="async" src="{{ p.src }}" alt="{{ p.alt }}" style="display:block;width:100%;max-width:{{ p.maxW }};height:auto;background:#E6E4E0" /></figure>
+        </sc-if>
+      </sc-for>
+
+      <sc-if value="{{ hasQuote }}" hint-placeholder-val="{{ false }}">
+        <blockquote style="margin:clamp(28px,3cqi,44px) 0 0;border-left:4px solid #f4a72d;padding:4px 0 4px 24px;max-width:52ch">
+          <p style="margin:0;font:400 clamp(19px,1.7cqi,26px)/1.35 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-wrap:pretty">“{{ quoteText }}”</p>
+          <cite style="display:block;margin-top:16px;font:600 11px/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:rgba(20,20,18,0.6)">{{ quoteBy }}</cite>
+        </blockquote>
+      </sc-if>
+    </div>
+
+    <aside style="min-width:0;position:{{ asideSticky }};top:96px">
+      <div style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);padding:clamp(22px,2.4cqi,30px)">
+        <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5);margin-bottom:20px">At a glance</div>
+        <div style="display:grid;border-top:1px solid rgba(20,20,18,0.16)">
+          <div style="display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,20,18,0.16)"><span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.55)">Customer</span><span style="font:600 14px/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-align:right">{{ customer }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,20,18,0.16)"><span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.55)">Sector</span><span style="font:600 14px/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-align:right">{{ sector }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,20,18,0.16)"><span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.55)">Location</span><span style="font:600 14px/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-align:right">{{ location }}</span></div>
+          <div style="display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid rgba(20,20,18,0.16)"><span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.55)">Machine</span><span style="font:600 14px/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-align:right">{{ machine }}</span></div>
+        </div>
+        <button type="button" data-quote="Case study" style="margin-top:22px;width:100%;background:#f4a72d;color:#141412;border:0;padding:18px 22px;min-height:52px;cursor:pointer;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#141412;color:#f4a72d">Get a setup like this</button>
+      </div>
+
+      <sc-if value="{{ hasKit }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top:clamp(14px,1.6cqi,20px);background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);padding:clamp(22px,2.4cqi,30px)">
+          <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5);margin-bottom:18px">The kit they run</div>
+          <div style="display:grid;gap:12px">
+            <sc-for list="{{ kit }}" as="k" hint-placeholder-count="1">
+              <a href="{{ k.href }}" style="display:flex;align-items:center;gap:14px;border:1px solid rgba(20,20,18,0.14);padding:12px;min-height:64px" style-hover="border-color:#141412">
+                <img loading="lazy" decoding="async" src="{{ k.image }}" alt="{{ k.name }}" style="width:56px;height:56px;object-fit:cover;flex:0 0 auto;background:#E6E4E0" />
+                <span style="min-width:0">
+                  <span style="display:block;font:600 13px/1.25 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ k.name }}</span>
+                  <span style="display:block;margin-top:5px;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#f4a72d">View product <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span>
+                </span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </aside>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#141412;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:clamp(22px,2.6cqi,36px)">
+    <h2 style="margin:0;font:700 clamp(26px,3.4cqi,52px)/0.96 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1">More customer stories</h2>
+    <a href="news.html" style="font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#F4F3F1;border-bottom:2px solid #f4a72d;padding-bottom:6px">All guides &amp; resources <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+  </div>
+  <div style="display:grid;grid-template-columns:{{ cols3 }};gap:clamp(14px,1.6cqi,24px)">
+    <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+      <a href="{{ r.href }}" style="display:flex;flex-direction:column;background:#1c1c1a;border:1px solid rgba(255,255,255,0.16)" style-hover="border-color:#f4a72d">
+        <span style="display:block;height:clamp(170px,17cqi,220px);overflow:hidden"><img loading="lazy" decoding="async" src="{{ r.image }}" alt="{{ r.title }}" style="width:100%;height:100%;object-fit:cover" /></span>
+        <span style="display:block;padding:clamp(18px,2cqi,26px)">
+          <span style="display:block;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#f4a72d;margin-bottom:10px">{{ r.location }}</span>
+          <span style="display:block;font:700 clamp(17px,1.5cqi,22px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ r.title }}</span>
+        </span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <section style="background:#141412;padding:clamp(36px,5cqi,60px) clamp(16px,3cqi,44px);border-top:1px solid rgba(255,255,255,0.14)">
+    <h2 style="margin:0;font:700 clamp(28px,7cqi,44px)/1.02 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:18ch;text-wrap:balance">Want the same result?</h2>
+    <p style="margin:16px 0 0;max-width:46ch;font:400 16px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68);text-wrap:pretty">Tell us your block and the machine you run - we'll spec it the same way.</p>
+    <button type="button" data-quote="Case study mobile" style="margin-top:26px;width:100%;background:#f4a72d;color:#141412;border:0;padding:22px 28px;min-height:56px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Get a quote</button>
+  </section>
+</sc-if>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+<div style="height:60px"></div>
+
+</div>
+
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:150;background:#141412;border-top:1px solid rgba(255,255,255,0.14);padding:12px clamp(16px,3cqi,44px);display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:16px">
+  <span style="font:600 22px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;color:#F4F3F1">Ready to get started?</span>
+  <button type="button" data-quote="Case study sticky bar" style="background:#f4a72d;color:#141412;border:0;padding:13px 22px;min-height:44px;cursor:pointer;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap" style-hover="background:#ffffff">Talk to a Specialist</button>
+</div>
+
+<div style="position:fixed;right:14px;bottom:68px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const PAGE_SEO = {"title":"Customer Case Studies | DTE Equipment","description":"Real results from orchardists, councils and contractors running Greentec and Virnig attachments.","path":"case-study.html"};
+
+class Component extends DCLogic {
+  state = { w: 1440, view: 'desktop', data: null, slug: '' };
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  componentDidMount() {
+    import('./seo-meta.js').then((m) => m.applySEO(PAGE_SEO));
+
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    const q = new URLSearchParams(location.search);
+    this.setState({ w: window.innerWidth, view: view, slug: q.get('n') || '' });
+    import('./site-data.js').then((m) => this.setState({ data: m }));
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  embed(v) {
+    if (!v) return '';
+    let id = v;
+    if (v.indexOf('http') === 0) id = (v.split('v=')[1] || v.split('/embed/')[1] || v.split('/').pop() || '').split(/[?&#]/)[0];
+    return 'https://www.youtube.com/embed/' + id + '?rel=0';
+  }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const phone = mobile || layoutW < 760;
+    const d = this.state.data;
+    const n = d && this.state.slug ? d.newsBySlug(this.state.slug) : (d ? d.news.find((x) => x.study) : null);
+    const st = (n && n.study) || {};
+    const kit = (n && n.products ? n.products : [])
+      .map((s) => (d ? d.bySlug(s) : null))
+      .filter(Boolean)
+      .map((p) => ({ href: 'product.html?p=' + p.slug, name: p.name, image: p.image }));
+    const related = (d ? d.news.filter((x) => x.study && x.slug !== (n && n.slug)) : [])
+      .slice(0, 3)
+      .map((x) => ({ href: 'case-study.html?n=' + x.slug, image: x.image, title: x.study.operation, location: x.study.location }));
+
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow,
+      phone: phone,
+      cols2: narrow ? '1fr' : 'repeat(2,1fr)',
+      cols3: narrow ? '1fr' : 'repeat(3,1fr)',
+      storyCols: narrow ? '1fr' : 'minmax(0,1.9fr) minmax(0,1fr)',
+      asideSticky: narrow ? 'static' : 'sticky',
+      image: n ? (st.heroImage || n.image) : '',
+      hasImage: !!(n && (st.heroImage || n.image)),
+      excerpt: n ? n.excerpt : '',
+      customer: st.customer || '',
+      operation: st.operation || (n ? n.title : 'Loading…'),
+      location: st.location || '',
+      machine: st.machine || '',
+      sector: st.sector || 'Case study',
+      challenge: st.challenge || '',
+      result: st.result || '',
+      stats: st.stats || [],
+      statCols: 'repeat(' + Math.max((st.stats || []).length, 1) + ',1fr)',
+      statPad: phone ? '16px 10px' : 'clamp(22px,2.4cqi,34px) clamp(16px,3cqi,44px)',
+      statValFont: phone ? '700 20px/1' : '700 clamp(26px,3cqi,44px)/1',
+      statLabelFont: phone ? '400 10px/1.25' : '400 14px/1.35',
+      statLabelGap: phone ? '5px' : '9px',
+      hasVideo: !!(n && n.video),
+      embedSrc: n && n.video ? this.embed(n.video) : '',
+      hasQuote: !!(n && n.quote),
+      quoteText: n && n.quote ? n.quote.text : '',
+      quoteBy: n && n.quote ? n.quote.by : '',
+      hasKit: kit.length > 0,
+      kit: kit,
+      related: related,
+      paras: n ? (n.body || []).map((b) => {
+        if (typeof b === 'string') return { isPara: true, text: b };
+        if (b.h) return { isHeading: true, text: b.h };
+        if (b.sub) return { isSub: true, text: b.sub };
+        if (b.list) return { isList: true, items: b.list.map((t) => ({ text: t })) };
+        if (b.link) return { isLink: true, href: b.link, label: b.label || 'Read more' };
+        if (b.img) return { isImage: true, src: b.img, alt: b.alt || '', maxW: b.w ? (b.w + 'px') : '100%' };
+        return { isPara: true, text: b.p || '' };
+      }) : [],
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

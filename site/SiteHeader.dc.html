@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  /* the dc-import mount wrapper must not create its own box, or it becomes the sticky
+     header's containing block and caps how long it can stay stuck (bounded by this
+     wrapper's own shrink-wrapped height instead of the full scrollable page) */
+  /* header must sit outside any container-type ancestor (contain:layout there
+     disables position:sticky in this environment) so it uses vw, not cqi, for
+     fluid sizing - see the vw conversion below */
+  .sc-host[data-sc-name="SiteHeader"] { display: contents; }
+</style>
+</helmet>
+
+
+<header onMouseLeave="{{ closeMega }}" style="position:{{ headerPos }};top:0;left:0;right:0;width:{{ headerWidth }};z-index:60;background:{{ headerBg }};border-bottom:1px solid {{ headerBorder }};transition:background-color .15s linear,border-color .15s linear">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 clamp(16px,3vw,44px);height:{{ barHeight }};transition:height .25s ease">
+    <a href="index.html" style="display:flex;align-items:center;min-height:44px;flex:0 0 auto"><img src="https://www.dte-equipment.com.au/wp-content/uploads/2018/12/DTE-logo_-white-_-yellow.-png-v2.png" alt="DTE Equipment" style="height:{{ logoH }};width:auto;display:block;transition:height .25s ease" /></a>
+
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:0;height:100%;font:600 {{ navFontSize }}/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#F4F3F1">
+        <a href="products.html" onMouseEnter="{{ openProducts }}" style="padding:0 20px;display:flex;align-items:center;gap:9px;height:100%;color:{{ cProducts }};border-bottom:3px solid {{ uProducts }}">Products<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" style="display:block;flex:0 0 auto;overflow:visible"><path d="M1 1L5 5L9 1" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square" /></svg></a>
+
+        <a href="orchard.html" onMouseEnter="{{ openApps }}" style="padding:0 20px;display:flex;align-items:center;gap:9px;height:100%;color:{{ cApps }};border-bottom:3px solid {{ uApps }}">Applications<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" style="display:block;flex:0 0 auto;overflow:visible"><path d="M1 1L5 5L9 1" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square" /></svg></a>
+
+        <a href="news.html" onMouseEnter="{{ openMedia }}" style="padding:0 20px;display:flex;align-items:center;gap:9px;height:100%;color:{{ cMedia }};border-bottom:3px solid {{ uMedia }}">Media<svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true" style="display:block;flex:0 0 auto;overflow:visible"><path d="M1 1L5 5L9 1" fill="none" stroke="#f4a72d" stroke-width="1.8" stroke-linecap="square" /></svg></a>
+
+        <a href="about.html" onMouseEnter="{{ closeMega }}" style="padding:0 20px;display:flex;align-items:center;height:100%;color:{{ cAbout }};border-bottom:3px solid {{ uAbout }}">About</a>
+        <a href="contact.html" onMouseEnter="{{ closeMega }}" style="padding:0 20px;display:flex;align-items:center;height:100%;color:{{ cContact }};border-bottom:3px solid {{ uContact }}">Contact</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:14px;flex:0 0 auto">
+        <a href="tel:0753158020" style="display:flex;align-items:center;gap:9px;white-space:nowrap;color:#f4a72d" style-hover="color:#F4F3F1">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true" style="display:block;flex:0 0 auto"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.03-.24c1.12.37 2.33.57 3.56.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.44.57 3.56a1 1 0 0 1-.25 1.03l-2.2 2.2z" /></svg>
+          <span style="font:700 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.01em">07 5315 8020</span>
+        </a>
+        <button type="button" data-quote="Header" style="background:#F4F3F1;color:#141412;border:0;padding:15px 24px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;cursor:pointer" style-hover="background:#f4a72d;color:#141412">Get a Quote</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;align-items:center;gap:10px">
+        <a href="tel:0753158020" style="background:#f4a72d;color:#141412;padding:0 20px;min-height:48px;display:flex;align-items:center;border-radius:2px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em">CALL</a>
+        <button onClick="{{ toggleNav }}"  style="background:transparent;border:1px solid rgba(255,255,255,0.28);color:#F4F3F1;width:48px;height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0;border-radius:2px">
+          <span style="width:20px;height:2px;background:#F4F3F1;display:block"></span>
+          <span style="width:20px;height:2px;background:#f4a72d;display:block"></span>
+          <span style="width:20px;height:2px;background:#F4F3F1;display:block"></span>
+        </button>
+      </div>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ megaProducts }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:100%;left:0;right:0;background:#141412;border-top:5px solid #f4a72d;border-bottom:1px solid rgba(255,255,255,0.16)">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;padding:clamp(30px,3vw,44px) clamp(16px,3vw,44px)">
+        <div style="padding-right:clamp(20px,2.4vw,38px)">
+          <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">By Attachment Type</div>
+          <div style="font:400 13px/1.35 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:rgba(255,255,255,0.55);margin:-10px 0 16px">The attachments our customers ask for most</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:400 15px/1.2 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1"><a href="products.html?category=quadsaws-tree-saws">Quadsaws</a><a href="products.html?category=boom-mowers">Reach Mowers</a><a href="products.html?category=skid-steer-disc-mulchers">Disc Mulchers</a><a href="products.html?category=skid-steer-drum-mulchers">Drum Mulchers</a><a href="products.html?category=flail-mowers">Flail Mowers</a><a href="products.html?category=cutterbars-trimmers">Cutterbars</a><a href="products.html?category=multi-carriers">Multi Carriers</a><a href="products.html?category=skid-steer-slashers">Skid Steer Slashers</a><a href="products.html?category=barrier-mowers">Barrier Mowers</a><a href="products.html?category=rotary-mulchers">Rotary Mulchers</a><a href="products.html?category=rotary-mowers">Rotary Mowers</a><a href="products.html?category=brush-cutters">Brush Cutters</a><a href="products.html?category=excavator-slashers">Excavator Slashers</a><a href="products.html?category=specialist-tools">Specialist Tools</a><a href="products.html" style="margin-top:6px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#f4a72d">View all attachments <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a></div>
+        </div>
+        <div style="padding:0 clamp(20px,2.4vw,38px);border-left:1px solid rgba(255,255,255,0.16)">
+          <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">By Brand</div>
+          <div style="font:400 13px/1.35 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:rgba(255,255,255,0.55);margin:-10px 0 16px">Our exclusive authorised partner brands</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:400 15px/1.2 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1"><a href="products.html?b=Greentec">Greentec</a><a href="products.html?b=Virnig">Virnig</a><a href="products.html" style="margin-top:6px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#f4a72d">View all products <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a></div>
+        </div>
+        <div style="padding:0 clamp(20px,2.4vw,38px);border-left:1px solid rgba(255,255,255,0.16)">
+          <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">By Vehicle</div>
+          <div style="font:400 13px/1.35 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:rgba(255,255,255,0.55);margin:-10px 0 16px">Attachments for the machine you run</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:400 15px/1.2 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1"><a href="products.html?v=Tractor">Tractor</a><a href="products.html?v=Excavator">Excavator</a><a href="products.html?v=Skid%20Steer">Skid Steer</a><a href="products.html?v=Telehandler">Telehandler</a><a href="products.html?v=Loader">Loader</a><a href="products.html" style="margin-top:6px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#f4a72d">Filter by vehicle <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a></div>
+        </div>
+        <div style="padding-left:clamp(20px,2.4vw,38px);border-left:1px solid rgba(255,255,255,0.16);display:flex;flex-direction:column;gap:16px">
+          <a href="products.html?category=boom-mowers" style="position:relative;display:block;min-height:190px;overflow:hidden;background:#141412">
+          <img src="https://www.dte-equipment.com.au/wp-content/uploads/2023/09/Scorpion-630-FR-1903x840-1.webp" alt="Scorpion reach mowers" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <span style="position:absolute;left:0;right:0;bottom:0;display:block;background:#141412;border-top:3px solid #f4a72d;padding:14px 16px">
+            <span style="display:block;font:800 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:uppercase;color:#ffffff">Scorpion reach mowers</span>
+            <span style="display:block;margin-top:6px;font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1">Agritechnica Silver Medal engineering</span>
+          </span>
+        </a>
+          <a href="products.html" style="background:#f4a72d;color:#141412;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase" style-hover="background:#141412;color:#f4a72d">View all products <span><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ megaApps }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:100%;left:0;right:0;background:#141412;border-top:5px solid #f4a72d;border-bottom:1px solid rgba(255,255,255,0.16)">
+      <div style="padding:clamp(26px,2.6vw,38px) clamp(16px,3vw,44px)">
+        <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">By Application</div>
+        <div style="font:400 13px/1.35 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:rgba(255,255,255,0.55);margin:-8px 0 18px">View the attachments for your application</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,18px)">
+          <a href="orchard.html" style="position:relative;display:block;min-height:300px;overflow:hidden;background:#141412">
+          <img src="uploads/Orchard Image - The Best.jpg" alt="Orchards" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <span style="position:absolute;left:0;right:0;bottom:0;display:block;background:#141412;border-top:3px solid #f4a72d;padding:14px 16px">
+            <span style="display:block;font:800 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:uppercase;color:#ffffff">Orchard Hedging &amp; Mulching</span>
+            <span style="display:block;margin-top:6px;font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1">Quadsaws, hedge cutters, cutterbars</span>
+          </span>
+        </a>
+          <a href="roadside.html" style="position:relative;display:block;min-height:300px;overflow:hidden;background:#141412">
+          <img src="uploads/Roadside Image.jpg" alt="Municipality" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <span style="position:absolute;left:0;right:0;bottom:0;display:block;background:#141412;border-top:3px solid #f4a72d;padding:14px 16px">
+            <span style="display:block;font:800 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:uppercase;color:#ffffff">Roadside Vegetation Management</span>
+            <span style="display:block;margin-top:6px;font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1">Reach mowers, verge and boom mowers</span>
+          </span>
+        </a>
+          <a href="land-clearing.html" style="position:relative;display:block;min-height:300px;overflow:hidden;background:#141412">
+          <img src="uploads/V70 Disc Mulcher In Action.jpg" alt="Forestry" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <span style="position:absolute;left:0;right:0;bottom:0;display:block;background:#141412;border-top:3px solid #f4a72d;padding:14px 16px">
+            <span style="display:block;font:800 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:uppercase;color:#ffffff">Land Clearing &amp; Mulching</span>
+            <span style="display:block;margin-top:6px;font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1">Disc and drum mulchers</span>
+          </span>
+        </a>
+          <a href="leucaena.html" style="position:relative;display:block;min-height:300px;overflow:hidden;background:#141412">
+          <img src="uploads/Leucaena Image.jpg" alt="Agriculture" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <span style="position:absolute;left:0;right:0;bottom:0;display:block;background:#141412;border-top:3px solid #f4a72d;padding:14px 16px">
+            <span style="display:block;font:800 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:uppercase;color:#ffffff">Leucaena</span>
+            <span style="display:block;margin-top:6px;font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1">Flail mowers, slashers, cutterbars</span>
+          </span>
+        </a>
+        </div>
+        <a href="orchard.html" style="display:inline-block;margin-top:18px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;color:#f4a72d">View all applications <svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></a>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ megaMedia }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:100%;left:0;right:0;background:#141412;border-top:5px solid #f4a72d;border-bottom:1px solid rgba(255,255,255,0.16)">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1.4fr;padding:clamp(26px,2.6vw,38px) clamp(16px,3vw,44px);gap:clamp(20px,2.4vw,38px)">
+        <div>
+          <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">Read</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:400 15px/1.2 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1"><a href="news.html">Guides &amp; Resources</a><a href="news.html?cat=Customer%20Insights">Case studies</a><a href="downloads.html">Brochures &amp; specs</a></div>
+        </div>
+        <div>
+          <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:18px">Watch</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font:400 15px/1.2 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1"><a href="videos.html">All videos</a><a href="videos.html?k=field">Machines in the field</a><a href="videos.html?k=walkaround">Machine walk arounds</a></div>
+        </div>
+        <a href="case-study.html?n=mango-pruning-a-gold-nugget" style="position:relative;display:block;min-height:190px;overflow:hidden;background:#141412">
+          <img src="https://www.dte-equipment.com.au/wp-content/uploads/2023/06/20230215-Greentec-Quadsaw-Marathon-Man-Go-032-Resized.jpg" alt="90,000 trees a season" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+          <span style="position:absolute;left:0;right:0;bottom:0;display:block;background:#141412;border-top:3px solid #f4a72d;padding:14px 16px">
+            <span style="display:block;font:800 19px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:uppercase;color:#ffffff">90,000 trees a season</span>
+            <span style="display:block;margin-top:6px;font:400 13px/1.3 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0;text-transform:none;color:#F4F3F1">Marathon Man Go, Nth QLD</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </sc-if>
+
+
+  <sc-if value="{{ navOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;top:0;left:0;right:0;height:100dvh;z-index:90;background:#141412;display:flex;flex-direction:column">
+      <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(16px,3vw,44px);height:clamp(66px,7vw,86px);border-bottom:1px solid rgba(255,255,255,0.14)">
+        <img src="https://www.dte-equipment.com.au/wp-content/uploads/2018/12/DTE-logo_-white-_-yellow.-png-v2.png" alt="DTE Equipment" style="height:30px;width:auto;display:block" />
+        <button onClick="{{ toggleNav }}"  style="background:transparent;border:1px solid rgba(255,255,255,0.28);color:#F4F3F1;height:44px;padding:0 18px;display:flex;align-items:center;gap:10px;cursor:pointer;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;border-radius:2px">CLOSE <span style="color:#f4a72d;font-size:15px">✕</span></button>
+      </div>
+
+      <div style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch">
+        <div style="padding:24px clamp(16px,3vw,44px) 0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:14px">START WITH THE JOB</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.18);border-radius:2px">
+            <a href="orchard.html" style="position:relative;min-height:118px;display:flex;align-items:flex-end;padding:14px;overflow:hidden;background:#141412">
+              <img src="uploads/Orchard Image - The Best.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55" />
+              <span style="position:relative;font:800 17px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">Orchard Hedging &amp; Mulching</span>
+            </a>
+            <a href="roadside.html" style="position:relative;min-height:118px;display:flex;align-items:flex-end;padding:14px;overflow:hidden;background:#141412">
+              <img src="uploads/Roadside Image.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55" />
+              <span style="position:relative;font:800 17px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">Roadside Vegetation Management</span>
+            </a>
+            <a href="land-clearing.html" style="position:relative;min-height:118px;display:flex;align-items:flex-end;padding:14px;overflow:hidden;background:#141412">
+              <img src="uploads/V70 Disc Mulcher In Action.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55" />
+              <span style="position:relative;font:800 17px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">Land Clearing &amp; Mulching</span>
+            </a>
+            <a href="leucaena.html" style="position:relative;min-height:118px;display:flex;align-items:flex-end;padding:14px;overflow:hidden;background:#141412">
+              <img src="uploads/Leucaena Image.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55" />
+              <span style="position:relative;font:800 17px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">Leucaena</span>
+            </a>
+          </div>
+        </div>
+
+        <div style="padding:28px clamp(16px,3vw,44px) 0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:14px">BY VEHICLE</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <a href="products.html?v=Tractor" style="border:1px solid rgba(255,255,255,0.24);color:#F4F3F1;padding:15px 18px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;border-radius:2px">TRACTOR</a>
+            <a href="products.html?v=Excavator" style="border:1px solid rgba(255,255,255,0.24);color:#F4F3F1;padding:15px 18px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;border-radius:2px">EXCAVATOR</a>
+            <a href="products.html?v=Skid%20Steer" style="border:1px solid rgba(255,255,255,0.24);color:#F4F3F1;padding:15px 18px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;border-radius:2px">SKID STEER</a>
+            <a href="products.html?v=Telehandler" style="border:1px solid rgba(255,255,255,0.24);color:#F4F3F1;padding:15px 18px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;border-radius:2px">TELEHANDLER</a>
+          </div>
+        </div>
+
+        <div style="padding:28px clamp(16px,3vw,44px) 0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:14px">ATTACHMENTS</div>
+          <div style="display:grid;border-top:1px solid rgba(255,255,255,0.14)">
+            <a href="products.html?category=quadsaws-tree-saws" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.14);font:400 16px/1.1 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1">Quadsaws <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+            <a href="products.html?category=boom-mowers" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.14);font:400 16px/1.1 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1">Reach mowers <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+            <a href="products.html?category=skid-steer-drum-mulchers" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.14);font:400 16px/1.1 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1">Drum &amp; disc mulchers <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+            <a href="products.html?category=flail-mowers" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.14);font:400 16px/1.1 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1">Flail mowers <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+            <a href="products.html?category=cutterbars-trimmers" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.14);font:400 16px/1.1 'General Sans','GeneralSans-Variable',sans-serif;color:#F4F3F1">Cutterbars <span style="color:#f4a72d"><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+            <a href="products.html" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,0.14);font:600 13px/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;color:#f4a72d">ALL PRODUCTS <span><svg viewBox="0 0 6 10" width="6" height="10" aria-hidden="true" style="display:inline-block;vertical-align:middle;overflow:visible;flex:0 0 auto;margin-left:1px"><path d="M1 1L5 5L1 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></svg></span></a>
+          </div>
+        </div>
+
+        <div style="padding:28px clamp(16px,3vw,44px) 0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:14px">BRANDS</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <a href="products.html?b=Greentec" style="border:1px solid rgba(255,255,255,0.24);padding:20px 16px;font:800 22px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1;border-radius:2px">Greentec</a>
+            <a href="products.html?b=Virnig" style="border:1px solid rgba(255,255,255,0.24);padding:20px 16px;font:800 22px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1;border-radius:2px">Virnig</a>
+          </div>
+        </div>
+
+        <div style="padding:28px clamp(16px,3vw,44px) 0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:14px">COMPANY</div>
+          <div style="display:flex;flex-direction:column;gap:4px;font:800 27px/1.12 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.01em;text-transform:uppercase;color:#F4F3F1">
+            <a href="news.html">Guides &amp; Resources</a>
+            <a href="videos.html">Videos</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="about.html">About DTE</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div style="margin-top:30px;padding:26px clamp(16px,3vw,44px) 34px;background:#141412;border-top:1px solid rgba(255,255,255,0.14)">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:rgba(255,255,255,0.5);margin-bottom:12px">TALK TO A SPECIALIST</div>
+          <a href="tel:0753158020" style="font:800 34px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.01em;color:#F4F3F1;border-bottom:3px solid #f4a72d;padding-bottom:5px">07 5315 8020</a>
+          <div style="display:flex;align-items:center;gap:14px;margin-top:24px">
+            <a href="https://au.linkedin.com/company/dte-equipment" target="_blank" rel="noopener" aria-label="LinkedIn" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,0.22);border-radius:2px;color:#0A66C2"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" style="display:block"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" /></svg></a>
+            <a href="https://www.youtube.com/channel/UC-jx3tGIr1XZmE5Qt1RETbg" target="_blank" rel="noopener" aria-label="YouTube" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,0.22);border-radius:2px;color:#FF0000"><svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true" style="display:block"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.54 12 3.54 12 3.54s-7.5 0-9.38.51A3.02 3.02 0 0 0 .5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.51 9.38.51 9.38.51s7.5 0 9.38-.51a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z" /></svg></a>
+            <a href="https://www.facebook.com/DTEEquipment/" target="_blank" rel="noopener" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,0.22);border-radius:2px;color:#1877F2"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" style="display:block"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z" /></svg></a>
+            <a href="https://www.instagram.com/dteequipment/" target="_blank" rel="noopener" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(255,255,255,0.22);border-radius:2px;color:#E4405F"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true" style="display:block"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07c-1.28.06-2.15.26-2.91.56-.79.3-1.46.71-2.13 1.38A5.9 5.9 0 0 0 .63 4.14c-.3.76-.5 1.63-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.28.26 2.15.56 2.91.3.79.71 1.46 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.63.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.28-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.63.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.28-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63c-.76-.3-1.63-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z" /></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.2)">
+        <button type="button" data-quote="Mobile menu" style="background:#141412;color:#F4F3F1;border:0;padding:20px;text-align:center;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;cursor:pointer">GET A QUOTE</button>
+        <a href="tel:0753158020" style="background:#f4a72d;color:#141412;padding:20px;text-align:center;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em">CALL NOW</a>
+      </div>
+    </div>
+  </sc-if>
+</header>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440,&quot;height&quot;:140},&quot;narrow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;&quot;,&quot;products&quot;,&quot;applications&quot;,&quot;media&quot;,&quot;about&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { mega: null, navOpen: false, scrollProgress: 0, compact: false };
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const p = Math.max(0, Math.min(1, window.scrollY / 480));
+      const el = document.getElementById('promise-strip');
+      const c = el ? (window.scrollY >= el.offsetTop + el.offsetHeight) : (window.scrollY > 80);
+      if (p !== this.state.scrollProgress || c !== this.state.compact) this.setState({ scrollProgress: p, compact: c });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  // 120ms intent delay: diagonal travel across the nav shouldn't flicker panels
+  intend(key) {
+    clearTimeout(this.t);
+    if (key === null) { this.t = setTimeout(() => this.setState({ mega: null }), 180); return; }
+    this.t = setTimeout(() => this.setState({ mega: key }), 120);
+  }
+  componentWillUnmount() { clearTimeout(this.t); }
+  renderVals() {
+    const narrow = !!this.props.narrow;
+    const overlay = !!this.props.overlay;
+    const a = this.props.active || '';
+    const c = (k) => (a === k ? '#ffffff' : '#F4F3F1');
+    const u = (k) => (a === k ? '#f4a72d' : 'transparent');
+    const hovering = !!this.state.mega && !narrow;
+    return {
+      wide: !narrow,
+      headerBg: hovering ? '#141412' : 'rgba(20,20,18,' + this.state.scrollProgress.toFixed(3) + ')',
+      headerBorder: hovering ? 'rgba(255,255,255,0.16)' : 'rgba(255,255,255,' + (0.12 * this.state.scrollProgress).toFixed(3) + ')',
+      headerPos: overlay ? 'fixed' : 'sticky',
+      headerWidth: overlay ? '100%' : 'auto',
+      barHeight: (overlay && !this.state.compact) ? 'clamp(64px,5.4vw,76px)' : 'clamp(46px,3.8vw,56px)',
+      logoH: (overlay && !this.state.compact) ? 'clamp(28px,2.6vw,34px)' : 'clamp(20px,1.8vw,24px)',
+      navFontSize: (overlay && !this.state.compact) ? '13px' : '11px',
+      ubJustify: narrow ? 'flex-end' : 'space-between',
+      notPhone: !this.props.phone,
+      narrow: narrow,
+      megaProducts: this.state.mega === 'products' && !narrow,
+      megaApps: this.state.mega === 'apps' && !narrow,
+      megaMedia: this.state.mega === 'media' && !narrow,
+      openProducts: () => this.intend('products'),
+      openApps: () => this.intend('apps'),
+      openMedia: () => this.intend('media'),
+      closeMega: () => this.intend(null),
+      toggleNav: () => this.setState({ navOpen: !this.state.navOpen }),
+      navOpen: this.state.navOpen && narrow,
+      cProducts: c('products'), cApps: c('applications'), cMedia: c('media'),
+      cAbout: c('about'), cContact: c('contact'),
+      uProducts: u('products'), uApps: u('applications'), uMedia: u('media'),
+      uAbout: u('about'), uContact: u('contact')
+    };
+  }
+}
+</script>
+</body>
+</html>

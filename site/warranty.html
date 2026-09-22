@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  button, input, select, textarea { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="background:#141412;padding:calc(clamp(30px,4cqi,58px) + clamp(72px,5.8vw,92px)) clamp(16px,3cqi,44px) clamp(34px,4cqi,56px);border-bottom:1px solid rgba(255,255,255,0.14)">
+  <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px"><a href="index.html">Home</a> <span style="color:#f4a72d">/</span> Warranty Registration</div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px">
+    <h1 style="margin:0;max-width:14ch;font:700 clamp(36px,5.6cqi,88px)/0.94 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.014em;text-transform:uppercase;color:#F4F3F1;text-wrap:balance">Register your machine</h1>
+    <p style="margin:0;max-width:40ch;font:400 clamp(15px,1.15cqi,18px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.6);text-wrap:pretty">Two minutes now saves an argument later. Registration records your serial and purchase date with us, so a claim never depends on you finding the invoice.</p>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#F4F3F1;padding:clamp(40px,5cqi,90px) clamp(16px,3cqi,44px)">
+  <div style="display:grid;grid-template-columns:{{ formCols }};gap:clamp(24px,3cqi,56px);align-items:start">
+
+    <div style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);border-top:3px solid #f4a72d;padding:clamp(24px,2.8cqi,44px);min-width:0">
+      <sc-if value="{{ notDone }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:24px">
+            <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5)">Step 1 - Your details</div>
+            <div style="font:400 12px/1 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.45)">* required</div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:{{ fieldCols }};gap:16px">
+            <label style="display:block;min-width:0">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">First name *</span>
+              <input type="text" value="{{ vFirst }}" onChange="{{ onFirst }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid {{ eFirstBd }};background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+              <sc-if value="{{ eFirst }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:7px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Enter your first name</span></sc-if>
+            </label>
+            <label style="display:block;min-width:0">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Last name *</span>
+              <input type="text" value="{{ vLast }}" onChange="{{ onLast }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid {{ eLastBd }};background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+              <sc-if value="{{ eLast }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:7px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Enter your last name</span></sc-if>
+            </label>
+            <label style="display:block;min-width:0">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Email *</span>
+              <input type="email" value="{{ vEmail }}" onChange="{{ onEmail }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid {{ eEmailBd }};background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+              <sc-if value="{{ eEmail }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:7px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Enter a valid email address</span></sc-if>
+            </label>
+            <label style="display:block;min-width:0">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Phone *</span>
+              <input type="tel" value="{{ vPhone }}" onChange="{{ onPhone }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid {{ ePhoneBd }};background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+              <sc-if value="{{ ePhone }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:7px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Enter a contact number</span></sc-if>
+            </label>
+            <label style="display:block;min-width:0">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Business</span>
+              <input type="text" value="{{ vBiz }}" onChange="{{ onBiz }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid rgba(20,20,18,0.24);background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+            </label>
+            <label style="display:block;min-width:0">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Postcode</span>
+              <input type="text" inputMode="numeric" value="{{ vPostcode }}" onChange="{{ onPostcode }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid rgba(20,20,18,0.24);background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;font-variant-numeric:tabular-nums" />
+            </label>
+          </div>
+
+          <div style="margin-top:32px;padding-top:26px;border-top:1px solid rgba(20,20,18,0.16)">
+            <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5);margin-bottom:20px">Step 2 - The machine</div>
+
+            <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:10px">Model *</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ models }}" as="m" hint-placeholder-count="6">
+                <button type="button" onClick="{{ m.pick }}" style="background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.bd }};padding:13px 16px;min-height:46px;cursor:pointer;font:600 12px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.02em">{{ m.label }}</button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ eModel }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:10px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Pick the model you're registering</span></sc-if>
+
+            <div style="display:grid;grid-template-columns:{{ fieldCols }};gap:16px;margin-top:22px">
+              <label style="display:block;min-width:0">
+                <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Serial number *</span>
+                <input type="text" value="{{ vSerial }}" onChange="{{ onSerial }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid {{ eSerialBd }};background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;font-variant-numeric:tabular-nums" />
+                <sc-if value="{{ eSerial }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:7px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Enter the serial from the plate</span></sc-if>
+              </label>
+              <label style="display:block;min-width:0">
+                <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Purchase date *</span>
+                <input type="date" value="{{ vDate }}" onChange="{{ onDate }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid {{ eDateBd }};background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+                <sc-if value="{{ eDate }}" hint-placeholder-val="{{ false }}"><span style="display:block;margin-top:7px;font:500 12px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">Enter the date of purchase</span></sc-if>
+              </label>
+              <label style="display:block;min-width:0">
+                <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Carrier it runs on</span>
+                <input type="text" value="{{ vCarrier }}" onChange="{{ onCarrier }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid rgba(20,20,18,0.24);background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+              </label>
+              <label style="display:block;min-width:0">
+                <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Bought from</span>
+                <input type="text" value="{{ vDealer }}" onChange="{{ onDealer }}" style="width:100%;min-height:52px;padding:14px 16px;border:1px solid rgba(20,20,18,0.24);background:#F4F3F1;font:400 16px/1.2 'General Sans','GeneralSans-Variable',sans-serif;color:#141412" />
+              </label>
+            </div>
+
+            <label style="display:block;margin-top:16px">
+              <span style="display:block;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.6);margin-bottom:8px">Anything we should know</span>
+              <textarea rows="3" value="{{ vNotes }}" onChange="{{ onNotes }}" style="width:100%;padding:14px 16px;border:1px solid rgba(20,20,18,0.24);background:#F4F3F1;font:400 16px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:#141412;resize:vertical"></textarea>
+            </label>
+          </div>
+
+          <label style="display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin-top:28px;cursor:pointer">
+            <button type="button" onClick="{{ toggleConsent }}" aria-pressed="{{ consentPressed }}" style="width:26px;height:26px;flex:0 0 auto;margin-top:1px;background:{{ consentBg }};border:1px solid {{ consentBd }};cursor:pointer;display:flex;align-items:center;justify-content:center;font:700 15px/1 'General Sans','GeneralSans-Variable',sans-serif;color:#141412">{{ consentMark }}</button>
+            <span style="font:400 14px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.72);text-wrap:pretty">I'm happy for DTE Equipment to contact me about this machine - service reminders, parts and any safety notices for this model.</span>
+          </label>
+
+          <sc-if value="{{ hasErrors }}" hint-placeholder-val="{{ false }}">
+            <div style="margin-top:24px;background:#FDECEA;border:1px solid #B3261E;border-left:4px solid #B3261E;padding:16px 18px">
+              <span style="font:600 13px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:#B3261E">{{ errorSummary }}</span>
+            </div>
+          </sc-if>
+
+          <button type="button" onClick="{{ submit }}" style="margin-top:26px;width:100%;background:#f4a72d;color:#141412;border:0;padding:22px 28px;min-height:56px;cursor:pointer;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#141412;color:#f4a72d">Register warranty</button>
+          <p style="margin:16px 0 0;font:400 13px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.5);text-wrap:pretty">Prototype form - submissions are held in the browser only. [Insert: connect to the warranty inbox or CRM on launch.]</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:clamp(16px,2cqi,32px) 0">
+          <div style="width:52px;height:52px;background:#f4a72d;display:flex;align-items:center;justify-content:center;font:700 26px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412">✓</div>
+          <h2 style="margin:24px 0 0;font:700 clamp(24px,2.6cqi,38px)/1.05 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">Registered</h2>
+          <p style="margin:16px 0 0;max-width:48ch;font:400 clamp(15px,1.2cqi,18px)/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.68);text-wrap:pretty">We've got it on record. A confirmation is on its way to {{ doneEmail }}, and we'll be in touch before your first service interval.</p>
+
+          <div style="margin-top:clamp(24px,2.6cqi,34px);border-top:1px solid rgba(20,20,18,0.16)">
+            <sc-for list="{{ summary }}" as="s" hint-placeholder-count="4">
+              <div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(20,20,18,0.16)">
+                <span style="font:500 11px/1.4 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:rgba(20,20,18,0.55)">{{ s.k }}</span>
+                <span style="font:600 14px/1.4 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;text-align:right">{{ s.v }}</span>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(24px,2.6cqi,32px)">
+            <a href="service.html" style="background:#141412;color:#F4F3F1;padding:18px 24px;min-height:52px;display:flex;align-items:center;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#f4a72d;color:#141412">Service schedule</a>
+            <button type="button" onClick="{{ again }}" style="background:transparent;border:1px solid rgba(20,20,18,0.28);color:#141412;padding:18px 24px;min-height:52px;cursor:pointer;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase" style-hover="border-color:#141412">Register another</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <aside style="min-width:0">
+      <div style="background:#141412;border-top:3px solid #f4a72d;padding:clamp(22px,2.4cqi,32px)">
+        <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#f4a72d;margin-bottom:20px">Why register</div>
+        <div style="display:grid;gap:14px">
+          <sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start">
+              <span style="width:6px;height:6px;margin-top:9px;background:#f4a72d;display:block"></span>
+              <span style="font:400 15px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.72);text-wrap:pretty">{{ w.text }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="margin-top:clamp(14px,1.6cqi,20px);background:#FFFFFF;border:1px solid rgba(20,20,18,0.14);padding:clamp(22px,2.4cqi,32px)">
+        <div style="font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.5);margin-bottom:16px">Where's the serial?</div>
+        <p style="margin:0;font:400 15px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.68);text-wrap:pretty">On a stamped plate on the main frame - usually the side or rear of the housing, near the mount. If you can't find it, send us a photo of the attachment and we'll point you at it.</p>
+        <a href="tel:0753158020" style="display:inline-block;margin-top:20px;font:700 18px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;color:#141412;border-bottom:3px solid #f4a72d;padding-bottom:5px;font-variant-numeric:tabular-nums">07 5315 8020</a>
+      </div>
+      <p style="margin:clamp(18px,2cqi,24px) 0 0;font:400 13px/1.6 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.5);text-wrap:pretty">Registration does not limit your rights under the Australian Consumer Law. See <a href="legal.html?p=terms" style="color:#141412;border-bottom:1px solid #f4a72d">Terms &amp; Conditions</a> for the warranty period and what's covered. [Insert: warranty period per brand.]</p>
+    </aside>
+  </div>
+</section>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+
+</div>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}" style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const MODELS = ['Quadsaw', 'Cutterbar', 'Multi Carrier', 'Scorpion reach mower', 'Spider reach mower', 'Flail mower', 'Virnig drum mulcher', 'Virnig disc mulcher', 'Virnig brush cutter', 'Other'];
+const REQUIRED = ['first', 'last', 'email', 'phone', 'model', 'serial', 'date'];
+const BLANK = { first: '', last: '', biz: '', phone: '', email: '', postcode: '', model: '', serial: '', date: '', carrier: '', dealer: '', notes: '' };
+
+const PAGE_SEO = {"title":"Warranty | DTE Equipment","description":"Warranty terms and registration for Greentec and Virnig attachments distributed by DTE Equipment.","path":"warranty.html"};
+
+class Component extends DCLogic {
+  state = Object.assign({ w: 1440, view: 'desktop', done: false, consent: true, touched: false }, BLANK);
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  componentDidMount() {
+    import('./seo-meta.js').then((m) => m.applySEO(PAGE_SEO));
+
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    this.setState({ w: window.innerWidth, view: view });
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  field(key) { return (e) => { const u = {}; u[key] = e.target.value; this.setState(u); }; }
+
+  invalid() {
+    const s = this.state;
+    const bad = {};
+    REQUIRED.forEach((k) => { if (!String(s[k] || '').trim()) bad[k] = true; });
+    if (s.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s.email)) bad.email = true;
+    if (s.phone && String(s.phone).replace(/\D/g, '').length < 8) bad.phone = true;
+    return bad;
+  }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const s = this.state;
+    const bad = s.touched ? this.invalid() : {};
+    const count = Object.keys(bad).length;
+    const bd = (k) => (bad[k] ? '#B3261E' : 'rgba(20,20,18,0.24)');
+    const dash = (v) => (String(v || '').trim() ? v : ' - ');
+
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow,
+      phone: mobile || layoutW < 760,
+      formCols: narrow ? '1fr' : 'minmax(0,1.7fr) minmax(0,1fr)',
+      fieldCols: narrow ? '1fr' : 'repeat(2,1fr)',
+      notDone: !s.done,
+      done: s.done,
+      doneEmail: s.email || 'your inbox',
+      summary: [
+        { k: 'Model', v: dash(s.model) },
+        { k: 'Serial', v: dash(s.serial) },
+        { k: 'Purchased', v: dash(s.date) },
+        { k: 'Carrier', v: dash(s.carrier) },
+        { k: 'Registered to', v: dash((s.first + ' ' + s.last).trim()) }
+      ],
+      vFirst: s.first, vLast: s.last, vBiz: s.biz, vPhone: s.phone, vEmail: s.email,
+      vPostcode: s.postcode, vSerial: s.serial, vDate: s.date, vCarrier: s.carrier,
+      vDealer: s.dealer, vNotes: s.notes,
+      onFirst: this.field('first'), onLast: this.field('last'), onBiz: this.field('biz'),
+      onPhone: this.field('phone'), onEmail: this.field('email'), onPostcode: this.field('postcode'),
+      onSerial: this.field('serial'), onDate: this.field('date'), onCarrier: this.field('carrier'),
+      onDealer: this.field('dealer'), onNotes: this.field('notes'),
+      eFirst: !!bad.first, eLast: !!bad.last, eEmail: !!bad.email, ePhone: !!bad.phone,
+      eSerial: !!bad.serial, eDate: !!bad.date, eModel: !!bad.model,
+      eFirstBd: bd('first'), eLastBd: bd('last'), eEmailBd: bd('email'), ePhoneBd: bd('phone'),
+      eSerialBd: bd('serial'), eDateBd: bd('date'),
+      hasErrors: count > 0,
+      errorSummary: count === 1 ? 'One field still needs attention - it is marked below.' : count + ' fields still need attention - they are marked below.',
+      models: MODELS.map((m) => ({
+        label: m,
+        bg: s.model === m ? '#141412' : 'transparent',
+        fg: s.model === m ? '#F4F3F1' : '#141412',
+        bd: s.model === m ? '#141412' : (bad.model ? '#B3261E' : 'rgba(20,20,18,0.24)'),
+        pick: () => this.setState({ model: s.model === m ? '' : m })
+      })),
+      consentBg: s.consent ? '#f4a72d' : 'transparent',
+      consentBd: s.consent ? '#f4a72d' : 'rgba(20,20,18,0.32)',
+      consentMark: s.consent ? '✓' : '',
+      consentPressed: s.consent ? 'true' : 'false',
+      toggleConsent: () => this.setState({ consent: !s.consent }),
+      why: [
+        'Your serial and purchase date are on file, so a claim never hinges on finding the invoice',
+        'We can tell you straight away whether a part is under warranty or a wear item',
+        'Service reminders before the interval, not after something has failed',
+        'Safety or update notices for your exact model reach you directly'
+      ].map((t) => ({ text: t })),
+      submit: () => {
+        const bad2 = this.invalid();
+        if (Object.keys(bad2).length) { this.setState({ touched: true }); return; }
+        this.setState({ done: true, touched: false });
+      },
+      again: () => this.setState(Object.assign({ done: false, touched: false }, BLANK)),
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+
+</script>
+</body>
+</html>

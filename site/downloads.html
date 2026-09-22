@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<script src="./access-gate.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin="" />
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+<style>
+  @media (prefers-reduced-motion: no-preference) {
+    .om-rise { opacity:0; transform:translateY(22px); transition:opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+    .om-rise.om-in { opacity:1; transform:none; }
+  }
+  html, body { margin:0; padding:0; background:#141412; -webkit-font-smoothing:antialiased; }
+  body { font-family:'General Sans','GeneralSans-Variable',sans-serif; }
+  * { box-sizing:border-box; }
+  /* Micro-curve: 2px - softens every hard corner without reading as "rounded UI". */
+  *, *::before, *::after { border-radius:2px; }
+  html, body { border-radius:0; }
+  img[alt="DTE Equipment"] { border-radius:0; }
+
+  :focus-visible { outline:2px solid #f4a72d; outline-offset:3px; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  input, button { font-family:inherit; }
+  ::selection { background:#f4a72d; color:#141412; }
+  ::-webkit-scrollbar { width:10px; height:10px; }
+  ::-webkit-scrollbar-track { background:transparent; }
+  ::-webkit-scrollbar-thumb { background:#8a8a86; border-radius:999px; border:2px solid transparent; background-clip:padding-box; }
+  ::-webkit-scrollbar-thumb:hover { background:#f4a72d; }
+  html { scrollbar-width:thin; scrollbar-color:#8a8a86 transparent; }
+</style>
+</helmet>
+
+<div style="width:100%;margin:0 auto;max-width:{{ frameWidth }};position:relative">
+
+<dc-import name="SiteHeader" narrow="{{ narrow }}" phone="{{ phone }}" active="media" overlay="{{ true }}" hint-size="100%,0px"></dc-import>
+
+<div style="background:#F4F3F1;overflow-x:hidden;container-type:inline-size;width:100%">
+
+<section style="background:#141412;padding:calc(clamp(30px,4cqi,58px) + clamp(72px,5.8vw,92px)) clamp(16px,3cqi,44px) clamp(34px,4cqi,56px);border-bottom:1px solid rgba(255,255,255,0.14)">
+  <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:22px"><a href="index.html">Home</a> <span style="color:#f4a72d">/</span> Downloads</div>
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:22px">
+    <h1 style="margin:0;font:800 clamp(38px,6cqi,96px)/0.9 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.015em;text-transform:uppercase;color:#F4F3F1">Brochures &amp; Specs</h1>
+    <p style="margin:0;max-width:36ch;font:400 clamp(15px,1.15cqi,18px)/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.6);text-wrap:pretty">Full specifications, dimensions and flow requirements for every range. One short form, then the file.</p>
+  </div>
+</section>
+
+<section class="om-rise" style="background:#F4F3F1;display:grid;grid-template-columns:{{ layout }};align-items:start">
+  <div style="padding:clamp(28px,3cqi,48px) clamp(16px,3cqi,44px) clamp(50px,6cqi,90px);min-width:0">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid rgba(20,20,18,0.16);margin-bottom:clamp(14px,1.8cqi,24px)">
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+          <button onClick="{{ f.click }}"  style="border:1px solid rgba(20,20,18,0.26);background:{{ f.bg }};color:{{ f.fg }};padding:12px 15px;font:600 11px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px">{{ f.label }}</button>
+        </sc-for>
+      </div>
+      <div style="font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(20,20,18,0.66)">{{ countLabel }}</div>
+    </div>
+
+    <div style="display:grid;border-top:1px solid rgba(20,20,18,0.16)">
+      <sc-for list="{{ items }}" as="d" hint-placeholder-count="8">
+        <button onClick="{{ d.pick }}"  style="border:0;border-bottom:1px solid rgba(20,20,18,0.16);background:transparent;display:flex;align-items:center;gap:clamp(12px,2cqi,26px);padding:18px 14px;cursor:pointer;text-align:left;width:100%;border-radius:2px" style-hover="background:#FFFFFF">
+          <span style="flex:0 0 auto;width:38px;height:46px;border:1px solid rgba(20,20,18,0.3);display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;font:600 9px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.06em;color:#141412;border-radius:2px">PDF</span>
+          <span style="flex:1;min-width:0">
+            <span style="display:block;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(20,20,18,0.55);margin-bottom:7px">{{ d.brand }} · {{ d.type }}</span>
+            <span style="display:block;font:800 clamp(15px,1.3cqi,20px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412">{{ d.title }}</span>
+          </span>
+          <span style="flex:0 0 auto;width:38px;height:38px;background:#f4a72d;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" stroke="#141412" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+
+  <aside style="background:#141412;padding:clamp(30px,3.4cqi,56px) clamp(16px,3cqi,44px);position:{{ railPos }};top:0">
+    <h2 style="margin:0 0 14px;font:800 clamp(21px,2cqi,30px)/1.04 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">Need a hand?</h2>
+    <div style="font:400 13px/1.4 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.55)">Call <a href="tel:0753158020" style="color:#f4a72d">07 5315 8020</a> and we'll email the right file.</div>
+  </aside>
+</section>
+
+<sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+  <section style="background:#141412;padding:clamp(36px,5cqi,60px) clamp(16px,3cqi,44px);border-top:1px solid rgba(255,255,255,0.14)">
+    <h2 style="margin:0;font:700 clamp(28px,7cqi,44px)/1.02 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:0.012em;text-transform:uppercase;color:#F4F3F1;max-width:18ch;text-wrap:balance">Can't find the spec sheet?</h2>
+    <p style="margin:16px 0 0;max-width:46ch;font:400 16px/1.55 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(255,255,255,0.68);text-wrap:pretty">Tell us the model and we'll send the documentation straight through.</p>
+    <button type="button" data-quote="Downloads mobile" style="margin-top:26px;width:100%;background:#f4a72d;color:#141412;border:0;padding:22px 28px;min-height:56px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer">Get a quote</button>
+  </section>
+</sc-if>
+
+<dc-import name="SiteFooter" narrow="{{ narrow }}" phone="{{ phone }}" hint-size="100%,1500px"></dc-import>
+</div>
+
+</div>
+
+<sc-if value="{{ gateOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ gateClose }}" style="position:fixed;inset:0;z-index:400;background:rgba(20,20,19,0.74);display:flex;align-items:flex-start;justify-content:center;padding:clamp(14px,4vh,60px) 16px;overflow:auto">
+    <div onClick="{{ stop }}" style="width:100%;max-width:540px;background:#F4F3F1;border-radius:4px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.45)">
+      <div style="background:#141412;padding:clamp(22px,3cqi,30px) clamp(20px,3cqi,32px);display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+        <div style="min-width:0">
+          <div style="font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;color:#f4a72d;margin-bottom:11px">YOU'RE DOWNLOADING</div>
+          <div style="font:800 clamp(19px,2cqi,26px)/1.06 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#F4F3F1">{{ gateTitle }}</div>
+          <div style="margin-top:8px;font:500 11px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,0.5)">{{ gateMeta }}</div>
+        </div>
+        <button onClick="{{ gateClose }}" style="flex:0 0 auto;background:transparent;border:1px solid rgba(255,255,255,0.3);color:#F4F3F1;width:38px;height:38px;font:400 17px/1 'General Sans','GeneralSans-Variable',sans-serif;cursor:pointer;border-radius:2px" style-hover="border-color:#f4a72d;color:#f4a72d">✕</button>
+      </div>
+
+      <sc-if value="{{ gateDone }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:clamp(26px,3.4cqi,40px) clamp(20px,3cqi,32px)">
+          <div style="font:800 clamp(20px,2cqi,27px)/1.1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;text-transform:uppercase;color:#141412;margin-bottom:12px">Your file is on its way</div>
+          <p style="margin:0 0 22px;font:400 16px/1.5 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.7);text-wrap:pretty">{{ gateDoneMsg }}</p>
+          <button onClick="{{ gateClose }}" style="width:100%;background:#141412;color:#F4F3F1;border:0;padding:22px;font:600 12px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;border-radius:2px" style-hover="background:#f4a72d;color:#141412">Done</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ gateFormOn }}" hint-placeholder-val="{{ true }}">
+        <div style="padding:clamp(24px,3cqi,34px) clamp(20px,3cqi,32px) clamp(26px,3.4cqi,38px)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <input type="text" autocomplete="given-name" placeholder="FIRST NAME *" value="{{ gateFn }}" onChange="{{ setFn }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+            <input type="text" autocomplete="family-name" placeholder="LAST NAME *" value="{{ gateLn }}" onChange="{{ setLn }}" style="background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+            <input type="email" autocomplete="email" inputmode="email" placeholder="EMAIL *" value="{{ gateEm }}" onChange="{{ setEm }}" style="grid-column:1 / -1;background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+            <input type="tel" autocomplete="tel" inputmode="tel" placeholder="PHONE *" value="{{ gatePh }}" onChange="{{ setPh }}" style="grid-column:1 / -1;background:#FFFFFF;border:1px solid rgba(20,20,18,0.22);color:#141412;padding:18px 16px;font:500 13px/1 'General Sans','GeneralSans-Variable',sans-serif;outline:none;border-radius:2px;min-width:0" style-focus="border-color:#f4a72d;box-shadow:inset 0 0 0 1px #f4a72d" />
+          </div>
+          <div style="margin:22px 0 10px;font:500 10px/1 'General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:rgba(20,20,18,0.55)">What best describes your business?</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px">
+            <sc-for list="{{ segs }}" as="s" hint-placeholder-count="9">
+              <button onClick="{{ s.pick }}" style="background:{{ s.bg }};color:{{ s.fg }};border:1px solid rgba(20,20,18,0.24);padding:11px 13px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px">{{ s.label }}</button>
+            </sc-for>
+          </div>
+          <button onClick="{{ gateSubmit }}" style="margin-top:24px;width:100%;background:{{ gateBtnBg }};color:{{ gateBtnFg }};border:0;padding:24px;display:flex;align-items:center;justify-content:center;gap:10px;font:600 13px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.16em;text-transform:uppercase;cursor:{{ gateBtnCursor }};border-radius:2px"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download now</button>
+          <div style="margin-top:13px;font:400 12px/1.45 'General Sans','GeneralSans-Variable',sans-serif;color:rgba(20,20,18,0.55);text-wrap:pretty">{{ gateHint }}</div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:200;display:flex;gap:1px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.25);border-radius:2px">
+  <button onClick="{{ setDesktop }}"  style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgDesktop }};color:{{ fgDesktop }};border-radius:2px">DESKTOP</button>
+  <button onClick="{{ setMobile }}"  style="border:0;cursor:pointer;padding:10px 14px;font:600 10px/1 'Futura ND Alt W03','Futura ND Alt','Futura ND','General Sans','GeneralSans-Variable',sans-serif;letter-spacing:.14em;background:{{ bgMobile }};color:{{ fgMobile }};border-radius:2px">MOBILE</button>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const SEGMENTS = [
+  'Orchard', 'Council', 'Mulching / Slashing / Mowing', 'Tree Maintenance / Arborist',
+  'Landscaping', 'Civil / Earthmoving', 'Cattle Farmer (Leucaena)', 'Hire Company', 'Other'
+];
+
+const PAGE_SEO = {"title":"Brochures & Spec Sheets | DTE Equipment","description":"Download brochures and spec sheets for the full Greentec and Virnig attachment range.","path":"downloads.html"};
+
+class Component extends DCLogic {
+  state = { w: 1440, view: 'desktop', data: null, brand: '', seg: '', gate: null, fn: '', ln: '', em: '', ph: '', done: false };
+
+  openGate(item) {
+    this.setState({ gate: item, fn: '', ln: '', em: '', ph: '', seg: '', done: false });
+  }
+  gateValid() {
+    const s = this.state;
+    return !!(s.fn.trim() && s.ln.trim() && /.+@.+\..+/.test(s.em.trim()) && s.ph.replace(/\D/g, '').length >= 8);
+  }
+
+  componentDidUpdate() { if (this.reveal) this.reveal(); }
+
+  componentDidMount() {
+    import('./seo-meta.js').then((m) => m.applySEO(PAGE_SEO));
+
+    this.reveal = () => {
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.om-rise:not(.om-in)');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('om-in')); return; }
+      if (!this.io) this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('om-in'); }), { rootMargin: '0px 0px -12% 0px', threshold: 0.06 });
+      els.forEach((el) => this.io.observe(el));
+    };
+    this.reveal();
+    setTimeout(this.reveal, 120);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    window.addEventListener('resize', this.onResize);
+    let view = 'desktop';
+    try { view = localStorage.getItem('dte-view') || 'desktop'; } catch (e) {}
+    this.setState({ w: window.innerWidth, view: view });
+    import('./site-data.js').then((m) => this.setState({ data: m }));
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this.onResize); }
+
+  renderVals() {
+    const mobile = this.state.view === 'mobile';
+    const width = mobile ? 430 : this.state.w;
+    const __isTop = (typeof window !== 'undefined') && window.self === window.top;
+    const __ow = (typeof window !== 'undefined' && window.outerWidth) || 0;
+    const __iw = (typeof window !== 'undefined' && window.innerWidth) || width;
+    const __zoom = (__isTop && __ow > 0 && __iw > 0 && __ow >= __iw) ? Math.min(__ow / __iw, 3) : 1;
+    const layoutW = mobile ? 430 : Math.round(width * __zoom);
+    const narrow = layoutW < 1020;
+    const phone = mobile || layoutW < 760;
+    const d = this.state.data;
+    const all = d ? d.downloads : [];
+    const list = this.state.brand ? all.filter((x) => x.brand === this.state.brand) : all;
+
+    const opt = (label, value) => ({
+      label: label,
+      bg: this.state.brand === value ? '#141412' : 'transparent',
+      fg: this.state.brand === value ? '#f4a72d' : '#141412',
+      click: () => this.setState({ brand: value })
+    });
+
+    const g = this.state.gate;
+    const valid = this.gateValid();
+
+    return {
+      frameWidth: mobile ? '430px' : 'none',
+      narrow: narrow,
+      phone: phone,
+      layout: narrow ? '1fr' : 'minmax(0,1.5fr) minmax(320px,1fr)',
+      railPos: narrow ? 'static' : 'sticky',
+      filters: [opt('All', ''), opt('Greentec', 'Greentec'), opt('Virnig', 'Virnig')],
+      countLabel: d ? list.length + ' files' : 'Loading…',
+      items: list.map((x) => ({
+        title: x.title, brand: x.brand, type: x.type,
+        cta: 'DOWNLOAD',
+        pick: () => this.openGate(x)
+      })),
+      gateOpen: !!g,
+      gateTitle: g ? g.title : '',
+      gateMeta: g ? g.brand + ' · ' + g.type + ' · PDF' : '',
+      gateDone: !!g && this.state.done,
+      gateFormOn: !!g && !this.state.done,
+      gateDoneMsg: g ? 'The ' + g.title + ' ' + g.type.toLowerCase() + ' is opening now, and a copy is on its way to ' + this.state.em.trim() + '. Our team can see which document you took, so any follow-up will be about this machine - nothing else.' : '',
+      gateFn: this.state.fn, gateLn: this.state.ln, gateEm: this.state.em, gatePh: this.state.ph,
+      setFn: (e) => this.setState({ fn: e.target.value }),
+      setLn: (e) => this.setState({ ln: e.target.value }),
+      setEm: (e) => this.setState({ em: e.target.value }),
+      setPh: (e) => this.setState({ ph: e.target.value }),
+      gateBtnBg: valid ? '#f4a72d' : 'rgba(20,20,18,0.14)',
+      gateBtnFg: valid ? '#141412' : 'rgba(20,20,18,0.4)',
+      gateBtnCursor: valid ? 'pointer' : 'not-allowed',
+      gateHint: valid ? 'Tagged as: ' + (g ? g.title : '') : 'First name, last name, email and phone are all required.',
+      gateSubmit: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        if (!this.gateValid()) return;
+        if (g && g.href) window.open(g.href, '_blank', 'noopener');
+        this.setState({ done: true });
+      },
+      gateClose: () => this.setState({ gate: null }),
+      stop: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
+      segs: SEGMENTS.map((s) => ({
+        label: s,
+        bg: this.state.seg === s ? '#141412' : 'transparent',
+        fg: this.state.seg === s ? '#f4a72d' : 'rgba(20,20,18,0.75)',
+        pick: () => this.setState({ seg: this.state.seg === s ? '' : s })
+      })),
+      setDesktop: () => { try { localStorage.setItem('dte-view', 'desktop'); } catch (e) {} this.setState({ view: 'desktop' }); },
+      setMobile: () => { try { localStorage.setItem('dte-view', 'mobile'); } catch (e) {} this.setState({ view: 'mobile' }); },
+      bgDesktop: mobile ? '#141412' : '#f4a72d', fgDesktop: mobile ? '#F4F3F1' : '#141412',
+      bgMobile: mobile ? '#f4a72d' : '#141412', fgMobile: mobile ? '#141412' : '#F4F3F1'
+    };
+  }
+}
+</script>
+</body>
+</html>
